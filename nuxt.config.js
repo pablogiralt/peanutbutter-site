@@ -37,7 +37,7 @@ export default {
   '@nuxtjs/eslint-module'],
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [["@nuxtjs/prismic", {
-    "endpoint": "https://peanutbutter-site.cdn.prismic.io/api/v2",
+    "endpoint": "https://peanutbutter.cdn.prismic.io/api/v2",
     "apiOptions": {
       "routes": [{
         "type": "page",

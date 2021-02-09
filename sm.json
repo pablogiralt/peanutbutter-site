@@ -1,5 +1,5 @@
 {
-  "apiEndpoint": "https://peanutbutter-site.cdn.prismic.io/api/v2",
+  "apiEndpoint": "https://peanutbutter.cdn.prismic.io/api/v2",
   "libraries": [
     "@/slices",
     "vue-essential-slices"
