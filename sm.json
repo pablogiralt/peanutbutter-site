@@ -1,1 +1,8 @@
-{"apiEndpoint":"https://peanutbutter-site.cdn.prismic.io/api/v2","libraries":["@/slices","vue-essential-slices"],"_latest":"0.0.43"}
+{
+  "apiEndpoint": "https://peanutbutter-site.cdn.prismic.io/api/v2",
+  "libraries": [
+    "@/slices",
+    "vue-essential-slices"
+  ],
+  "_latest": "0.0.43"
+}
