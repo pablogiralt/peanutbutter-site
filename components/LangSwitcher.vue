@@ -53,6 +53,7 @@ export default {
   .lang-switcher {
     display: flex;
     list-style: none;
+    padding: 0;
   }
   .lang-switcher__item:after {
     content: '/'

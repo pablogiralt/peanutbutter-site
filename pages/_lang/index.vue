@@ -1,6 +1,12 @@
 <template>
   <div>
-    <lang-switcher :alt-langs="altLangs" :current-lang="langCode" />
+    <div class="header">
+      <lang-switcher :alt-langs="altLangs" :current-lang="langCode" />
+      <nuxt-link :to="logoLink">
+        <img class="logo" src="https://peanutbutter.es/wp-content/themes/peanut/library/images/logo_peanut_header.png">
+      </nuxt-link>
+      <span class="contact-link">contact</span>
+    </div>
 
     <slice-zone
       type="page"
@@ -69,7 +75,24 @@ export default {
         currentLang = this.$route.name === 'index' || this.$route.name === 'uid' ? 'es' : this.$route.name
       }
       return currentLang
+    },
+    logoLink () {
+      return this.langCode !== 'es' ? `/${this.langCode}` : '/'
     }
   }
 }
 </script>
+
+<style>
+  .header {
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    background-color: #000;
+    border-radius: 50%;
+    width: 80px;
+  }
+</style>
