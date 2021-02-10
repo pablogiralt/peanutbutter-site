@@ -2,7 +2,7 @@
   <div>
     <slice-zone
       type="page"
-      uid="homepage"
+      :uid="uid"
       :lang="lang"
     />
   </div>
@@ -16,11 +16,19 @@ export default {
     SliceZone
   },
   computed: {
+    uid () {
+      return this.$route.params.uid || 'homepage'
+    },
     lang () {
-      const currentLang = this.$route.name === 'index' ? 'es' : this.$route.name
       const locales = {
         en: 'en-us',
         es: 'es-es'
+      }
+      let currentLang
+      if (this.$route.params.lang) {
+        currentLang = this.$route.params.lang
+      } else {
+        currentLang = this.$route.name === 'index' ? 'es' : this.$route.name
       }
       return locales[currentLang]
     }

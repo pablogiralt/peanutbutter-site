@@ -1,4 +1,4 @@
 <script>
-import _uid from '~/pages/_lang/_uid'
-export default _uid
+import index from '~/pages/_lang/index'
+export default index
 </script>
