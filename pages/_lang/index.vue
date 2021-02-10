@@ -37,7 +37,6 @@ export default {
 
       // Query to get document content
       const result = await $prismic.api.getByUID('page', uid, lang)
-      // console.log(result)
 
       return {
         // Document content
@@ -60,7 +59,7 @@ export default {
         en: 'en-us',
         es: 'es-es'
       }
-      return locales[this.currentLang]
+      return locales[this.langCode]
     },
     langCode () {
       let currentLang

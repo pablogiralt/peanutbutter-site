@@ -1,14 +1,17 @@
 export default function (doc) {
 
-  const mainLang = 'es'
-  const langCode = doc.shortCode !== mainLang ? doc.shortCode : ''
+  const langPaths = {
+    'en-us': 'en',
+    'es-es': ''
+  }
+  const shortCode = langPaths[doc.lang]
 
   if (doc.uid === 'homepage') {
-    return `/${langCode}`
+    return `/${shortCode}`
   }
 
   if (doc.type === 'page') {
-    return langCode ? `/${doc.shortCode}/${doc.uid}` : `/${doc.uid}`
+    return shortCode ? `/${shortCode}/${doc.uid}` : `/${doc.uid}`
   }
 
   return '/not-found'
