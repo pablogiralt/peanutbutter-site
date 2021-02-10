@@ -5,11 +5,7 @@
         "src": "nuxt.config.js",
         "use": "@nuxtjs/vercel-builder",
         "config": {
-            "generateStaticRoutes": true,
-            "serverFiles": [
-              "pages/_lang/**",
-              "pages/**"
-            ]
+            "generateStaticRoutes": true
         }
       }
     ]
