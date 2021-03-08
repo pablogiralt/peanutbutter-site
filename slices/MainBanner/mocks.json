@@ -1,0 +1,34 @@
+[
+  {
+    "id": "default-slice",
+    "name": "Default slice",
+    "docURL": "...",
+    "version": "sktwi1xtmkfgx8626",
+    "description": "MainBanner",
+    "primary": {
+      "title": [
+        {
+          "type": "paragraph",
+          "text": "Commodo Lorem irure ad duis ut qui eiusmod. Dolore ex ex eu dolor ad proident nostrud elit ad incididunt sit cupidatat anim elit tempor. Nostrud non veniam minim.",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Fugiat ullamco aliqua ullamco.",
+          "spans": []
+        }
+      ],
+      "subtitle": [
+        {
+          "type": "paragraph",
+          "text": "Minim exercitation aliqua consectetur quis dolor. Labore ea id reprehenderit enim cupidatat.",
+          "spans": []
+        }
+      ]
+    },
+    "items": [],
+    "slice_type": "main_banner"
+  }
+]

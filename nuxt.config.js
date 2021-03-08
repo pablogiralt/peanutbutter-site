@@ -49,28 +49,30 @@ export default {
   build: {
     transpile: ["vue-slicezone", "nuxt-sm"]
   },
-
   router: {
     extendRoutes(routes, resolve) {
       routes.unshift({
         name: 'custom',
         path: '*',
         component: resolve(__dirname, 'pages/404.vue')
-      });
+      }); // Move uid so it has higuer priority than lang
 
-      // Move uid so it has higuer priority than lang
       let fromIndex = routes.map(route => route.name).indexOf('uid');
       let toIndex = 0;
       var uidRoute = routes[fromIndex];
       routes.splice(fromIndex, 1);
-      routes.splice(toIndex, 0, uidRoute);
+      routes.splice(toIndex, 0, uidRoute); // Move en so it has higuer than uid
 
-      // Move en so it has higuer than uid
       fromIndex = routes.map(route => route.name).indexOf('en');
       toIndex = 0;
       var uidRoute = routes[fromIndex];
       routes.splice(fromIndex, 1);
       routes.splice(toIndex, 0, uidRoute);
     }
-  }
+
+  },
+  storybook: {
+    stories: ["~/slices/**/*.stories.js"]
+  },
+  ignore: ["**/*.stories.js"]
 };

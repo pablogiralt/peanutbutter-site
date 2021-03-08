@@ -1,0 +1,20 @@
+{
+  "LangSwitcher": {
+    "description": "Auto imported from /components/LangSwitcher.vue"
+  },
+  "LazyLangSwitcher": {
+    "description": "Auto imported from /components/LangSwitcher.vue"
+  },
+  "Logo": {
+    "description": "Auto imported from /components/Logo.vue"
+  },
+  "LazyLogo": {
+    "description": "Auto imported from /components/Logo.vue"
+  },
+  "Navigation": {
+    "description": "Auto imported from /components/Navigation.vue"
+  },
+  "LazyNavigation": {
+    "description": "Auto imported from /components/Navigation.vue"
+  }
+}
