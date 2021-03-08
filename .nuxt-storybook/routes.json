@@ -1,0 +1,48 @@
+[
+  {
+    "name": "prismic-preview",
+    "path": "/preview",
+    "component": "/Users/pablo/jamstack/peanutbutter-site/.nuxt-storybook/prismic/pages/preview.vue"
+  },
+  {
+    "name": "en",
+    "path": "/en",
+    "component": "/Users/pablo/jamstack/peanutbutter-site/pages/en.vue",
+    "chunkName": "pages/en"
+  },
+  {
+    "name": "uid",
+    "path": "/:uid",
+    "component": "/Users/pablo/jamstack/peanutbutter-site/pages/_uid.vue",
+    "chunkName": "pages/_uid"
+  },
+  {
+    "name": "custom",
+    "path": "*",
+    "component": "/Users/pablo/jamstack/peanutbutter-site/pages/404.vue"
+  },
+  {
+    "name": "404",
+    "path": "/404",
+    "component": "/Users/pablo/jamstack/peanutbutter-site/pages/404.vue",
+    "chunkName": "pages/404"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/pablo/jamstack/peanutbutter-site/pages/index.vue",
+    "chunkName": "pages/index"
+  },
+  {
+    "name": "lang",
+    "path": "/:lang",
+    "component": "/Users/pablo/jamstack/peanutbutter-site/pages/_lang/index.vue",
+    "chunkName": "pages/_lang/index"
+  },
+  {
+    "name": "lang-uid",
+    "path": "/:lang/:uid",
+    "component": "/Users/pablo/jamstack/peanutbutter-site/pages/_lang/_uid.vue",
+    "chunkName": "pages/_lang/_uid"
+  }
+]
