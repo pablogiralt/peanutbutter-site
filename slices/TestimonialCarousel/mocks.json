@@ -1,0 +1,113 @@
+[
+  {
+    "id": "default-slice",
+    "name": "Default slice",
+    "docURL": "...",
+    "version": "sktwi1xtmkfgx8626",
+    "description": "TestimonialCarousel",
+    "primary": {},
+    "items": [
+      {
+        "testimonial": [
+          {
+            "type": "paragraph",
+            "text": "Magna pariatur qui irure incididunt incididunt aute quis eu et aliqua velit cupidatat consequat qui. Cupidatat mollit reprehenderit in laborum duis officia culpa occaecat.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=900&h=500&fit=crop"
+        },
+        "name": "deploy sticky models",
+        "role": "transition value-added vortals"
+      },
+      {
+        "testimonial": [
+          {
+            "type": "paragraph",
+            "text": "Sunt consectetur consequat veniam irure sit esse adipisicing magna minim minim in. Cillum eiusmod ex dolore nostrud nulla culpa. Laborum eiusmod nulla dolor reprehenderit magna nulla adipisicing.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?w=900&h=500&fit=crop"
+        },
+        "name": "implement granular convergence",
+        "role": "grow enterprise mindshare"
+      },
+      {
+        "testimonial": [
+          {
+            "type": "paragraph",
+            "text": "Do irure aliqua mollit officia minim velit laborum sit nostrud id. Exercitation aliquip veniam dolore ea nostrud aliquip.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"
+        },
+        "name": "envisioneer collaborative platforms",
+        "role": "implement next-generation supply-chains"
+      },
+      {
+        "testimonial": [
+          {
+            "type": "paragraph",
+            "text": "Aliqua excepteur quis anim proident consequat proident ipsum amet sunt aliqua ad ut nisi. Dolore esse pariatur reprehenderit.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea?w=900&h=500&fit=crop"
+        },
+        "name": "enhance B2C web-readiness",
+        "role": "visualize impactful e-tailers"
+      },
+      {
+        "testimonial": [
+          {
+            "type": "paragraph",
+            "text": "Tempor ex nostrud id mollit quis amet nisi commodo officia qui. Reprehenderit minim duis officia. Duis labore ut consectetur esse qui duis ipsum ut deserunt deserunt duis mollit ipsum.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=900&h=500&fit=crop"
+        },
+        "name": "transition interactive applications",
+        "role": "deploy real-time e-tailers"
+      }
+    ],
+    "slice_type": "testimonial_carousel"
+  }
+]
