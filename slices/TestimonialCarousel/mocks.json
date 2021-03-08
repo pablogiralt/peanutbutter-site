@@ -11,27 +11,7 @@
         "testimonial": [
           {
             "type": "paragraph",
-            "text": "Magna pariatur qui irure incididunt incididunt aute quis eu et aliqua velit cupidatat consequat qui. Cupidatat mollit reprehenderit in laborum duis officia culpa occaecat.",
-            "spans": []
-          }
-        ],
-        "image": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=900&h=500&fit=crop"
-        },
-        "name": "deploy sticky models",
-        "role": "transition value-added vortals"
-      },
-      {
-        "testimonial": [
-          {
-            "type": "paragraph",
-            "text": "Sunt consectetur consequat veniam irure sit esse adipisicing magna minim minim in. Cillum eiusmod ex dolore nostrud nulla culpa. Laborum eiusmod nulla dolor reprehenderit magna nulla adipisicing.",
+            "text": "In consequat magna ipsum in mollit deserunt aute ea ea proident cillum exercitation sunt nostrud. Culpa eu aute quis dolore voluptate enim cupidatat irure nulla deserunt cillum.",
             "spans": []
           }
         ],
@@ -44,14 +24,14 @@
           "copyright": null,
           "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?w=900&h=500&fit=crop"
         },
-        "name": "implement granular convergence",
-        "role": "grow enterprise mindshare"
+        "name": "deploy impactful niches",
+        "role": "disintermediate best-of-breed technologies"
       },
       {
         "testimonial": [
           {
             "type": "paragraph",
-            "text": "Do irure aliqua mollit officia minim velit laborum sit nostrud id. Exercitation aliquip veniam dolore ea nostrud aliquip.",
+            "text": "Do consectetur officia id velit nisi est eiusmod. Veniam pariatur mollit elit. Non aute consequat cillum velit sit est nisi aliqua anim ad ad amet esse qui.",
             "spans": []
           }
         ],
@@ -62,16 +42,16 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=900&h=500&fit=crop"
         },
-        "name": "envisioneer collaborative platforms",
-        "role": "implement next-generation supply-chains"
+        "name": "reintermediate wireless niches",
+        "role": "monetize bricks-and-clicks interfaces"
       },
       {
         "testimonial": [
           {
             "type": "paragraph",
-            "text": "Aliqua excepteur quis anim proident consequat proident ipsum amet sunt aliqua ad ut nisi. Dolore esse pariatur reprehenderit.",
+            "text": "Proident adipisicing veniam aliqua mollit minim nostrud enim sunt dolor id dolor elit consectetur.",
             "spans": []
           }
         ],
@@ -82,16 +62,16 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869?w=900&h=500&fit=crop"
         },
-        "name": "enhance B2C web-readiness",
-        "role": "visualize impactful e-tailers"
+        "name": "seize one-to-one solutions",
+        "role": "target proactive e-tailers"
       },
       {
         "testimonial": [
           {
             "type": "paragraph",
-            "text": "Tempor ex nostrud id mollit quis amet nisi commodo officia qui. Reprehenderit minim duis officia. Duis labore ut consectetur esse qui duis ipsum ut deserunt deserunt duis mollit ipsum.",
+            "text": "Non laboris consectetur officia velit aliquip. Minim Lorem ex ullamco enim excepteur nulla do sit do anim. Deserunt sint ut ut.",
             "spans": []
           }
         ],
@@ -102,10 +82,50 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?w=900&h=500&fit=crop"
         },
-        "name": "transition interactive applications",
-        "role": "deploy real-time e-tailers"
+        "name": "envisioneer dynamic channels",
+        "role": "redefine bricks-and-clicks eyeballs"
+      },
+      {
+        "testimonial": [
+          {
+            "type": "paragraph",
+            "text": "Amet anim proident in in consequat irure nostrud occaecat aliquip qui et. Cillum voluptate velit ad ipsum sit duis mollit pariatur magna.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51?w=900&h=500&fit=crop"
+        },
+        "name": "revolutionize compelling e-tailers",
+        "role": "transition transparent vortals"
+      },
+      {
+        "testimonial": [
+          {
+            "type": "paragraph",
+            "text": "Id do voluptate consequat cillum qui pariatur fugiat elit.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89?w=900&h=500&fit=crop"
+        },
+        "name": "productize intuitive solutions",
+        "role": "exploit scalable models"
       }
     ],
     "slice_type": "testimonial_carousel"
