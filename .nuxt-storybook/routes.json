@@ -2,47 +2,55 @@
   {
     "name": "prismic-preview",
     "path": "/preview",
-    "component": "/Users/pablo/jamstack/peanutbutter-site/.nuxt-storybook/prismic/pages/preview.vue"
+    "component": "/Users/pablo/jamstack/peanutbutter-site/.nuxt-storybook/prismic/pages/preview.vue",
+    "_name": "_1f6ce156"
   },
   {
     "name": "en",
     "path": "/en",
     "component": "/Users/pablo/jamstack/peanutbutter-site/pages/en.vue",
-    "chunkName": "pages/en"
+    "chunkName": "pages/en",
+    "_name": "_8d09152c"
   },
   {
     "name": "uid",
     "path": "/:uid",
     "component": "/Users/pablo/jamstack/peanutbutter-site/pages/_uid.vue",
-    "chunkName": "pages/_uid"
+    "chunkName": "pages/_uid",
+    "_name": "_a1eebbdc"
   },
   {
     "name": "custom",
     "path": "*",
-    "component": "/Users/pablo/jamstack/peanutbutter-site/pages/404.vue"
+    "component": "/Users/pablo/jamstack/peanutbutter-site/pages/404.vue",
+    "_name": "_276d7b72"
   },
   {
     "name": "404",
     "path": "/404",
     "component": "/Users/pablo/jamstack/peanutbutter-site/pages/404.vue",
-    "chunkName": "pages/404"
+    "chunkName": "pages/404",
+    "_name": "_276d7b72"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/pablo/jamstack/peanutbutter-site/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_22b78321"
   },
   {
     "name": "lang",
     "path": "/:lang",
     "component": "/Users/pablo/jamstack/peanutbutter-site/pages/_lang/index.vue",
-    "chunkName": "pages/_lang/index"
+    "chunkName": "pages/_lang/index",
+    "_name": "_037b911f"
   },
   {
     "name": "lang-uid",
     "path": "/:lang/:uid",
     "component": "/Users/pablo/jamstack/peanutbutter-site/pages/_lang/_uid.vue",
-    "chunkName": "pages/_lang/_uid"
+    "chunkName": "pages/_lang/_uid",
+    "_name": "_42abdc54"
   }
 ]
