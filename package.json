@@ -21,7 +21,8 @@
     "nuxt-sm": "^0.0.6",
     "prismic-javascript": "^3.0.2",
     "vue-essential-slices": "^0.2.0",
-    "vue-slicezone": "^0.0.29"
+    "vue-slicezone": "^0.0.29",
+    "vue-slick-carousel": "^1.0.6"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",
