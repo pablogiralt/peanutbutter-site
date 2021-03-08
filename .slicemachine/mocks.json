@@ -14,5 +14,21 @@
         "content": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5"
       }
     }
+  },
+  "TestimonialCarousel": {
+    "items": {
+      "testimonial": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "name": {
+        "content": null
+      },
+      "role": {
+        "content": null
+      }
+    }
   }
 }

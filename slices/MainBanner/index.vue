@@ -43,9 +43,7 @@
 </template>
 
 <script>
-import {
-  PbSection
-} from '../components'
+import { PbSection } from '../components'
 import { commonProps } from '../utils'
 
 export default {
