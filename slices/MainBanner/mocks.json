@@ -6,27 +6,42 @@
     "version": "sktwi1xtmkfgx8626",
     "description": "MainBanner",
     "primary": {
+      "image": {
+        "dimensions": {
+          "width": 940,
+          "height": 666
+        },
+        "alt": "Placeholder image",
+        "copyright": null,
+        "url": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=940&h=666&fit=crop"
+      },
       "title": [
         {
-          "type": "paragraph",
-          "text": "Commodo Lorem irure ad duis ut qui eiusmod. Dolore ex ex eu dolor ad proident nostrud elit ad incididunt sit cupidatat anim elit tempor. Nostrud non veniam minim.",
-          "spans": []
-        }
-      ],
-      "description": [
-        {
-          "type": "paragraph",
-          "text": "Fugiat ullamco aliqua ullamco.",
+          "type": "heading1",
+          "text": "Evolve open-source deliverables",
           "spans": []
         }
       ],
       "subtitle": [
         {
-          "type": "paragraph",
-          "text": "Minim exercitation aliqua consectetur quis dolor. Labore ea id reprehenderit enim cupidatat.",
+          "type": "heading1",
+          "text": "Incubate seamless paradigms",
           "spans": []
         }
-      ]
+      ],
+      "description": [
+        {
+          "type": "heading1",
+          "text": "Disintermediate impactful models",
+          "spans": []
+        }
+      ],
+      "buttonText": "incubate world-class methodologies",
+      "link": {
+        "link_type": "Web",
+        "url": "https://slicemachine.dev"
+      },
+      "imageSide": "left"
     },
     "items": [],
     "slice_type": "main_banner"

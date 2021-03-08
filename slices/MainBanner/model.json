@@ -11,6 +11,17 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "MainBanner",
       "primary": {
+        "image": {
+          "config": {
+            "label": "Image",
+            "constraint": {
+              "width": 940,
+              "height": 666
+            },
+            "thumbnails": []
+          },
+          "type": "Image"
+        },
         "title": {
           "type": "StructuredText",
           "config": {
@@ -18,6 +29,15 @@
             "label": "Title",
             "placeholder": "This is where it all begins..."
           }
+        },
+        "subtitle": {
+          "config": {
+            "label": "Subtitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          },
+          "type": "StructuredText"
         },
         "description": {
           "type": "StructuredText",
@@ -27,15 +47,32 @@
             "placeholder": "A nice description of your product"
           }
         },
-        "subtitle": {
-          "type": "StructuredText",
+        "buttonText": {
           "config": {
-            "label": "",
-            "id": "subtitle",
+            "label": "Button Text",
+            "placeholder": ""
+          },
+          "type": "Text"
+        },
+        "link": {
+          "config": {
+            "label": "Link",
             "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
+            "allowTargetBlank": true
+          },
+          "type": "Link"
+        },
+        "imageSide": {
+          "config": {
+            "label": "Image Side",
+            "placeholder": "",
+            "options": [
+              "left",
+              "right"
+            ],
+            "default_value": "left"
+          },
+          "type": "Select"
         }
       },
       "items": {}
