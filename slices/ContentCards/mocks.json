@@ -1,0 +1,141 @@
+[
+  {
+    "id": "default-slice",
+    "name": "Default slice",
+    "docURL": "...",
+    "version": "sktwi1xtmkfgx8626",
+    "description": "ContentCards",
+    "primary": {},
+    "items": [
+      {
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04?w=900&h=500&fit=crop"
+        },
+        "title": [
+          {
+            "type": "paragraph",
+            "text": "Reprehenderit voluptate proident ad exercitation nisi minim. Mollit Lorem elit nulla. Cillum Lorem officia adipisicing magna labore veniam quis non incididunt laborum sit fugiat aute anim ut.",
+            "spans": []
+          }
+        ],
+        "subtitle": [
+          {
+            "type": "paragraph",
+            "text": "Culpa reprehenderit occaecat incididunt magna laborum Lorem do.",
+            "spans": []
+          }
+        ],
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Adipisicing occaecat incididunt velit consequat enim ullamco ea magna ullamco cupidatat.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118?w=900&h=500&fit=crop"
+        },
+        "title": [
+          {
+            "type": "paragraph",
+            "text": "Minim mollit id et. Incididunt excepteur pariatur consequat dolor dolore do occaecat do. Consequat reprehenderit proident sunt.",
+            "spans": []
+          }
+        ],
+        "subtitle": [
+          {
+            "type": "paragraph",
+            "text": "Sit enim cupidatat anim.",
+            "spans": []
+          }
+        ],
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Exercitation et enim commodo quis eiusmod consequat sunt ipsum excepteur id. Ea anim proident sit nostrud exercitation. Incididunt sunt eiusmod reprehenderit consectetur aliquip sit labore.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=900&h=500&fit=crop"
+        },
+        "title": [
+          {
+            "type": "paragraph",
+            "text": "Duis quis minim qui ipsum ipsum velit tempor ex pariatur anim sint aliquip minim voluptate et. Proident id sint excepteur reprehenderit culpa.",
+            "spans": []
+          }
+        ],
+        "subtitle": [
+          {
+            "type": "paragraph",
+            "text": "Qui dolore dolore ad esse aliqua ullamco aliqua excepteur ex deserunt. Qui voluptate cupidatat proident esse ex veniam ea nulla in aute aute est. Ad consequat reprehenderit minim ea sit qui veniam.",
+            "spans": []
+          }
+        ],
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Ad amet consequat incididunt nisi sit cupidatat sunt nisi.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?w=900&h=500&fit=crop"
+        },
+        "title": [
+          {
+            "type": "paragraph",
+            "text": "Dolor sint exercitation nostrud nostrud aute nulla Lorem qui aliquip ullamco reprehenderit sint eu. Lorem voluptate aliqua id labore duis laborum do ea commodo. Mollit aute enim laborum pariatur non amet sit laboris eiusmod est tempor deserunt occaecat aute magna.",
+            "spans": []
+          }
+        ],
+        "subtitle": [
+          {
+            "type": "paragraph",
+            "text": "Sint esse qui reprehenderit officia nostrud nulla fugiat laboris dolor ea. Veniam reprehenderit aute occaecat in enim aute cillum cupidatat. Id reprehenderit laboris quis consequat cupidatat quis consectetur cupidatat cupidatat fugiat cupidatat duis.",
+            "spans": []
+          }
+        ],
+        "description": [
+          {
+            "type": "paragraph",
+            "text": "Exercitation duis anim reprehenderit sint aute eiusmod laboris. Eu deserunt nostrud duis pariatur commodo nostrud reprehenderit laboris qui.",
+            "spans": []
+          }
+        ]
+      }
+    ],
+    "slice_type": "content_cards"
+  }
+]
