@@ -11,17 +11,6 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "MainBanner",
       "primary": {
-        "image": {
-          "config": {
-            "label": "Image",
-            "constraint": {
-              "width": 940,
-              "height": 666
-            },
-            "thumbnails": []
-          },
-          "type": "Image"
-        },
         "title": {
           "type": "StructuredText",
           "config": {
@@ -75,7 +64,17 @@
           "type": "Select"
         }
       },
-      "items": {}
+      "items": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "id": "image",
+            "label": "",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      }
     }
   ]
 }

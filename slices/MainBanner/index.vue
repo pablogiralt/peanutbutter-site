@@ -5,15 +5,14 @@
     :class-attr="'main-banner--'+ slice.primary.imageSide"
   >
     <component
-      :is="slice.primary.link ? 'prismic-link' : 'div'"
+      :is="slice.primary.link && slice.items && slice.items.length <= 1 ? 'prismic-link' : 'div'"
       :field="slice.primary.link"
       class="main-banner__inner"
     >
-      <prismic-image
-        v-if="slice.primary.image"
-        :field="slice.primary.image"
-        class="main-banner__col main-banner__image"
-      />
+      <div v-if="slice.items.length == 1" class="main-banner__col main-banner__col--image">
+        <prismic-image :field="slice.items[0].image" class=" main-banner__image"/>
+      </div>
+      <ImageCarousel v-else class="main-banner__col main-banner__col--image" :items="slice.items" />
 
       <div class="main-banner__col main-banner__text">
         <prismic-rich-text
@@ -48,7 +47,8 @@ import { commonProps } from '../utils'
 
 export default {
   components: {
-    PbSection
+    PbSection,
+    ImageCarousel: () => import('../components/ImageCarousel/ImageCarousel.vue')
   },
   props: {
     ...commonProps,
@@ -86,7 +86,7 @@ export default {
     }
 
     &--right {
-      .main-banner__image {
+      .main-banner__col--image {
          order: 1
       }
     }
