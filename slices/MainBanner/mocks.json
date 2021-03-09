@@ -6,44 +6,91 @@
     "version": "sktwi1xtmkfgx8626",
     "description": "MainBanner",
     "primary": {
-      "image": {
-        "dimensions": {
-          "width": 940,
-          "height": 666
-        },
-        "alt": "Placeholder image",
-        "copyright": null,
-        "url": "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=940&h=666&fit=crop"
-      },
       "title": [
         {
           "type": "heading1",
-          "text": "Evolve open-source deliverables",
+          "text": "Embrace visionary convergence",
           "spans": []
         }
       ],
       "subtitle": [
         {
           "type": "heading1",
-          "text": "Incubate seamless paradigms",
+          "text": "Transform sticky action-items",
           "spans": []
         }
       ],
       "description": [
         {
           "type": "heading1",
-          "text": "Disintermediate impactful models",
+          "text": "Engage distributed synergies",
           "spans": []
         }
       ],
-      "buttonText": "incubate world-class methodologies",
+      "buttonText": "streamline dynamic paradigms",
       "link": {
         "link_type": "Web",
-        "url": "https://slicemachine.dev"
+        "url": "http://google.com"
       },
       "imageSide": "left"
     },
-    "items": [],
+    "items": [
+      {
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=900&h=500&fit=crop"
+        }
+      },
+      {
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=900&h=500&fit=crop"
+        }
+      },
+      {
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=900&h=500&fit=crop"
+        }
+      },
+      {
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a?w=900&h=500&fit=crop"
+        }
+      },
+      {
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118?w=900&h=500&fit=crop"
+        }
+      }
+    ],
     "slice_type": "main_banner"
   }
 ]
