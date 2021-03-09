@@ -1,6 +1,6 @@
 <template>
   <div>
-    <site-header :alt-langs="altLangs" :current-lang="langCode" />
+    <site-header :alt-langs="altLangs" :current-lang="langCode" :main-menu="mainMenu" />
     <slice-zone
       type="page"
       :uid="uid"
@@ -18,31 +18,34 @@ export default {
   },
   async asyncData ({ $prismic, params, error, route }) {
     try {
-      // console.log(route)
       let currentLang
       if (route.params.lang) {
         currentLang = route.params.lang
       } else {
         currentLang = route.name === 'index' ? 'es' : route.name
       }
-
       const locales = {
         en: 'en-us',
         es: 'es-es'
       }
       const lang = { lang: locales[currentLang] }
-
       const uid = route.params.uid || 'homepage'
 
       // Query to get document content
-      const result = await $prismic.api.getByUID('page', uid, lang)
+      const pageContent = await $prismic.api.getByUID('page', uid, lang)
+
+      // Query to get main nav
+      const mainMenu = await $prismic.api.getByUID('navigation', 'main-nav', lang)
 
       return {
         // Document content
         // slices: result.data.body,
 
         // Lang switcher
-        altLangs: result.alternate_languages
+        altLangs: pageContent.alternate_languages,
+
+        // Main Menu
+        mainMenu: mainMenu && mainMenu.data && mainMenu.data.menu ? mainMenu.data.menu : []
       }
     } catch (e) {
       // Returns error page
@@ -74,15 +77,4 @@ export default {
 </script>
 
 <style>
-  .header {
-    padding: 10px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .logo {
-    background-color: #000;
-    border-radius: 50%;
-    width: 80px;
-  }
 </style>

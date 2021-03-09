@@ -3,7 +3,7 @@
     <nuxt-link :to="logoLink">
       <img class="logo" src="https://peanutbutter.es/wp-content/themes/peanut/library/images/logo_peanut_header.png">
     </nuxt-link>
-    <navigation />
+    <navigation :main-menu="mainMenu" />
     <lang-switcher :alt-langs="altLangs" :current-lang="currentLang" />
     <span class="contact-link">contact</span>
   </header>
@@ -23,6 +23,13 @@ export default {
       default () {
         return []
       }
+    },
+    mainMenu: {
+      type: Array,
+      required: true,
+      default () {
+        return []
+      }
     }
   },
   computed: {
@@ -33,5 +40,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+  .header {
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    background-color: #000;
+    border-radius: 50%;
+    width: 80px;
+  }
 </style>
