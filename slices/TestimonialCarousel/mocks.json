@@ -1,0 +1,133 @@
+[
+  {
+    "id": "default-slice",
+    "name": "Default slice",
+    "docURL": "...",
+    "version": "sktwi1xtmkfgx8626",
+    "description": "TestimonialCarousel",
+    "primary": {},
+    "items": [
+      {
+        "testimonial": [
+          {
+            "type": "paragraph",
+            "text": "In consequat magna ipsum in mollit deserunt aute ea ea proident cillum exercitation sunt nostrud. Culpa eu aute quis dolore voluptate enim cupidatat irure nulla deserunt cillum.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?w=900&h=500&fit=crop"
+        },
+        "name": "deploy impactful niches",
+        "role": "disintermediate best-of-breed technologies"
+      },
+      {
+        "testimonial": [
+          {
+            "type": "paragraph",
+            "text": "Do consectetur officia id velit nisi est eiusmod. Veniam pariatur mollit elit. Non aute consequat cillum velit sit est nisi aliqua anim ad ad amet esse qui.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=900&h=500&fit=crop"
+        },
+        "name": "reintermediate wireless niches",
+        "role": "monetize bricks-and-clicks interfaces"
+      },
+      {
+        "testimonial": [
+          {
+            "type": "paragraph",
+            "text": "Proident adipisicing veniam aliqua mollit minim nostrud enim sunt dolor id dolor elit consectetur.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869?w=900&h=500&fit=crop"
+        },
+        "name": "seize one-to-one solutions",
+        "role": "target proactive e-tailers"
+      },
+      {
+        "testimonial": [
+          {
+            "type": "paragraph",
+            "text": "Non laboris consectetur officia velit aliquip. Minim Lorem ex ullamco enim excepteur nulla do sit do anim. Deserunt sint ut ut.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?w=900&h=500&fit=crop"
+        },
+        "name": "envisioneer dynamic channels",
+        "role": "redefine bricks-and-clicks eyeballs"
+      },
+      {
+        "testimonial": [
+          {
+            "type": "paragraph",
+            "text": "Amet anim proident in in consequat irure nostrud occaecat aliquip qui et. Cillum voluptate velit ad ipsum sit duis mollit pariatur magna.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51?w=900&h=500&fit=crop"
+        },
+        "name": "revolutionize compelling e-tailers",
+        "role": "transition transparent vortals"
+      },
+      {
+        "testimonial": [
+          {
+            "type": "paragraph",
+            "text": "Id do voluptate consequat cillum qui pariatur fugiat elit.",
+            "spans": []
+          }
+        ],
+        "image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89?w=900&h=500&fit=crop"
+        },
+        "name": "productize intuitive solutions",
+        "role": "exploit scalable models"
+      }
+    ],
+    "slice_type": "testimonial_carousel"
+  }
+]

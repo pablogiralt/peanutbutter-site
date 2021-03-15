@@ -1,0 +1,53 @@
+{
+  "MainBanner": {
+    "primary": {
+      "subtitle": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "buttonText": {
+        "content": null
+      }
+    }
+  },
+  "TestimonialCarousel": {
+    "items": {
+      "testimonial": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "name": {
+        "content": null
+      },
+      "role": {
+        "content": null
+      }
+    }
+  },
+  "ContentCards": {
+    "items": {
+      "title": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "subtitle": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
+  }
+}
