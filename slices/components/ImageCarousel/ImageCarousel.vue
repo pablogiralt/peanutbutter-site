@@ -3,6 +3,7 @@
     <VueSlickCarousel :arrows="true" :dots="true">
       <div class="image-carousel__item" v-for="(item, i) in items" :key="`slice-item-${i}`">
         <prismic-image class="image-carousel__image" :field="item.image" />
+        <prismic-rich-text v-if="item.caption" :field="item.caption" class="main-banner__caption" />
         <div class="image-carousel__overlay"></div>
       </div>
     </VueSlickCarousel>

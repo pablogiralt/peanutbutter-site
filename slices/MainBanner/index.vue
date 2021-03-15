@@ -2,7 +2,7 @@
   <pb-section
     v-bind="theme.wrapper"
     class-main="main-banner"
-    :class-attr="'main-banner--'+ slice.primary.imageSide"
+    :class-attr="'main-banner--'+ slice.primary.imageSide + ' main-banner--img-'+ slice.primary.imageSize"
   >
     <component
       :is="slice.primary.link && slice.items && slice.items.length <= 1 ? 'prismic-link' : 'div'"
@@ -11,6 +11,7 @@
     >
       <div v-if="slice.items.length == 1" class="main-banner__col main-banner__col--image">
         <prismic-image :field="slice.items[0].image" class=" main-banner__image"/>
+        <prismic-rich-text v-if="slice.items[0].caption" :field="slice.items[0].caption" class="main-banner__caption" />
       </div>
       <ImageCarousel v-else class="main-banner__col main-banner__col--image" :items="slice.items" />
 
@@ -88,6 +89,12 @@ export default {
     &--right {
       .main-banner__col--image {
          order: 1
+      }
+    }
+
+    &--img-large {
+      .main-banner__col--image {
+        width: 70%;
       }
     }
   }

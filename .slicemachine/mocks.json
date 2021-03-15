@@ -10,6 +10,14 @@
       "buttonText": {
         "content": null
       }
+    },
+    "items": {
+      "caption": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
     }
   },
   "TestimonialCarousel": {
