@@ -27,7 +27,10 @@ export default {
     }]
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["vue-essential-slices/src/styles/styles.scss"],
+  css: [
+    //"vue-essential-slices/src/styles/styles.scss",
+    "@/assets/scss/main"
+  ],
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -44,11 +47,19 @@ export default {
         "path": "/:uid"
       }]
     }
-  }], ["nuxt-sm"]],
+  }], ["nuxt-sm"], '@nuxtjs/style-resources',],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ["vue-slicezone", "nuxt-sm"]
   },
+
+  styleResources: {
+    scss: [
+      "@/assets/scss/common/_variables.scss",
+      "@/assets/scss/common/_mixins.scss"
+    ],
+  },
+
   router: {
     extendRoutes(routes, resolve) {
       routes.unshift({

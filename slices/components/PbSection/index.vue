@@ -4,7 +4,7 @@
     :class="`${classMain} ${darkMode ? classMain + '--black' : ''} ${classAttr ? classAttr : ''}`"
     v-bind="theme"
   >
-    <slot/>
+    <slot />
   </component>
 </template>
 <script>

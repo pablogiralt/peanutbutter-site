@@ -1,10 +1,10 @@
 <template>
   <div class="image-carousel">
     <VueSlickCarousel :arrows="true" :dots="true">
-      <div class="image-carousel__item" v-for="(item, i) in items" :key="`slice-item-${i}`">
+      <div v-for="(item, i) in items" :key="`slice-item-${i}`" class="image-carousel__item">
         <prismic-image class="image-carousel__image" :field="item.image" />
-        <prismic-rich-text v-if="item.caption" :field="item.caption" class="main-banner__caption" />
-        <div class="image-carousel__overlay"></div>
+        <prismic-rich-text v-if="item.caption" :field="item.caption" class="image-carousel__caption" />
+        <div class="image-carousel__overlay" />
       </div>
     </VueSlickCarousel>
   </div>
@@ -41,15 +41,28 @@ export default {
     &__item {
       position: relative;
     }
+
     &__image {
       width: 100%;
     }
-    &__overlay {
+
+    &__caption {
+      color: $white;
+      font-weight: 700;
+      z-index: 1;
       position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      bottom: 16px;
+      padding: 0 rem(16px);
+      width: 100%;
+    }
+
+    &__overlay {
+      display: none;
+    //   position: absolute;
+    //   top: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   right: 0;
     }
   }
 </style>

@@ -8,11 +8,11 @@
     <VueSlickCarousel :arrows="true" :dots="true">
       <div v-for="(item, i) in slice.items" :key="`slice-item-${i}`">
         <div class="testimonial">
-          <prismic-rich-text class="testimonial__col" :field="item.testimonial" />
-          <div class="testimonial__col">
-            <prismic-image class="testimonial__image" :field="item.image" />
-            <span>{{ item.name }}</span>
-            <span>{{ item.role }}</span>
+          <prismic-image class="testimonial__image" :field="item.image" />
+          <prismic-rich-text class="testimonial__text" :field="item.testimonial" />
+          <div class="testimonial__info">
+            <span class="testimonial__info__name">{{ item.name }}</span>
+            <span class="testimonial__info__role">{{ item.role }}</span>
           </div>
         </div>
       </div>
@@ -48,14 +48,38 @@ export default {
 
 <style lang="scss" scoped>
   .testimonials {
-    padding: 4em;
+    background-color: $primary-60;
+    padding: rem(40px) rem(52px) rem(80px);
   }
 
   .testimonial {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
     &__image {
-      width: 400px;
+      height: rem(88px);
+      width: auto;
+      margin-bottom: rem(24px);
+    }
+
+    &__text {
+      @include testimonialText;
+      text-align: center;
+    }
+
+    &__info {
+      text-align: center;
+
+      &__name,
+      &__role {
+        @include bannerSubtitle2;
+        display: block;
+      }
+
+      &__role {
+        color: $white;
+      }
     }
   }
 </style>

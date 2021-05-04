@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  *:focus {
+    outline: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body,
+html {
+  margin: 0
+}
+
+body {
+  @include tbody1;
+
+  font-family: $font-primary;
+  color: $black;
+}
+
+h1 {
+  //font-size: rem(56px);
+}
+
+h2 {
+  font-size: rem(40px);
+}
+
+h3 {
+  font-size: rem(24px);
+}
+
+h4 {
+  font-size: rem(18px);
+}
