@@ -102,6 +102,8 @@ export default {
   }
 
   .main-nav {
+    $mainNav: &;
+
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -117,6 +119,21 @@ export default {
 
     &.is-active {
       transform: translateY(0);
+
+      #{$mainNav} {
+        &__list {
+          &__item {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+
+            @for $i from 1 to 6 {
+              &:nth-child(#{$i}) {
+                transition: opacity 1s  $i * 0.25s, transform 1s cubic-bezier(0.16, 1.08, 0.38, 0.98) $i * 0.25s;
+              }
+            }
+          }
+        }
+      }
     }
 
     &__list {
@@ -132,11 +149,17 @@ export default {
         flex: 1 1 100%;
         padding: 0;
         text-align: center;
+        opacity: 0;
+        transform: translate3d(0, 50%, 0);
 
         &__link {
           @include navItem;
           padding: rem(24px);
           display: block;
+
+          &.nuxt-link-active {
+            color: $primary;
+          }
         }
       }
     }
