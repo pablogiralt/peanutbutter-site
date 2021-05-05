@@ -92,14 +92,18 @@ export default {
     }
 
     &__title {
-      @include bannerTitle;
-      margin-bottom: rem(8px);
+      /deep/ h1 {
+        @include bannerTitle;
+        margin: 0 0 rem(8px);
+      }
     }
 
     &__subtitle {
-      @include bannerSubtitle;
-      color: $primary;
-      margin: 0 0 rem(24px);
+      /deep/ p {
+        @include bannerSubtitle;
+        color: $primary;
+        margin: 0 0 rem(24px);
+      }
     }
 
     &__description {

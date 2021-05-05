@@ -56,6 +56,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: rem(32px);
 
     &__image {
       height: rem(88px);

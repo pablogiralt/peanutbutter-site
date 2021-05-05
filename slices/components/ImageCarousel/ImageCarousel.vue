@@ -54,6 +54,10 @@ export default {
       bottom: 16px;
       padding: 0 rem(16px);
       width: 100%;
+
+      /deep/ p {
+        margin: 0;
+      }
     }
 
     &__overlay {

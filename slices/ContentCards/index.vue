@@ -59,22 +59,26 @@ export default {
     }
 
     &__image {
-      height: 264px;
+      height: rem(264px);
       width: auto;
-      margin: 0 auto;
+      margin: 0 auto rem(16px);
       display: block;
     }
 
     &__title {
-      @include bannerTitle;
-      color: $primary;
-      margin-bottom: rem(8px);
+      /deep/ p {
+        @include bannerTitle;
+        color: $primary;
+        margin: 0 0 rem(8px);
+      }
     }
 
     &__subtitle {
-      @include bannerSubtitle2;
-      color: $black;
-      margin: 0 0 rem(24px);
+      /deep/ p {
+        @include bannerSubtitle2;
+        color: $black;
+        margin: 0 0 rem(24px);
+      }
     }
   }
 </style>

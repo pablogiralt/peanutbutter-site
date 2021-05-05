@@ -71,12 +71,12 @@ export default {
       transition: 0.25s ease-in-out;
 
       &:nth-child(2) {
-        top: calc(50% - 1px);
+        top: calc(50% - 2px);
         width: 80%;
       }
 
       &:nth-child(3) {
-        top: calc(100% - 2px);
+        top: calc(100% - 3px);
       }
     }
 
