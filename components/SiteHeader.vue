@@ -9,7 +9,7 @@
     <!-- <lang-switcher :alt-langs="altLangs" :current-lang="currentLang" /> -->
 
     <span class="contact-link">
-      <img class="contact-link__img" src="icon-plane.svg">
+      <img class="contact-link__img" src="icons/icon-plane.svg">
     </span>
   </header>
 </template>

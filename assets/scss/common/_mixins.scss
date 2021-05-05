@@ -38,9 +38,8 @@
 }
 
 @mixin tbody2 {
-  font-size: 12px;
+  font-size: rem(12px);
   line-height: 2;
-  color: #000000;
 }
 
 @mixin bannerTitle {
