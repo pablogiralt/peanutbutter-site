@@ -70,9 +70,19 @@ export default {
     padding: 0 0 rem(48px);
     overflow: hidden;
 
+    @media (min-width: $md) {
+      padding: rem(103px) 0 rem(64px);
+    }
+
     &__inner {
       color: $black;
       text-decoration: none;
+
+      @media (min-width: $md) {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+      }
     }
 
     &__image-wrapper {
@@ -84,11 +94,21 @@ export default {
         margin: 0 auto;
         display: block;
       }
+
+      @media (min-width: $md) {
+        flex: 1 1 50%;
+        max-width: 50%;
+      }
     }
 
     &__text {
       max-width: rem(266px);
       margin: 0 auto;
+
+      @media (min-width: $md) {
+        flex: 1 1 50%;
+        max-width: 50%;
+      }
     }
 
     &__title {

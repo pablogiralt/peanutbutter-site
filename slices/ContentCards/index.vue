@@ -4,20 +4,22 @@
     class-main="content-cards"
     :class-attr="''"
   >
-    <div v-for="(item, i) in slice.items" :key="`slice-item-${i}`" class="content-cards__item">
-      <prismic-image class="content-cards__image" :field="item.image" />
-      <prismic-rich-text
-        :field="item.title"
-        class="content-cards__title"
-      />
-      <prismic-rich-text
-        :field="item.subtitle"
-        class="content-cards__subtitle"
-      />
-      <prismic-rich-text
-        :field="item.description"
-        class="content-cards__description"
-      />
+    <div class="content-cards__container">
+      <div v-for="(item, i) in slice.items" :key="`slice-item-${i}`" class="content-cards__item">
+        <prismic-image class="content-cards__image" :field="item.image" />
+        <prismic-rich-text
+          :field="item.title"
+          class="content-cards__title"
+        />
+        <prismic-rich-text
+          :field="item.subtitle"
+          class="content-cards__subtitle"
+        />
+        <prismic-rich-text
+          :field="item.description"
+          class="content-cards__description"
+        />
+      </div>
     </div>
   </pb-section>
 </template>
@@ -46,15 +48,35 @@ export default {
 <style lang="scss" scoped>
   .content-cards {
     background-color: $primary-10;
-    display: flex;
-    flex-wrap: wrap;
+
     padding: rem(24px) rem(52px) rem(80px);
+
+    @media (min-width: $md) {
+
+      padding: rem(80px) 0;
+    }
+
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+
+      @media (min-width: $md) {
+        @include container;
+        justify-content: space-between;
+      }
+    }
 
     &__item {
       margin-bottom: rem(48px);
 
       &:last-child {
         margin-bottom: 0;
+      }
+
+      @media (min-width: $md) {
+        margin: 0 auto;
+        flex: 1 1 30%;
+        max-width: rem(220px);
       }
     }
 

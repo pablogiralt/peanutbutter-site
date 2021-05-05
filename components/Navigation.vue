@@ -55,9 +55,9 @@ export default {
     position: relative;
     z-index: 1001;
 
-    @media (min-width: $md) {
-      display: none;
-    }
+    // @media (min-width: $md) {
+    //   display: none;
+    // }
 
     .bar {
       display: block;
