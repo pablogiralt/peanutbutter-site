@@ -76,7 +76,7 @@ export default {
       }
 
       &:nth-child(3) {
-        top: calc(100% - 3px);
+        top: calc(100% - 4px);
       }
     }
 
