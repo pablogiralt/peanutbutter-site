@@ -110,4 +110,9 @@
   font-style: italic;
   line-height: 1.33;
   letter-spacing: normal;
+
+  @media (min-width: $md) {
+    font-size: rem(40px);
+    line-height: 1.2;
+  }
 }

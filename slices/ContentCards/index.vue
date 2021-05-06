@@ -75,8 +75,8 @@ export default {
 
       @media (min-width: $md) {
         margin: 0 auto;
-        flex: 1 1 30%;
-        max-width: rem(220px);
+        flex: 1 1 33.333%;
+        max-width: rem(264px);
       }
     }
 

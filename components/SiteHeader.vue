@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{ 'header--hidden': !showHeader }">
     <navigation :main-menu="mainMenu" />
 
     <nuxt-link :to="logoLink">
@@ -37,9 +37,36 @@ export default {
       }
     }
   },
+  data () {
+    return {
+      showHeader: true,
+      lastScrollPosition: 0
+    }
+  },
   computed: {
     logoLink () {
       return this.currentLang !== 'es' ? `/${this.currentLang}` : '/'
+    }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.onScroll)
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.onScroll)
+  },
+  methods: {
+    onScroll () {
+      const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
+      if (currentScrollPosition < 0) {
+        return
+      }
+
+      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
+        return
+      }
+
+      this.showHeader = currentScrollPosition < this.lastScrollPosition
+      this.lastScrollPosition = currentScrollPosition
     }
   }
 }
@@ -53,7 +80,17 @@ export default {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    transition: top 0.2s ease-in-out;
+
+    &--hidden {
+      top: -56px;
+    }
   }
+
   .logo {
     height: rem(32px);
     display: block;
