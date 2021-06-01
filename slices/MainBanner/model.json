@@ -74,6 +74,18 @@
             "default_value": "default"
           },
           "type": "Select"
+        },
+        "backgroundColor": {
+          "config": {
+            "label": "Background Color",
+            "placeholder": "",
+            "default_value": "white",
+            "options": [
+              "white",
+              "grey"
+            ]
+          },
+          "type": "Select"
         }
       },
       "items": {

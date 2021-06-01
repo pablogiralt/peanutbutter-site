@@ -9,31 +9,32 @@
       "title": [
         {
           "type": "paragraph",
-          "text": "Lorem sit nostrud ex duis Lorem nulla exercitation deserunt cillum do ut commodo nostrud proident ad.",
+          "text": "Mollit enim elit ipsum cupidatat. Elit amet consectetur fugiat ex.",
           "spans": []
         }
       ],
       "subtitle": [
         {
           "type": "heading1",
-          "text": "Expedite extensible e-services",
+          "text": "Incubate B2C e-tailers",
           "spans": []
         }
       ],
       "description": [
         {
           "type": "heading1",
-          "text": "Engage holistic infomediaries",
+          "text": "Morph viral relationships",
           "spans": []
         }
       ],
-      "buttonText": "productize turn-key methodologies",
+      "buttonText": "incentivize magnetic experiences",
       "link": {
         "link_type": "Web",
         "url": "http://google.com"
       },
-      "imageSide": "right",
-      "imageSize": "default"
+      "imageSide": "left",
+      "imageSize": "default",
+      "backgroundColor": "white"
     },
     "items": [
       {
@@ -44,12 +45,12 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f?w=900&h=500&fit=crop"
         },
         "caption": [
           {
             "type": "paragraph",
-            "text": "Nulla pariatur irure ad nisi magna cupidatat esse commodo nisi.",
+            "text": "Adipisicing fugiat nisi dolore laborum pariatur cupidatat adipisicing pariatur voluptate qui mollit. Nulla nostrud voluptate incididunt. Irure esse duis consectetur tempor mollit aliquip proident excepteur.",
             "spans": []
           }
         ]
@@ -62,12 +63,12 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1587840171670-8b850147754e?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"
         },
         "caption": [
           {
             "type": "paragraph",
-            "text": "Dolor culpa pariatur exercitation laborum id esse consequat deserunt laboris eiusmod minim voluptate veniam laboris aliqua. Et officia esse voluptate adipisicing aute nulla laboris duis enim.",
+            "text": "Fugiat adipisicing commodo fugiat magna commodo eu in ea duis ullamco velit nisi nostrud et sint. Ullamco consequat eiusmod ut magna in proident ad sit reprehenderit.",
             "spans": []
           }
         ]
@@ -80,30 +81,12 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=900&h=500&fit=crop"
+          "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?w=900&h=500&fit=crop"
         },
         "caption": [
           {
             "type": "paragraph",
-            "text": "Culpa ea culpa sint do voluptate minim incididunt. Voluptate nostrud est id duis velit minim consectetur cupidatat cillum consequat in officia ut laborum.",
-            "spans": []
-          }
-        ]
-      },
-      {
-        "image": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=900&h=500&fit=crop"
-        },
-        "caption": [
-          {
-            "type": "paragraph",
-            "text": "Dolor proident culpa ad eu velit nulla nostrud veniam nostrud laborum commodo nostrud deserunt deserunt duis. Cillum adipisicing sunt non labore. Deserunt id duis quis officia.",
+            "text": "Excepteur pariatur adipisicing enim labore elit fugiat sunt quis adipisicing mollit non.",
             "spans": []
           }
         ]
