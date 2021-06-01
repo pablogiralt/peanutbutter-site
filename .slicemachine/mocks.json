@@ -57,5 +57,27 @@
         }
       }
     }
+  },
+  "ContactForm": {
+    "primary": {
+      "NameFieldLabel": {
+        "content": null
+      },
+      "EmailFieldLabel": {
+        "content": null
+      },
+      "MessageFieldLabel": {
+        "content": null
+      },
+      "PolicyFieldLabel": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "ButtonText": {
+        "content": null
+      }
+    }
   }
 }
