@@ -2,18 +2,20 @@
   <pb-section
     v-bind="theme.wrapper"
     class-main="main-banner"
+    :class="{ 'main-banner--only-text' : slice.items.length < 1 }"
     :class-attr="'main-banner--'+ slice.primary.imageSide + ' main-banner--img-'+ slice.primary.imageSize + ' main-banner__bg--'+ slice.primary.backgroundColor"
   >
+
     <component
       :is="slice.primary.link && slice.items && slice.items.length <= 1 ? 'prismic-link' : 'div'"
       :field="slice.primary.link"
       class="main-banner__inner"
     >
-      <div v-if="slice.items.length == 1" class="main-banner__col main-banner__image-wrapper">
+      <div v-if="slice.items.length > 0 && slice.items.length == 1" class="main-banner__col main-banner__image-wrapper">
         <prismic-image :field="slice.items[0].image" class=" main-banner__image" />
         <prismic-rich-text v-if="slice.items[0].caption" :field="slice.items[0].caption" class="main-banner__caption" />
       </div>
-      <ImageCarousel v-else class="main-banner__col main-banner__col--image" :items="slice.items" />
+      <ImageCarousel v-else-if="slice.items.length > 1" class="main-banner__col main-banner__col--image" :items="slice.items" />
 
       <div class="main-banner__col main-banner__text">
         <div class="main-banner__col main-banner__text__inner">
@@ -41,6 +43,7 @@
         </div>
       </div>
     </component>
+
   </pb-section>
 </template>
 
@@ -97,11 +100,13 @@ export default {
       text-decoration: none;
 
       @media (min-width: $md) {
+        @include container;
         display: flex;
         align-content: center;
 
-        #{$mainBanner}--img-default & {
-          @include container;
+        #{$mainBanner}--img-large & {
+          max-width: 100%;
+          padding: 0;
         }
 
         #{$mainBanner}--right & {
@@ -130,6 +135,7 @@ export default {
         @media (min-width: $md) {
           max-height: 70vh;
           margin: 0;
+          width: 100%;
         }
       }
     }
@@ -167,12 +173,22 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-content: center;
+
+        #{$mainBanner}--only-text & {
+          flex: 1 1 100%;
+          max-width: 100%;
+          justify-content: flex-start;
+        }
       }
 
       &__inner {
         @media (min-width: $xs) {
           max-width: rem(360px);
           align-self: center;
+
+          #{$mainBanner}--only-text & {
+            max-width: 90%
+          }
         }
       }
     }
