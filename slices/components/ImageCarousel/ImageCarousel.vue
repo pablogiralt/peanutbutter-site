@@ -1,6 +1,6 @@
 <template>
   <div class="image-carousel">
-    <VueSlickCarousel :arrows="true" :dots="true">
+    <VueSlickCarousel :arrows="false" :dots="true">
       <div v-for="(item, i) in items" :key="`slice-item-${i}`" class="image-carousel__item">
         <prismic-image class="image-carousel__image" :field="item.image" />
         <prismic-rich-text v-if="item.caption" :field="item.caption" class="image-carousel__caption" />

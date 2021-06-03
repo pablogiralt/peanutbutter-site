@@ -2,7 +2,7 @@
   <pb-section
     v-bind="theme.wrapper"
     class-main="main-banner"
-    :class-attr="'main-banner--'+ slice.primary.imageSide + ' main-banner--img-'+ slice.primary.imageSize"
+    :class-attr="'main-banner--'+ slice.primary.imageSide + ' main-banner--img-'+ slice.primary.imageSize + ' main-banner__bg--'+ slice.primary.backgroundColor"
   >
     <component
       :is="slice.primary.link && slice.items && slice.items.length <= 1 ? 'prismic-link' : 'div'"
@@ -16,27 +16,29 @@
       <ImageCarousel v-else class="main-banner__col main-banner__col--image" :items="slice.items" />
 
       <div class="main-banner__col main-banner__text">
-        <prismic-rich-text
-          v-if="slice.primary.title"
-          :field="slice.primary.title"
-          class="main-banner__title"
-        />
-        <prismic-rich-text
-          v-if="slice.primary.subtitle"
-          :field="slice.primary.subtitle"
-          class="main-banner__subtitle"
-        />
-        <prismic-rich-text
-          v-if="slice.primary.description"
-          :field="slice.primary.description"
-          class="main-banner__description"
-        />
-        <span
-          v-if="slice.primary.buttonText"
-          class="main-banner__link"
-        >
-          {{ slice.primary.buttonText }}
-        </span>
+        <div class="main-banner__col main-banner__text__inner">
+          <prismic-rich-text
+            v-if="slice.primary.title"
+            :field="slice.primary.title"
+            class="main-banner__title"
+          />
+          <prismic-rich-text
+            v-if="slice.primary.subtitle"
+            :field="slice.primary.subtitle"
+            class="main-banner__subtitle"
+          />
+          <prismic-rich-text
+            v-if="slice.primary.description"
+            :field="slice.primary.description"
+            class="main-banner__description"
+          />
+          <span
+            v-if="slice.primary.buttonText"
+            class="main-banner__link"
+          >
+            {{ slice.primary.buttonText }}
+          </span>
+        </div>
       </div>
     </component>
   </pb-section>
@@ -66,12 +68,28 @@ export default {
 
 <style lang="scss" scoped>
   .main-banner {
+    $mainBanner: &;
+
     position: relative;
     padding: 0 0 rem(48px);
     overflow: hidden;
 
+    &.main-banner--img-large {
+      padding: 0;
+    }
+
     @media (min-width: $md) {
       padding: rem(103px) 0 rem(64px);
+
+      &.main-banner--img-large {
+        padding: 0;
+      }
+    }
+
+    &__bg {
+      &--grey {
+        background-color: $very-light-grey;
+      }
     }
 
     &__inner {
@@ -80,24 +98,61 @@ export default {
 
       @media (min-width: $md) {
         display: flex;
-        flex-direction: column;
         align-content: center;
+
+        #{$mainBanner}--img-default & {
+          @include container;
+        }
+
+        #{$mainBanner}--right & {
+          flex-direction: row-reverse;
+        }
       }
     }
 
     &__image-wrapper {
+      position: relative;
       margin: rem(16px) 0;
 
+      @media (min-width: $md) {
+        flex: 1 1 60%;
+        max-width: 60%;
+        margin: 0;
+      }
+
       img {
-        max-height: 256px;
+        //max-height: 256px;
+        max-height: 35vh;
         width: auto;
         margin: 0 auto;
         display: block;
-      }
 
+        @media (min-width: $md) {
+          max-height: 70vh;
+          margin: 0;
+        }
+      }
+    }
+
+    &__caption {
+      color: $white;
+      font-weight: 700;
+      z-index: 1;
+      position: absolute;
+      bottom: 16px;
+      padding: 0 rem(16px);
+      width: 100%;
+      left: 76px;
+
+      /deep/ p {
+        margin: 0;
+      }
+    }
+
+    .image-carousel {
       @media (min-width: $md) {
-        flex: 1 1 50%;
-        max-width: 50%;
+        flex: 1 1 60%;
+        max-width: 60%;
       }
     }
 
@@ -106,8 +161,19 @@ export default {
       margin: 0 auto;
 
       @media (min-width: $md) {
-        flex: 1 1 50%;
-        max-width: 50%;
+        flex: 1 1 40%;
+        max-width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+      }
+
+      &__inner {
+        @media (min-width: $xs) {
+          max-width: rem(360px);
+          align-self: center;
+        }
       }
     }
 

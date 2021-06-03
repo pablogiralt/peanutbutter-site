@@ -11,11 +11,11 @@ export default {
     slice: {
       type: Object,
       required: true,
-      default() {
+      default () {
         return {}
-      },
-    },
-  },
+      }
+    }
+  }
 }
 </script>
 
