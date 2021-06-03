@@ -19,7 +19,7 @@
 
       <div class="footer__col footer__col--logo">
         <a href="#" class="footer__logo-link">
-          <img class="logo" src="logo-peanut-butter.svg">
+          <img class="logo" src="logo-peanut-butter-collective.svg">
         </a>
       </div>
 
@@ -165,7 +165,8 @@ export default {
     display: block;
 
     @media (min-width: $md) {
-      margin-bottom: rem(46px);
+      margin: 0;
+      max-width: 223px;
     }
   }
 
