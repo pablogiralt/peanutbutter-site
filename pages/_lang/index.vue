@@ -2,6 +2,7 @@
   <div>
     <site-header :alt-langs="altLangs" :current-lang="langCode" :main-menu="mainMenu" />
     <slice-zone
+      class="main"
       type="page"
       :uid="uid"
       :lang="lang"

@@ -48,6 +48,14 @@
   font-stretch: normal;
   font-style: normal;
   line-height: 1;
+
+  @media (min-width: $md) {
+    font-size: rem(56px);
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+  }
 }
 
 @mixin bannerSubtitle {
@@ -76,9 +84,20 @@
   line-height: 1.33;
   letter-spacing: normal;
   text-decoration: none;
+  transition: $transition-standard;
 
-  &.is-active {
+  &.is-active,
+  &:hover {
     color: $primary;
+  }
+
+  @media (min-width: $md) {
+    font-size: rem(18px);
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
   }
 }
 
@@ -115,4 +134,30 @@
     font-size: rem(40px);
     line-height: 1.2;
   }
+}
+
+@mixin inputStandard {
+  padding: rem(8px) rem(16px);
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: none;
+  background-color: $white;
+  width: 100%;
+  @include tbody1;
+  @include placeholder-color($grey-60);
+  font-family: $font-primary;
+}
+
+@mixin buttonSolid {
+  @include tbody1;
+  padding: rem(8px) rem(16px);
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: none;
+  background-color: $black;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $white;
 }

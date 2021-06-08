@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="header__nav-wrapper">
     <a
       href="#"
       class="menu-toggle"
@@ -53,11 +53,24 @@ export default {
     width: 27px;
     text-decoration: none;
     position: relative;
-    z-index: 1001;
+    z-index: 99;
+    transition: 0.2s ease all;
 
-    // @media (min-width: $md) {
-    //   display: none;
-    // }
+    &.is-active {
+      z-index: 101;
+    }
+
+    @media (min-width: $md) {
+      display: none;
+    }
+
+    &:hover {
+      .bar {
+        &:nth-child(2) {
+          width: 100%;
+        }
+      }
+    }
 
     .bar {
       display: block;
@@ -104,31 +117,33 @@ export default {
   .main-nav {
     $mainNav: &;
 
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: $black;
-    transition: $transition-standard;
-    transform: translateX(-100%);
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    @media (max-width: $md) {
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: $black;
+      transition: $transition-standard;
+      transform: translateX(-100%);
+      display: flex;
+      justify-content: center;
+      align-content: center;
 
-    &.is-active {
-      transform: translateY(0);
+      &.is-active {
+        transform: translateY(0);
 
-      #{$mainNav} {
-        &__list {
-          &__item {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
+        #{$mainNav} {
+          &__list {
+            &__item {
+              opacity: 1;
+              transform: translate3d(0, 0, 0);
 
-            @for $i from 1 to 6 {
-              &:nth-child(#{$i}) {
-                transition: opacity 1s  $i * 0.25s, transform 1s cubic-bezier(0.16, 1.08, 0.38, 0.98) $i * 0.25s;
+              @for $i from 1 to 6 {
+                &:nth-child(#{$i}) {
+                  transition: opacity 1s  $i * 0.25s, transform 1s cubic-bezier(0.16, 1.08, 0.38, 0.98) $i * 0.25s;
+                }
               }
             }
           }
@@ -145,17 +160,34 @@ export default {
       justify-content: center;
       align-content: center;
 
+      @media (min-width: $md) {
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+
       &__item {
-        flex: 1 1 100%;
-        padding: 0;
-        text-align: center;
-        opacity: 0;
-        transform: translate3d(0, 50%, 0);
+        @media (max-width: $md) {
+          flex: 1 1 100%;
+          padding: 0;
+          text-align: center;
+          opacity: 0;
+          transform: translate3d(0, 50%, 0);
+        }
+
+        @media (min-width: $md) {
+          &:not(:first-child) {
+            margin-left: rem(32px);
+          }
+        }
 
         &__link {
           @include navItem;
           padding: rem(24px);
           display: block;
+
+          @media (min-width: $md) {
+            padding: 0;
+          }
 
           &.nuxt-link-active {
             color: $primary;

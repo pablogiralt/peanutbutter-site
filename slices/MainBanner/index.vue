@@ -5,7 +5,6 @@
     :class="{ 'main-banner--only-text' : slice.items.length < 1 }"
     :class-attr="'main-banner--'+ slice.primary.imageSide + ' main-banner--img-'+ slice.primary.imageSize + ' main-banner__bg--'+ slice.primary.backgroundColor"
   >
-
     <component
       :is="slice.primary.link && slice.items && slice.items.length <= 1 ? 'prismic-link' : 'div'"
       :field="slice.primary.link"
@@ -43,7 +42,6 @@
         </div>
       </div>
     </component>
-
   </pb-section>
 </template>
 
