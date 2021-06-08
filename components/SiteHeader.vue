@@ -84,6 +84,7 @@ export default {
     },
     toggleContactForm () {
       this.isContactFormActive = !this.isContactFormActive
+      document.body.style.overflow = this.isContactFormActive ? 'hidden' : ''
     }
   }
 }
@@ -127,6 +128,7 @@ export default {
         position: relative;
         z-index: 99;
         display: inline-block;
+        vertical-align: middle;
         transition: 0.2s ease all;
 
         &.is-active {

@@ -60,11 +60,10 @@ export default {
   justify-content: center;
   align-content: center;
   background-color: $primary-60;
+  height: 100vh;
 
   .main & {
-    //height: 100vh;
-    padding-top: rem(56px);
-    padding-bottom: rem(56px);
+    height: auto;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -74,6 +73,18 @@ export default {
   &__wrapper {
     max-width: rem(266px);
     margin: 0 auto;
+    padding-top: rem(56px);
+    padding-bottom: rem(56px);
+    height: 100%;
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none !important;/* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     @media (min-width: $xs) {
       max-width: rem(360px);
@@ -93,6 +104,7 @@ export default {
   input:not([type="checkbox"]):not([type="submit"]),
   textarea {
     @include inputStandard;
+    resize: none;
   }
 
   &__form {

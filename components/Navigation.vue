@@ -40,6 +40,7 @@ export default {
   methods: {
     toggleMenu () {
       this.isMenuActive = !this.isMenuActive
+      document.body.style.overflow = this.isMenuActive ? 'hidden' : ''
     }
   }
 }
@@ -117,7 +118,7 @@ export default {
   .main-nav {
     $mainNav: &;
 
-    @media (max-width: $md) {
+    @media (max-width: #{$md - 1}) {
       position: fixed;
       z-index: 100;
       left: 0;
@@ -166,7 +167,7 @@ export default {
       }
 
       &__item {
-        @media (max-width: $md) {
+        @media (max-width: #{$md - 1}) {
           flex: 1 1 100%;
           padding: 0;
           text-align: center;
