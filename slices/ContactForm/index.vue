@@ -20,12 +20,12 @@
           <input type="mail" name="email" placeholder="Correo electrónico">
         </div>
         <div class="form-group">
-          <textarea name="message" id="" cols="30" rows="6" placeholder="Cuéntanos tu proyecto..."></textarea>
+          <textarea name="message" cols="30" rows="6" placeholder="Cuéntanos tu proyecto..." />
         </div>
         <div class="form-group">
           <label class="custom-checkbox">
             <input type="checkbox" name="checkbox-legal" class="custom-checkbox__input">
-            <span class="custom-checkbox__checkmark"></span>
+            <span class="custom-checkbox__checkmark" />
             <span class="custom-checkbox__text">Acepto la <a href="#">Política de Privacidad</a></span>
           </label>
         </div>

@@ -9,16 +9,20 @@
     <!-- <lang-switcher :alt-langs="altLangs" :current-lang="currentLang" /> -->
 
     <div class="header__contact">
-      <span :class="{'is-active' : isContactFormActive }" @click="toggleContactForm" class="header__contact__actions">
+      <span
+        class="header__contact__actions"
+        :class="{'is-active' : isContactFormActive }"
+        @click="toggleContactForm"
+      >
         <img class="header__contact__img" src="icons/icon-plane.svg">
         <span class="header__contact__actions__close">
-          <span class="bar"></span>
-          <span class="bar"></span>
+          <span class="bar" />
+          <span class="bar" />
         </span>
         <span class="header__contact__text">Contacto</span>
       </span>
       <div :class="{'is-active' : isContactFormActive }" class="header__contact__form-wrapper">
-        <ContactForm/>
+        <ContactForm />
       </div>
     </div>
   </header>
