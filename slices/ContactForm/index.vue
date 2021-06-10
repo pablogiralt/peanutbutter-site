@@ -3,37 +3,86 @@
     <div class="contact__wrapper">
       <!-- <prismic-rich-text :field="slice.primary.title" class="title" />
       <prismic-rich-text :field="slice.primary.description" /> -->
+      <div v-if="!status">
+        <div class="contact__title">
+          ¿Hablamos?
+        </div>
 
-      <div class="contact__title">
-        ¿Hablamos?
+        <div class="contact__description">
+          Si tienes una idea para una tienda nueva o ya vendas online con Shopify, podemos ayudarte a conseguir tus objetivos.
+        </div>
       </div>
 
-      <div class="contact__description">
-        Si tienes una idea para una tienda nueva o ya vendas online con Shopify, podemos ayudarte a conseguir tus objetivos.
-      </div>
+      <form class="contact__form" v-if="!status" @submit="sendForm">
+        <div class="form-group">
+          <input
+            type="text"
+            name="name"
+            v-model="name"
+            placeholder="Nombre"
+            required
+          />
+        </div>
 
-      <form class="contact__form">
         <div class="form-group">
-          <input type="text" name="name" placeholder="Nombre">
+          <input
+            type="email"
+            name="email"
+            v-model="email"
+            placeholder="Correo electrónico"
+            required
+          />
         </div>
+
         <div class="form-group">
-          <input type="mail" name="email" placeholder="Correo electrónico">
+          <textarea
+            name="message"
+            v-model="message"
+            cols="30"
+            rows="6"
+            placeholder="Cuéntanos tu proyecto..."
+            required
+          />
         </div>
-        <div class="form-group">
-          <textarea name="message" cols="30" rows="6" placeholder="Cuéntanos tu proyecto..." />
-        </div>
+
         <div class="form-group">
           <label class="custom-checkbox">
-            <input type="checkbox" name="checkbox-legal" class="custom-checkbox__input">
+            <input
+              type="checkbox"
+              name="legals"
+              class="custom-checkbox__input"
+              required
+            />
             <span class="custom-checkbox__checkmark" />
             <span class="custom-checkbox__text">Acepto la <a href="#">Política de Privacidad</a></span>
           </label>
         </div>
-        <button class="contact__form__button">
+
+        <button type="submit" class="contact__form__button">
           <span>Enviar</span>
           <img class="contact__form__button__icon" src="icons/icon-plane.svg">
         </button>
       </form>
+
+      <div v-if="status === 'success'">
+        <div class="contact__title">
+          Mensaje enviado!
+        </div>
+
+        <div class="contact__description">
+          Si tienes una idea para una tienda nueva o ya vendas online con Shopify, podemos ayudarte a conseguir tus objetivos.
+        </div>
+
+        <div class="contact__success">
+          <span>ENVIADO!</span>
+          <img class="contact__success__icon" src="icons/icon-plane.svg">
+        </div>
+
+      </div>
+      <h1 v-if="status === 'error'">
+        Oops, something went wrong. Please try again.
+      </h1>
+
     </div>
   </div>
 </template>
@@ -51,6 +100,43 @@ export default {
   //     }
   //   }
   // }
+
+  name: 'Form',
+  data: () => {
+    return {
+      status: null,
+      name: null,
+      email: null,
+      message: null
+    }
+  },
+  /* eslint-disable */
+  methods: {
+    sendForm: function (event) {
+      event.preventDefault()
+
+      fetch('https://formcarry.com/s/0DfUl3ukORF', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({ name: this.name, email: this.email, message: this.message })
+      })
+        .then((response) => response.json())
+        .then((response) => {
+          if (response.code === 200) {
+            this.status = 'success'
+          } else {
+            // Formcarry error
+            this.status = 'error'
+          }
+        })
+        // network error
+        .catch(() => (this.status = 'error'))
+    }
+  }
+  /* eslint-enable */
 }
 </script>
 
@@ -110,6 +196,10 @@ export default {
   textarea {
     @include inputStandard;
     resize: none;
+
+    .required & {
+      border-color: red;
+    }
   }
 
   &__form {
@@ -152,7 +242,7 @@ export default {
       cursor: pointer;
       height: 1px;
       width: 1px;
-      display: none;
+      //display: none;
 
       &:checked ~ .custom-checkbox__checkmark {
         background-color: $black;
@@ -199,6 +289,22 @@ export default {
         color: $grey-60;
         text-decoration: underline;
       }
+    }
+  }
+
+  &__success {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: rem(8px) rem(16px);
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: $white;
+
+    &__icon {
+      padding-left: rem(8px);
     }
   }
 }
