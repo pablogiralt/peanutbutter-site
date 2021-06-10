@@ -88,6 +88,11 @@ export default {
 
     @media (min-width: $xs) {
       max-width: rem(360px);
+      align-self: center;
+    }
+
+    @media (min-width: $sm) {
+      height: auto;
     }
   }
 
