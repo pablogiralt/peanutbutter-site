@@ -89,7 +89,7 @@ export default {
 
     &__title {
       /deep/ p {
-        @include bannerTitle;
+        @include bannerTitle2;
         color: $primary;
         margin: 0 0 rem(8px);
       }

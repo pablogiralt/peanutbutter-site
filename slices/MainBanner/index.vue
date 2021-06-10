@@ -75,7 +75,11 @@ export default {
     padding: 0 0 rem(48px);
     overflow: hidden;
 
-    &.main-banner--img-large {
+    &--only-text {
+      padding-top: rem(48px);
+    }
+
+    &--img-large {
       padding: 0;
     }
 

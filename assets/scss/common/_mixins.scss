@@ -58,6 +58,21 @@
   }
 }
 
+@mixin bannerTitle2 {
+  font-size: rem(40px);
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+
+  @media (min-width: $md) {
+    font-size: rem(40px);
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+  }
+}
+
 @mixin bannerSubtitle {
   font-size: rem(24px);
   font-weight: 700;
@@ -149,7 +164,7 @@
 
   &:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px $white inset;
-}
+  }
 }
 
 @mixin buttonSolid {
