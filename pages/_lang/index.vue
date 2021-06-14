@@ -7,6 +7,7 @@
       :uid="uid"
       :lang="lang"
     />
+    <site-footer :footer-menu="footerMenu" />
   </div>
 </template>
 
@@ -38,6 +39,9 @@ export default {
       // Query to get main nav
       const mainMenu = await $prismic.api.getByUID('navigation', 'main-nav', lang)
 
+      // Query to get main nav
+      const footerMenu = await $prismic.api.getByUID('navigation', 'footer-nav', lang)
+
       return {
         // Document content
         // slices: result.data.body,
@@ -46,7 +50,10 @@ export default {
         altLangs: pageContent.alternate_languages,
 
         // Main Menu
-        mainMenu: mainMenu && mainMenu.data && mainMenu.data.menu ? mainMenu.data.menu : []
+        mainMenu: mainMenu && mainMenu.data && mainMenu.data.menu ? mainMenu.data.menu : [],
+
+        // Footer Menu
+        footerMenu: footerMenu && footerMenu.data && footerMenu.data.menu ? footerMenu.data.menu : []
       }
     } catch (e) {
       // Returns error page

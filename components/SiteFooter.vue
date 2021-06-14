@@ -31,28 +31,10 @@
 
           <nav class="footer__legal-nav">
             <ul class="footer__legal-nav__list">
-              <li class="footer__legal-nav__list__item">
-                <a href="#" class="footer__legal-nav__list__item__link">
-                  Aviso legal
-                </a>
-              </li>
-
-              <li class="footer__legal-nav__list__item">
-                <a href="#" class="footer__legal-nav__list__item__link">
-                  Términos y Condiciones
-                </a>
-              </li>
-
-              <li class="footer__legal-nav__list__item">
-                <a href="#" class="footer__legal-nav__list__item__link">
-                  Política de Privacidad
-                </a>
-              </li>
-
-              <li class="footer__legal-nav__list__item">
-                <a href="#" class="footer__legal-nav__list__item__link">
-                  Cookieless
-                </a>
+              <li v-for="(item, i) in footerMenu" :key="`menu-item-${i}`" class="footer__legal-nav__list__item">
+                <prismic-link :field="item.link" class="footer__legal-nav__list__item__link">
+                  {{ item.label }}
+                </prismic-link>
               </li>
             </ul>
           </nav>
@@ -70,10 +52,24 @@
 
 <script>
 export default {
+  props: {
+    footerMenu: {
+      type: Array,
+      required: true,
+      default () {
+        return []
+      }
+    }
+  },
+
   data () {
     return {
       currentDate: new Date()
     }
+  },
+
+  mounted () {
+    console.log(1111, this.footerMenu)
   }
 }
 </script>
