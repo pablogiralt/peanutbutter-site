@@ -31,14 +31,9 @@
 <script>
 export default {
   components: {
-    ContactForm: () => import('../slices/ContactForm/index.vue')
+    ContactForm: () => import('./ContactForm.vue')
   },
   props: {
-    // currentLang: {
-    //   type: String,
-    //   required: true,
-    //   default: ''
-    // },
     altLangs: {
       type: Array,
       required: true,

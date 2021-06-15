@@ -1,8 +1,6 @@
 <template>
   <div class="contact">
     <div class="contact__wrapper">
-      <!-- <prismic-rich-text :field="slice.primary.title" class="title" />
-      <prismic-rich-text :field="slice.primary.description" /> -->
       <div v-if="!status">
         <div class="contact__title">
           {{ $t('contact.title') }}
@@ -88,19 +86,8 @@
 
 <script>
 export default {
-  // props: {
-  //   slice: {
-  //     type: Object,
-  //     required: true,
-  //     default () {
-  //       return {
-
-  //       }
-  //     }
-  //   }
-  // }
-
   name: 'Form',
+
   data: () => {
     return {
       status: null,
