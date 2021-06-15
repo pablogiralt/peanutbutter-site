@@ -154,7 +154,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .contact {
   display: flex;
   justify-content: center;
@@ -196,7 +196,8 @@ export default {
     }
   }
 
-  &__title {
+  &__title,
+  &__title * {
     @include bannerTitle;
     margin: 0 0 rem(24px);
   }
