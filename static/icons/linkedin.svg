@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>linkedin</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="linkedin">
+            <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+            <path d="M20,20 L16.8,20 L16.8,14.4 C16.8,12.865 16.122,12.008 14.907,12.008 C13.585,12.008 12.8,12.901 12.8,14.401 L12.8,20 L9.6,20 L9.6,9.6 L12.8,9.6 L12.8,10.77 C12.8,10.77 13.804,9.008 16.066,9.008 C18.33,9.008 20,10.388 20,13.246 L20,20 L20,20 Z M5.954,7.937 C4.874,7.937 4,7.055 4,5.968 C4,4.882 4.874,4 5.954,4 C7.032,4 7.90600086,4.882 7.90600086,5.968 C7.907,7.055 7.032,7.937 5.954,7.937 Z M4,20 L8,20 L8,9.6 L4,9.6 L4,20 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

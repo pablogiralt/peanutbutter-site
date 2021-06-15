@@ -12,7 +12,7 @@
           </a>
 
           <a href="https://www.linkedin.com/company/peanut-butter-collective" class="footer__social__link">
-            <img src="icons/invision.svg" alt="">
+            <img src="icons/linkedin.svg" alt="">
           </a>
         </div>
       </div>
