@@ -19,10 +19,6 @@ export default {
         return {}
       }
     }
-  },
-
-  created () {
-    console.log(this.slice.primary.title)
   }
 }
 </script>

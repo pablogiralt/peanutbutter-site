@@ -2,14 +2,18 @@
   <div class="contact">
     <div class="contact__wrapper">
       <div v-if="!status">
-        <div class="contact__title" >
+        <div class="contact__title">
           <prismic-rich-text v-if="title && title.length" :field="title" />
-          <h2 v-else>{{ $t('contact.title') }}</h2>
+          <h2 v-else>
+            {{ $t('contact.title') }}
+          </h2>
         </div>
 
         <div class="contact__description">
           <prismic-rich-text v-if="description && description.length" :field="description" />
-          <template v-else>{{ $t('contact.description') }}</template>
+          <template v-else>
+            {{ $t('contact.description') }}
+          </template>
         </div>
       </div>
 
