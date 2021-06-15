@@ -5,11 +5,11 @@
       <prismic-rich-text :field="slice.primary.description" /> -->
       <div v-if="!status">
         <div class="contact__title">
-          ¿Hablamos?
+          {{ $t('contact.title') }}
         </div>
 
         <div class="contact__description">
-          Si tienes una idea para una tienda nueva o ya vendas online con Shopify, podemos ayudarte a conseguir tus objetivos.
+          {{ $t('contact.description') }}
         </div>
       </div>
 
@@ -59,28 +59,28 @@
         </div>
 
         <button type="submit" class="contact__form__button">
-          <span>Enviar</span>
+          <span>{{ $t('contact.send') }}</span>
           <img class="contact__form__button__icon" src="icons/icon-plane.svg">
         </button>
       </form>
 
       <div v-if="status === 'success'">
         <div class="contact__title">
-          Mensaje enviado!
+          {{ $t('contact.success_title') }}
         </div>
 
         <div class="contact__description">
-          Si tienes una idea para una tienda nueva o ya vendas online con Shopify, podemos ayudarte a conseguir tus objetivos.
+          {{ $t('contact.success_description') }}
         </div>
 
         <div class="contact__success">
-          <span>ENVIADO!</span>
+          <span>{{ $t('contact.success_icon_label') }}</span>
           <img class="contact__success__icon" src="icons/icon-plane.svg">
         </div>
       </div>
 
       <h1 v-if="status === 'error'">
-        Oops, something went wrong. Please try again.
+        {{ $t('contact.error') }}
       </h1>
     </div>
   </div>

@@ -1,3 +1,11 @@
 {
-  "test": "english version!"
+  "contact": {
+    "title": "¿Hablamos???",
+    "description": "Si tienes una idea para una tienda nueva o ya vendas online con Shopify, podemos ayudarte a conseguir tus objetivos.",
+    "send": "Enviar",
+    "success_title": "Mensaje enviado!",
+    "success_description": "Si tienes una idea para una tienda nueva o ya vendas online con Shopify, podemos ayudarte a conseguir tus objetivos.",
+    "success_icon_label": "ENVIADO!",
+    "error": "Oops, something went wrong. Please try again."
+  }
 }
