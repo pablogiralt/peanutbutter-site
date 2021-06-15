@@ -18,6 +18,10 @@
             {{ item.label }}
           </prismic-link>
         </li>
+
+        <li class="main-nav__list__item--lang">
+          <lang-switcher :alt-langs="altLangs" :current-lang="currentLang" />
+        </li>
       </ul>
     </nav>
   </div>
@@ -26,6 +30,13 @@
 <script>
 export default {
   props: {
+    altLangs: {
+      type: Array,
+      required: true,
+      default () {
+        return []
+      }
+    },
     mainMenu: {
       type: Array,
       required: true,
@@ -192,6 +203,12 @@ export default {
 
           &.nuxt-link-active {
             color: $primary;
+          }
+        }
+
+        &--lang {
+          @media (min-width: $md) {
+            display: none;
           }
         }
       }

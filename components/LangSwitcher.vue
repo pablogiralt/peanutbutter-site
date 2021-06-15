@@ -2,6 +2,7 @@
   <ul class="lang-switcher">
     <li v-for="(lang, langCode) in langs" :key="lang.shortCode" class="lang-switcher__item">
       <nuxt-link
+        class="lang-switcher__item__link"
         v-if="lang.shortCode !== currentLang"
         :to="$prismic.linkResolver(altLang(langCode))"
       >
@@ -49,16 +50,24 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
   .lang-switcher {
     display: flex;
     list-style: none;
     padding: 0;
-  }
-  .lang-switcher__item:after {
-    content: '/'
-  }
-  .lang-switcher__item:last-child:after {
-    content: ''
+
+    &__item {
+      &:not(:last-child) {
+        &::after {
+          content: '|'
+        }
+      }
+
+      &__link {
+        @include navItem;
+        padding: rem(24px);
+        display: block;
+      }
+    }
   }
 </style>
