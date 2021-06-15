@@ -97,6 +97,12 @@ export default {
     }
   },
 
+  computed: {
+    privacy_link () {
+      return this.$store.state.locale === 'es' ? '/privacidad' : '/en/privacy-policy'
+    }
+  },
+
   methods: {
     sendForm (event) {
       event.preventDefault()
@@ -120,12 +126,6 @@ export default {
         })
         // network error
         .catch(() => (this.status = 'error'))
-    }
-  },
-
-  computed: {
-    privacy_link () {
-      return this.$store.state.locale === 'es' ? '/privacidad' : '/en/privacy-policy'
     }
   }
 }

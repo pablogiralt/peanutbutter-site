@@ -14,5 +14,8 @@
       "email": "Correo electrónico",
       "message": "Cuéntanos tu proyecto..."
     }
+  },
+  "footer": {
+    "legal": "Legal" 
   }
 }

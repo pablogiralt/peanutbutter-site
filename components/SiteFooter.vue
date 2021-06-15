@@ -7,11 +7,11 @@
         </a>
 
         <div class="footer__social">
-          <a href="#" class="footer__social__link">
+          <a href="https://www.instagram.com/peanutbuttercollective/" class="footer__social__link">
             <img src="icons/instagram.svg" alt="">
           </a>
 
-          <a href="#" class="footer__social__link">
+          <a href="https://www.linkedin.com/company/peanut-butter-collective" class="footer__social__link">
             <img src="icons/invision.svg" alt="">
           </a>
         </div>
@@ -26,7 +26,7 @@
       <div class="footer__col footer__col--nav">
         <div class="footer__nav">
           <div class="footer__nav__title">
-            Legal
+            {{ $t('footer.legal') }}
           </div>
 
           <nav class="footer__legal-nav">
