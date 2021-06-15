@@ -57,17 +57,18 @@ export default {
     }
 
     &__container {
-      display: flex;
-      flex-wrap: wrap;
+      @include container($container-medium);
 
       @media (min-width: $md) {
-        @include container;
+        display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
       }
     }
 
     &__item {
-      margin-bottom: rem(48px);
+      margin: 0 auto rem(48px);
+      max-width: rem(266px);
 
       &:last-child {
         margin-bottom: 0;

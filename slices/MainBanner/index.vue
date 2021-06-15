@@ -102,7 +102,7 @@ export default {
       text-decoration: none;
 
       @media (min-width: $md) {
-        @include container;
+        @include container($container-medium);
         display: flex;
         align-content: center;
 
@@ -121,6 +121,10 @@ export default {
       position: relative;
       margin: rem(16px) 0;
 
+      #{$mainBanner}--img-large & {
+        margin: 0;
+      }
+
       @media (min-width: $md) {
         flex: 1 1 60%;
         max-width: 60%;
@@ -133,6 +137,10 @@ export default {
         width: auto;
         margin: 0 auto;
         display: block;
+
+        #{$mainBanner}--img-large & {
+          max-height: unset;
+        }
 
         @media (min-width: $md) {
           max-height: 70vh;
@@ -167,6 +175,11 @@ export default {
     &__text {
       max-width: rem(266px);
       margin: 0 auto;
+
+      #{$mainBanner}--img-large & {
+        padding-top: rem(40px);
+        padding-bottom: rem(40px);
+      }
 
       @media (min-width: $md) {
         flex: 1 1 40%;
