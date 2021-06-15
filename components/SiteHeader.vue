@@ -1,13 +1,11 @@
 <template>
   <header class="header" :class="{ 'header--hidden': !showHeader }">
     <div class="header__container">
-      <navigation :main-menu="mainMenu" />
+      <navigation :main-menu="mainMenu" :alt-langs="altLangs" />
 
       <nuxt-link :to="logoLink" class="header__logo">
         <img class="logo" src="logo-peanut-butter.svg">
       </nuxt-link>
-
-      <!-- <lang-switcher :alt-langs="altLangs" :current-lang="currentLang" /> -->
 
       <div class="header__contact">
         <span
@@ -25,6 +23,8 @@
         <div :class="{'is-active' : isContactFormActive }" class="header__contact__form-wrapper">
           <ContactForm />
         </div>
+
+        <lang-switcher :alt-langs="altLangs" />
       </div>
     </div>
   </header>

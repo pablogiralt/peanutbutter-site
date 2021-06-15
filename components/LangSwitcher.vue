@@ -17,11 +17,11 @@
 export default {
   name: 'LangSwitcher',
   props: {
-    currentLang: {
-      type: String,
-      required: true,
-      default: ''
-    },
+    // currentLang: {
+    //   type: String,
+    //   required: true,
+    //   default: ''
+    // },
     altLangs: {
       type: Array,
       required: true,
@@ -45,6 +45,11 @@ export default {
   methods: {
     altLang (langCode) {
       return this.altLangs.filter(lang => lang.lang === langCode)[0] || {}
+    }
+  },
+  computed: {
+    currentLang () {
+      return this.$store.state.locale
     }
   }
 }
