@@ -24,7 +24,7 @@
           <ContactForm />
         </div>
 
-        <lang-switcher :alt-langs="altLangs" class="header__contact__lang"/>
+        <lang-switcher :alt-langs="altLangs" class="header__contact__lang" />
       </div>
     </div>
   </header>
