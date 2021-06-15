@@ -3,11 +3,17 @@
     <div class="contact__wrapper">
       <div v-if="!status">
         <div class="contact__title">
-          {{ $t('contact.title') }}
+          <prismic-rich-text v-if="title && title.length" :field="title" />
+          <h2 v-else>
+            {{ $t('contact.title') }}
+          </h2>
         </div>
 
         <div class="contact__description">
-          {{ $t('contact.description') }}
+          <prismic-rich-text v-if="description && description.length" :field="description" />
+          <template v-else>
+            {{ $t('contact.description') }}
+          </template>
         </div>
       </div>
 
@@ -87,6 +93,23 @@
 <script>
 export default {
   name: 'Form',
+
+  props: {
+    title: {
+      type: Array,
+      required: false,
+      default () {
+        return []
+      }
+    },
+    description: {
+      type: Array,
+      required: false,
+      default () {
+        return []
+      }
+    }
+  },
 
   data: () => {
     return {

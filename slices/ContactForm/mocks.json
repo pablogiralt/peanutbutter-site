@@ -1,0 +1,27 @@
+[
+  {
+    "id": "default-slice",
+    "name": "Default slice",
+    "docURL": "...",
+    "version": "sktwi1xtmkfgx8626",
+    "description": "ContactForm",
+    "primary": {
+      "title": [
+        {
+          "type": "heading2",
+          "text": "Drive proactive web services",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "heading1",
+          "text": "Disintermediate distributed relationships",
+          "spans": []
+        }
+      ]
+    },
+    "items": [],
+    "slice_type": "contact_form"
+  }
+]
