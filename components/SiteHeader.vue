@@ -24,7 +24,7 @@
           <ContactForm />
         </div>
 
-        <lang-switcher :alt-langs="altLangs" />
+        <lang-switcher :alt-langs="altLangs" class="header__contact__lang"/>
       </div>
     </div>
   </header>
@@ -114,11 +114,6 @@ export default {
         flex: 1 1 33.333%;
         max-width: 33.333%;
       }
-
-      &__contact {
-        display: flex;
-        justify-content: flex-end;
-      }
     }
 
     &__container {
@@ -129,6 +124,12 @@ export default {
     }
 
     &__contact {
+      @media (min-width: $md) {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
       &__actions {
         cursor: pointer;
         position: relative;
@@ -235,6 +236,14 @@ export default {
 
         &.is-active {
           transform: translateY(0);
+        }
+      }
+
+      &__lang {
+        display: none;
+
+        @media (min-width: $md) {
+          display: flex;
         }
       }
     }

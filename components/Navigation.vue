@@ -187,6 +187,9 @@ export default {
         }
 
         @media (min-width: $md) {
+          display: flex;
+          align-items: baseline;
+
           &:not(:first-child) {
             margin-left: rem(32px);
           }
