@@ -1,11 +1,18 @@
 {
   "contact": {
+    "button": "Contacto",
     "title": "¿Hablamos???",
     "description": "Si tienes una idea para una tienda nueva o ya vendas online con Shopify, podemos ayudarte a conseguir tus objetivos.",
     "send": "Enviar",
     "success_title": "Mensaje enviado!",
     "success_description": "Si tienes una idea para una tienda nueva o ya vendas online con Shopify, podemos ayudarte a conseguir tus objetivos.",
     "success_icon_label": "ENVIADO!",
-    "error": "Oops, something went wrong. Please try again."
+    "error": "Oops, something went wrong. Please try again.",
+    "privacy_policy": "Acepto la <a href=\"{link}\">Política de Privacidad</a>",
+    "placeholders": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "message": "Cuéntanos tu proyecto..."
+    }
   }
 }

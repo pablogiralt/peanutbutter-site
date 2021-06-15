@@ -19,7 +19,7 @@
             v-model="name"
             type="text"
             name="name"
-            placeholder="Nombre"
+            :placeholder="$t('contact.placeholders.name')"
             required
           >
         </div>
@@ -29,7 +29,7 @@
             v-model="email"
             type="email"
             name="email"
-            placeholder="Correo electrónico"
+            :placeholder="$t('contact.placeholders.email')"
             required
           >
         </div>
@@ -40,7 +40,7 @@
             name="message"
             cols="30"
             rows="6"
-            placeholder="Cuéntanos tu proyecto..."
+            :placeholder="$t('contact.placeholders.message')"
             required
           />
         </div>
@@ -54,7 +54,7 @@
               required
             >
             <span class="custom-checkbox__checkmark" />
-            <span class="custom-checkbox__text">Acepto la <a href="#">Política de Privacidad</a></span>
+            <span class="custom-checkbox__text" v-html="$t('contact.privacy_policy', { link: privacy_link })" />
           </label>
         </div>
 
@@ -109,9 +109,9 @@ export default {
       message: null
     }
   },
-  /* eslint-disable */
+
   methods: {
-    sendForm: function (event) {
+    sendForm (event) {
       event.preventDefault()
 
       fetch('https://formcarry.com/s/0DfUl3ukORF', {
@@ -122,7 +122,7 @@ export default {
         },
         body: JSON.stringify({ name: this.name, email: this.email, message: this.message })
       })
-        .then((response) => response.json())
+        .then(response => response.json())
         .then((response) => {
           if (response.code === 200) {
             this.status = 'success'
@@ -134,8 +134,13 @@ export default {
         // network error
         .catch(() => (this.status = 'error'))
     }
+  },
+
+  computed: {
+    privacy_link () {
+      return this.$store.state.locale === 'es' ? '/privacidad' : '/en/privacy-policy'
+    }
   }
-  /* eslint-enable */
 }
 </script>
 

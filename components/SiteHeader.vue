@@ -19,7 +19,7 @@
           <span class="bar" />
           <span class="bar" />
         </span>
-        <span class="header__contact__text">Contacto</span>
+        <span class="header__contact__text">{{ $t('contact.button') }}</span>
       </span>
       <div :class="{'is-active' : isContactFormActive }" class="header__contact__form-wrapper">
         <ContactForm />

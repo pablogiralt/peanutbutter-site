@@ -18,22 +18,8 @@ export default {
   components: {
     SliceZone
   },
-  // middleware: 'i18n',
   async asyncData ({ $prismic, params, store, error, route }) {
     try {
-      /*
-      console.log(store.state.locale)
-      let currentLang
-      if (route.params.lang) {
-        currentLang = route.params.lang
-      } else {
-        currentLang = route.name === 'index' ? 'es' : route.name
-      }
-      const prismicLocales = {
-        en: 'en-us',
-        es: 'es-es'
-      }
-      */
       const lang = { lang: store.state.prismicLocales[store.state.locale] }
       const uid = route.params.uid || 'homepage'
 
@@ -70,27 +56,7 @@ export default {
     },
     lang () {
       return this.$store.state.prismicLocales[this.$store.state.locale]
-
-      /*
-      const locales = {
-        en: 'en-us',
-        es: 'es-es'
-      }
-      return locales[this.langCode]
-      */
     }
-    /*
-    langCode () {
-      let currentLang
-      if (this.$route.params.lang) {
-        currentLang = this.$route.params.lang
-      } else {
-        currentLang = this.$route.name === 'index' || this.$route.name === 'uid' ? 'es' : this.$route.name
-      }
-      console.log('langCode', currentLang)
-      return currentLang
-    }
-    */
   }
 }
 </script>
