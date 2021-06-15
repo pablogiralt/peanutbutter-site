@@ -34,11 +34,11 @@ export default {
     ContactForm: () => import('../slices/ContactForm/index.vue')
   },
   props: {
-    currentLang: {
-      type: String,
-      required: true,
-      default: ''
-    },
+    // currentLang: {
+    //   type: String,
+    //   required: true,
+    //   default: ''
+    // },
     altLangs: {
       type: Array,
       required: true,
@@ -63,7 +63,7 @@ export default {
   },
   computed: {
     logoLink () {
-      return this.currentLang !== 'es' ? `/${this.currentLang}` : '/'
+      return this.$store.state.locale !== 'es' ? `/${this.$store.state.locale}` : '/'
     }
   },
   mounted () {

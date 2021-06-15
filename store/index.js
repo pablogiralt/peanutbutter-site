@@ -1,6 +1,10 @@
 export const state = () => ({
   locales: ['en', 'es'],
-  locale: 'en'
+  locale: 'en',
+  prismicLocales: {
+    en: 'en-us',
+    es: 'es-es'
+  }
 })
 
 export const mutations = {

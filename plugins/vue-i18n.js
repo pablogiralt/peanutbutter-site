@@ -9,7 +9,7 @@ export default ({ app, store }) => {
   app.i18n = new VueI18n({
     locale: store.state.locale,
     // always displays English if Spanish translation is not available
-    fallbackLocale: 'en',
+    fallbackLocale: 'es',
     messages: {
       // 'locales' directory contains all the translations in the form of json files
       en: require('~/locales/en.json'),

@@ -1,7 +1,6 @@
 <template>
   <div>
-    <site-header :alt-langs="altLangs" :current-lang="langCode" :main-menu="mainMenu" />
-    <h1>{{ $t('test') }}</h1>
+    <site-header :alt-langs="altLangs" :main-menu="mainMenu" />
     <slice-zone
       class="main"
       type="page"
@@ -20,23 +19,23 @@ export default {
     SliceZone
   },
   // middleware: 'i18n',
-  async asyncData ({ $prismic, params, error, route }) {
+  async asyncData ({ $prismic, params, store, error, route }) {
     try {
+      /*
+      console.log(store.state.locale)
       let currentLang
       if (route.params.lang) {
         currentLang = route.params.lang
       } else {
         currentLang = route.name === 'index' ? 'es' : route.name
       }
-      console.log('currentLang', currentLang)
-      const locales = {
+      const prismicLocales = {
         en: 'en-us',
         es: 'es-es'
       }
-      const lang = { lang: locales[currentLang] }
+      */
+      const lang = { lang: store.state.prismicLocales[store.state.locale] }
       const uid = route.params.uid || 'homepage'
-
-      console.log('lang', lang)
 
       // Query to get document content
       const pageContent = await $prismic.api.getByUID('page', uid, lang)
@@ -70,12 +69,17 @@ export default {
       return this.$route.params.uid || 'homepage'
     },
     lang () {
+      return this.$store.state.prismicLocales[this.$store.state.locale]
+
+      /*
       const locales = {
         en: 'en-us',
         es: 'es-es'
       }
       return locales[this.langCode]
-    },
+      */
+    }
+    /*
     langCode () {
       let currentLang
       if (this.$route.params.lang) {
@@ -83,8 +87,10 @@ export default {
       } else {
         currentLang = this.$route.name === 'index' || this.$route.name === 'uid' ? 'es' : this.$route.name
       }
+      console.log('langCode', currentLang)
       return currentLang
     }
+    */
   }
 }
 </script>
