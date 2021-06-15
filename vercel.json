@@ -1,11 +1,23 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "nuxt.config.js",
-        "use": "@nuxtjs/vercel-builder",
-        "config": {
-        }
+  "version": 2,
+  "builds": [
+    {
+      "src": "nuxt.config.js",
+      "use": "@nuxtjs/vercel-builder",
+      "config": {
       }
-    ]
-  }
+    }
+  ],
+  "redirects": [
+    { 
+      "source": "/contact",
+      "destination": "/", 
+      "statusCode": 301
+    },
+    { 
+      "source": "/contact2",
+      "destination": "/servicios", 
+      "statusCode": 301
+    }
+  ]
+}
