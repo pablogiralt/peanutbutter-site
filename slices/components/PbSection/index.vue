@@ -1,6 +1,6 @@
 <template>
   <component
-    v-bind:is="'section'"
+    :is="'section'"
     :class="`${classMain} ${darkMode ? classMain + '--black' : ''} ${classAttr ? classAttr : ''}`"
     v-bind="theme"
   >

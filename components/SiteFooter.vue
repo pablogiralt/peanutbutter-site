@@ -68,9 +68,7 @@ export default {
     }
   },
 
-  mounted () {
-    console.log(1111, this.footerMenu)
-  }
+  mounted () {}
 }
 </script>
 

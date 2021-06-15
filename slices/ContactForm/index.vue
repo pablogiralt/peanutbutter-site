@@ -13,31 +13,31 @@
         </div>
       </div>
 
-      <form class="contact__form" v-if="!status" @submit="sendForm">
+      <form v-if="!status" class="contact__form" @submit="sendForm">
         <div class="form-group">
           <input
+            v-model="name"
             type="text"
             name="name"
-            v-model="name"
             placeholder="Nombre"
             required
-          />
+          >
         </div>
 
         <div class="form-group">
           <input
+            v-model="email"
             type="email"
             name="email"
-            v-model="email"
             placeholder="Correo electrónico"
             required
-          />
+          >
         </div>
 
         <div class="form-group">
           <textarea
-            name="message"
             v-model="message"
+            name="message"
             cols="30"
             rows="6"
             placeholder="Cuéntanos tu proyecto..."
@@ -52,7 +52,7 @@
               name="legals"
               class="custom-checkbox__input"
               required
-            />
+            >
             <span class="custom-checkbox__checkmark" />
             <span class="custom-checkbox__text">Acepto la <a href="#">Política de Privacidad</a></span>
           </label>
@@ -77,12 +77,11 @@
           <span>ENVIADO!</span>
           <img class="contact__success__icon" src="icons/icon-plane.svg">
         </div>
-
       </div>
+
       <h1 v-if="status === 'error'">
         Oops, something went wrong. Please try again.
       </h1>
-
     </div>
   </div>
 </template>
