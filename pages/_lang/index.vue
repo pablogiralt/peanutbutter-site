@@ -1,6 +1,7 @@
 <template>
   <div>
     <site-header :alt-langs="altLangs" :current-lang="langCode" :main-menu="mainMenu" />
+    <h1>{{ $t('test') }}</h1>
     <slice-zone
       class="main"
       type="page"
@@ -18,6 +19,7 @@ export default {
   components: {
     SliceZone
   },
+  // middleware: 'i18n',
   async asyncData ({ $prismic, params, error, route }) {
     try {
       let currentLang
@@ -26,12 +28,15 @@ export default {
       } else {
         currentLang = route.name === 'index' ? 'es' : route.name
       }
+      console.log('currentLang', currentLang)
       const locales = {
         en: 'en-us',
         es: 'es-es'
       }
       const lang = { lang: locales[currentLang] }
       const uid = route.params.uid || 'homepage'
+
+      console.log('lang', lang)
 
       // Query to get document content
       const pageContent = await $prismic.api.getByUID('page', uid, lang)
