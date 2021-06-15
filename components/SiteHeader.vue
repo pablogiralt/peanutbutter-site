@@ -1,28 +1,30 @@
 <template>
   <header class="header" :class="{ 'header--hidden': !showHeader }">
-    <navigation :main-menu="mainMenu" />
+    <div class="header__container">
+      <navigation :main-menu="mainMenu" />
 
-    <nuxt-link :to="logoLink" class="header__logo">
-      <img class="logo" src="logo-peanut-butter.svg">
-    </nuxt-link>
+      <nuxt-link :to="logoLink" class="header__logo">
+        <img class="logo" src="logo-peanut-butter.svg">
+      </nuxt-link>
 
-    <!-- <lang-switcher :alt-langs="altLangs" :current-lang="currentLang" /> -->
+      <!-- <lang-switcher :alt-langs="altLangs" :current-lang="currentLang" /> -->
 
-    <div class="header__contact">
-      <span
-        class="header__contact__actions"
-        :class="{'is-active' : isContactFormActive }"
-        @click="toggleContactForm"
-      >
-        <img class="header__contact__img" src="icons/icon-plane.svg">
-        <span class="header__contact__actions__close">
-          <span class="bar" />
-          <span class="bar" />
+      <div class="header__contact">
+        <span
+          class="header__contact__actions"
+          :class="{'is-active' : isContactFormActive }"
+          @click="toggleContactForm"
+        >
+          <img class="header__contact__img" src="icons/icon-plane.svg">
+          <span class="header__contact__actions__close">
+            <span class="bar" />
+            <span class="bar" />
+          </span>
+          <span class="header__contact__text">{{ $t('contact.button') }}</span>
         </span>
-        <span class="header__contact__text">{{ $t('contact.button') }}</span>
-      </span>
-      <div :class="{'is-active' : isContactFormActive }" class="header__contact__form-wrapper">
-        <ContactForm />
+        <div :class="{'is-active' : isContactFormActive }" class="header__contact__form-wrapper">
+          <ContactForm />
+        </div>
       </div>
     </div>
   </header>
@@ -92,10 +94,8 @@ export default {
 <style lang="scss" scoped>
   .header {
     background-color: $black;
-    padding: rem(12px) rem(16px) rem(12px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding-top: rem(12px);
+    padding-bottom: rem(12px);
     width: 100%;
     position: fixed;
     left: 0;
@@ -119,6 +119,13 @@ export default {
         display: flex;
         justify-content: flex-end;
       }
+    }
+
+    &__container {
+      @include container;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     &__contact {

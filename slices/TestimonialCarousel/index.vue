@@ -83,8 +83,7 @@ export default {
     }
 
     &__image {
-      height: rem(88px);
-      width: auto;
+      width: rem(192px);
       margin-bottom: rem(24px);
 
       @media (min-width: $md) {
