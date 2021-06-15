@@ -11,6 +11,7 @@
   "redirects": [
     { "source": "/work", "destination": "/trabajos" },
     { "source": "/work/", "destination": "/trabajos" },
+    { "source": "/work/jimmy-lion", "destination": "/trabajos" },
     { "source": "/work/jimmy-lion/", "destination": "/trabajos" },
     { "source": "/work/edmmond", "destination": "/trabajos" },
     { "source": "/work/edmmond/", "destination": "/trabajos" },
