@@ -5,7 +5,9 @@ export const state = () => ({
     en: 'en-us',
     es: 'es-es'
   },
-  settings: {}
+  settings: {},
+  contactOpen: false,
+  menuOpen: false
 })
 
 export const mutations = {
@@ -19,5 +21,13 @@ export const mutations = {
     if (settings && settings.data) {
       state.settings = settings.data
     }
+  },
+
+  SET_CONTACT_OPEN (state, contactOpen) {
+    state.contactOpen = contactOpen
+  },
+
+  SET_MENU_OPEN (state, menuOpen) {
+    state.menuOpen = menuOpen
   }
 }
