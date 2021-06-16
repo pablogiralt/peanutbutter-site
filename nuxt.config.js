@@ -3,7 +3,7 @@ export default {
   head: {
     title: 'peanutbutter',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'es'
     },
     meta: [{
       charset: 'utf-8'
@@ -20,11 +20,19 @@ export default {
       type: 'image/x-icon',
       href: '/favicon.png'
     }],
-    script: [{
-      "src": "https://cdn.polyfill.io/v2/polyfill.min.js?features=Element.prototype.classList"
-    }, {
-      "src": "https://cdn.jsdelivr.net/npm/focus-visible@5.0.2/dist/focus-visible.min.js"
-    }]
+    script: [
+      {
+        "src": "https://cdn.polyfill.io/v2/polyfill.min.js?features=Element.prototype.classList"
+      }, 
+      {
+        "src": "https://cdn.jsdelivr.net/npm/focus-visible@5.0.2/dist/focus-visible.min.js"
+      },
+      {
+        "defer": true,
+        "data-domain": "new.peanutbutter.es",
+        "src": "https://plausible.io/js/plausible.js"
+      }
+    ]
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
