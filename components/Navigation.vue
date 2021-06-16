@@ -19,6 +19,12 @@
           </prismic-link>
         </li>
 
+        <li class="main-nav__list__item" @click="openContact">
+          <span class="main-nav__list__item__link">
+            Contact
+          </span>
+        </li>
+
         <li class="main-nav__list__item--lang">
           <lang-switcher :alt-langs="altLangs" />
         </li>
@@ -45,13 +51,25 @@ export default {
       }
     }
   },
-  data: () => ({
-    isMenuActive: false
-  }),
+
+  data: () => ({}),
+
+  computed: {
+    isMenuActive () {
+      return this.$store.state.menuOpen
+    }
+  },
+
   methods: {
     toggleMenu () {
-      this.isMenuActive = !this.isMenuActive
+      // this.isMenuActive = !this.isMenuActive
+      this.$store.commit('SET_MENU_OPEN', !this.isMenuActive)
+      // todo - añadir esto al body con Vue
       document.body.style.overflow = this.isMenuActive ? 'hidden' : ''
+    },
+
+    openContact () {
+      this.$store.commit('SET_CONTACT_OPEN', true)
     }
   }
 }
