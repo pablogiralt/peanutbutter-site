@@ -3,7 +3,7 @@
     <a
       href="#"
       class="menu-toggle"
-      :class="{ 'is-active' : isMenuActive }"
+      :class="{ 'is-active' : menuOpen }"
       @click="toggleMenu"
     >
       <span class="bar" />
@@ -11,9 +11,9 @@
       <span class="bar" />
     </a>
 
-    <nav :class="{ 'is-active' : isMenuActive }" class="main-nav">
+    <nav :class="{ 'is-active' : menuOpen }" class="main-nav">
       <ul class="main-nav__list">
-        <li v-for="(item, i) in mainMenu" :key="`menu-item-${i}`" class="main-nav__list__item">
+        <li v-for="(item, i) in mainMenu" :key="`menu-item-${i}`" class="main-nav__list__item" @click="toggleMenu">
           <prismic-link :field="item.link" class="main-nav__list__item__link">
             {{ item.label }}
           </prismic-link>
@@ -55,15 +55,14 @@ export default {
   data: () => ({}),
 
   computed: {
-    isMenuActive () {
+    menuOpen () {
       return this.$store.state.menuOpen
     }
   },
 
   methods: {
     toggleMenu () {
-      // this.isMenuActive = !this.isMenuActive
-      this.$store.commit('SET_MENU_OPEN', !this.isMenuActive)
+      this.$store.commit('SET_MENU_OPEN', !this.menuOpen)
     },
 
     openContact () {
