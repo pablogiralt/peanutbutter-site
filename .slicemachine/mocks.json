@@ -9,6 +9,12 @@
       },
       "buttonText": {
         "content": null
+      },
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
       }
     },
     "items": {

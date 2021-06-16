@@ -24,7 +24,7 @@
             "label": "Description",
             "placeholder": "A nice description of your product",
             "allowTargetBlank": true,
-            "single": "paragraph,heading1,heading2,heading3,strong,hyperlink,em,list-item,o-list-item"
+            "multi": "paragraph,heading1,heading2,heading3,strong,em,hyperlink,list-item,o-list-item"
           },
           "type": "StructuredText"
         }
