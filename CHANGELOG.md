@@ -4,6 +4,18 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0] - 2021-06-16
+
+### Fixed
+- Home menu item always has active class [#28](https://github.com/pablogiralt/peanutbutter-site/issues/28)
+- Logo in header and footer not visible in /en subpages [#23](https://github.com/pablogiralt/peanutbutter-site/issues/23)
+
+### Added
+- Contact button in mobile nav [#21](https://github.com/pablogiralt/peanutbutter-site/issues/21)
+- SEO - XML Sitemap [#31](https://github.com/pablogiralt/peanutbutter-site/issues/31)
+- SEO - title and meta-descriptions [#27](https://github.com/pablogiralt/peanutbutter-site/issues/27)
+- SEO - Robots.txt [#32](https://github.com/pablogiralt/peanutbutter-site/issues/32)
+
 ## [0.4.0] - 2021-06-16
 
 ### Added
