@@ -21,7 +21,7 @@
 
       <div class="footer__col footer__col--logo">
         <nuxt-link :to="logoLink" class="footer__logo-link">
-          <img class="logo" src="logo-peanut-butter-collective.svg">
+          <img class="logo" src="~/static/logo-peanut-butter-collective.svg">
         </nuxt-link>
       </div>
 
