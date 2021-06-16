@@ -57,6 +57,7 @@ export default {
       lastScrollPosition: 0
     }
   },
+
   computed: {
     logoLink () {
       return this.$store.state.locale !== 'es' ? `/${this.$store.state.locale}` : '/'
@@ -68,8 +69,20 @@ export default {
 
     contactOpen () {
       return this.$store.state.contactOpen
+    },
+
+    drawersVisible () {
+      return this.menuOpen || this.contactOpen
     }
   },
+
+  watch: {
+    drawersVisible (visible) {
+      const mutation = visible ? 'BODY_CLASS_ADD' : 'BODY_CLASS_REMOVE'
+      this.$store.commit(mutation, 'hidden')
+    }
+  },
+
   mounted () {
     window.addEventListener('scroll', this.onScroll)
   },
@@ -91,10 +104,7 @@ export default {
       this.lastScrollPosition = currentScrollPosition
     },
     toggleContactForm () {
-      // this.contactOpen = !this.contactOpen
       this.$store.commit('SET_CONTACT_OPEN', !this.contactOpen)
-      // todo - añadir esto al body con Vue
-      document.body.style.overflow = this.contactOpen ? 'hidden' : ''
     }
   }
 }
