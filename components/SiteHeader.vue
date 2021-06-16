@@ -246,7 +246,7 @@ export default {
         top: 0;
         bottom: 0;
         background-color: $primary-60;
-        transition: $transition-standard;
+        transition: $transition-drawer;
         transform: translateX(200%);
         display: flex;
         justify-content: center;

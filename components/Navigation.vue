@@ -19,13 +19,13 @@
           </prismic-link>
         </li>
 
-        <li class="main-nav__list__item" @click="openContact">
+        <li class="main-nav__list__item main-nav__list__item--contact" @click="openContact">
           <span class="main-nav__list__item__link">
-            Contact
+            {{ $t('contact.button') }}
           </span>
         </li>
 
-        <li class="main-nav__list__item--lang">
+        <li class="main-nav__list__item main-nav__list__item--lang">
           <lang-switcher :alt-langs="altLangs" />
         </li>
       </ul>
@@ -153,7 +153,7 @@ export default {
       top: 0;
       bottom: 0;
       background-color: $black;
-      transition: $transition-standard;
+      transition: $transition-drawer;
       transform: translateX(-100%);
       display: flex;
       justify-content: center;
@@ -185,8 +185,9 @@ export default {
       padding: 0;
       display: flex;
       flex-wrap: wrap;
+      flex-direction: column;
       justify-content: center;
-      align-content: center;
+      align-items: center;
 
       @media (min-width: $md) {
         flex-direction: row;
@@ -195,7 +196,7 @@ export default {
 
       &__item {
         @media (max-width: #{$md - 1}) {
-          flex: 1 1 100%;
+          flex: none;
           padding: 0;
           text-align: center;
           opacity: 0;
@@ -208,6 +209,10 @@ export default {
 
           &:not(:first-child) {
             margin-left: rem(32px);
+          }
+
+          &--contact {
+            display: none;
           }
         }
 
