@@ -14,7 +14,7 @@
     <nav :class="{ 'is-active' : menuOpen }" class="main-nav">
       <ul class="main-nav__list">
         <li v-for="(item, i) in mainMenu" :key="`menu-item-${i}`" class="main-nav__list__item" @click="toggleMenu">
-          <!-- 
+          <!--
             Thanks to exact-path, this link will only be active if the path is exact to that of url
             We may need to conditionally apply this when we have to level url like blog/post-titlee
             https://router.vuejs.org/api/#exact
