@@ -17,7 +17,7 @@
             "label": "Testimonial",
             "placeholder": "",
             "allowTargetBlank": true,
-            "single": "paragraph"
+            "multi": "paragraph,strong,em,hyperlink,list-item"
           },
           "type": "StructuredText"
         },

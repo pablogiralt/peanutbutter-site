@@ -29,12 +29,13 @@
           "type": "StructuredText"
         },
         "description": {
-          "type": "StructuredText",
           "config": {
-            "single": "paragraph",
             "label": "Description",
-            "placeholder": "A nice description of your product"
-          }
+            "placeholder": "A nice description of your product",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink,list-item"
+          },
+          "type": "StructuredText"
         },
         "buttonText": {
           "config": {
