@@ -47,13 +47,35 @@ export default {
         mainMenu: mainMenu && mainMenu.data && mainMenu.data.menu ? mainMenu.data.menu : [],
 
         // Footer Menu
-        footerMenu: footerMenu && footerMenu.data && footerMenu.data.menu ? footerMenu.data.menu : []
+        footerMenu: footerMenu && footerMenu.data && footerMenu.data.menu ? footerMenu.data.menu : [],
+
+        page: pageContent
       }
     } catch (e) {
       // Returns error page
       error({ statusCode: 404, message: 'Page not found' })
     }
   },
+
+  head () {
+    return {
+      title: this.page.data.meta_title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.page.data.meta_description
+        }
+      ],
+      bodyAttrs: {
+        class: this.$store.state.bodyClasses
+      },
+      htmlAttrs: {
+        lang: this.$store.state.locale
+      }
+    }
+  },
+
   computed: {
     uid () {
       return this.$route.params.uid || 'homepage'
