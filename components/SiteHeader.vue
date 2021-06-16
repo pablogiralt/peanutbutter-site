@@ -1,5 +1,5 @@
 <template>
-  <header class="header" :class="{ 'header--hidden': !showHeader }">
+  <header class="header" :class="{ 'header--hidden': !showHeader, 'menu--active': menuOpen, 'contact--active': contactOpen }">
     <div class="header__container">
       <navigation :main-menu="mainMenu" :alt-langs="altLangs" />
 
@@ -10,7 +10,7 @@
       <div class="header__contact">
         <span
           class="header__contact__actions"
-          :class="{'is-active' : isContactFormActive }"
+          :class="{'is-active' : contactOpen }"
           @click="toggleContactForm"
         >
           <img class="header__contact__img" src="icons/icon-plane.svg">
@@ -20,7 +20,7 @@
           </span>
           <span class="header__contact__text">{{ $t('contact.button') }}</span>
         </span>
-        <div :class="{'is-active' : isContactFormActive }" class="header__contact__form-wrapper">
+        <div :class="{'is-active' : contactOpen }" class="header__contact__form-wrapper">
           <ContactForm />
         </div>
 
@@ -54,15 +54,35 @@ export default {
   data () {
     return {
       showHeader: true,
-      lastScrollPosition: 0,
-      isContactFormActive: false
+      lastScrollPosition: 0
     }
   },
+
   computed: {
     logoLink () {
       return this.$store.state.locale !== 'es' ? `/${this.$store.state.locale}` : '/'
+    },
+
+    menuOpen () {
+      return this.$store.state.menuOpen
+    },
+
+    contactOpen () {
+      return this.$store.state.contactOpen
+    },
+
+    drawersVisible () {
+      return this.menuOpen || this.contactOpen
     }
   },
+
+  watch: {
+    drawersVisible (visible) {
+      const mutation = visible ? 'BODY_CLASS_ADD' : 'BODY_CLASS_REMOVE'
+      this.$store.commit(mutation, 'hidden')
+    }
+  },
+
   mounted () {
     window.addEventListener('scroll', this.onScroll)
   },
@@ -84,8 +104,7 @@ export default {
       this.lastScrollPosition = currentScrollPosition
     },
     toggleContactForm () {
-      this.isContactFormActive = !this.isContactFormActive
-      document.body.style.overflow = this.isContactFormActive ? 'hidden' : ''
+      this.$store.commit('SET_CONTACT_OPEN', !this.contactOpen)
     }
   }
 }
@@ -227,7 +246,7 @@ export default {
         top: 0;
         bottom: 0;
         background-color: $primary-60;
-        transition: $transition-standard;
+        transition: $transition-drawer;
         transform: translateX(200%);
         display: flex;
         justify-content: center;

@@ -57,3 +57,7 @@ div[body="body"] {
   flex-direction: column;
   scroll-snap-type: y mandatory;
 }
+
+.main {
+  min-height: 100vh;
+}

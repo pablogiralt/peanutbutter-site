@@ -3,7 +3,7 @@
     <a
       href="#"
       class="menu-toggle"
-      :class="{ 'is-active' : isMenuActive }"
+      :class="{ 'is-active' : menuOpen }"
       @click="toggleMenu"
     >
       <span class="bar" />
@@ -11,15 +11,26 @@
       <span class="bar" />
     </a>
 
-    <nav :class="{ 'is-active' : isMenuActive }" class="main-nav">
+    <nav :class="{ 'is-active' : menuOpen }" class="main-nav">
       <ul class="main-nav__list">
-        <li v-for="(item, i) in mainMenu" :key="`menu-item-${i}`" class="main-nav__list__item">
-          <prismic-link :field="item.link" class="main-nav__list__item__link">
+        <li v-for="(item, i) in mainMenu" :key="`menu-item-${i}`" class="main-nav__list__item" @click="toggleMenu">
+          <!--
+            Thanks to exact-path, this link will only be active if the path is exact to that of url
+            We may need to conditionally apply this when we have to level url like blog/post-titlee
+            https://router.vuejs.org/api/#exact
+          -->
+          <prismic-link :field="item.link" class="main-nav__list__item__link" exact-path>
             {{ item.label }}
           </prismic-link>
         </li>
 
-        <li class="main-nav__list__item--lang">
+        <li class="main-nav__list__item main-nav__list__item--contact" @click="openContact">
+          <span class="main-nav__list__item__link">
+            {{ $t('contact.button') }}
+          </span>
+        </li>
+
+        <li class="main-nav__list__item main-nav__list__item--lang">
           <lang-switcher :alt-langs="altLangs" />
         </li>
       </ul>
@@ -45,13 +56,22 @@ export default {
       }
     }
   },
-  data: () => ({
-    isMenuActive: false
-  }),
+
+  data: () => ({}),
+
+  computed: {
+    menuOpen () {
+      return this.$store.state.menuOpen
+    }
+  },
+
   methods: {
     toggleMenu () {
-      this.isMenuActive = !this.isMenuActive
-      document.body.style.overflow = this.isMenuActive ? 'hidden' : ''
+      this.$store.commit('SET_MENU_OPEN', !this.menuOpen)
+    },
+
+    openContact () {
+      this.$store.commit('SET_CONTACT_OPEN', true)
     }
   }
 }
@@ -137,7 +157,7 @@ export default {
       top: 0;
       bottom: 0;
       background-color: $black;
-      transition: $transition-standard;
+      transition: $transition-drawer;
       transform: translateX(-100%);
       display: flex;
       justify-content: center;
@@ -169,8 +189,9 @@ export default {
       padding: 0;
       display: flex;
       flex-wrap: wrap;
+      flex-direction: column;
       justify-content: center;
-      align-content: center;
+      align-items: center;
 
       @media (min-width: $md) {
         flex-direction: row;
@@ -179,7 +200,7 @@ export default {
 
       &__item {
         @media (max-width: #{$md - 1}) {
-          flex: 1 1 100%;
+          flex: none;
           padding: 0;
           text-align: center;
           opacity: 0;
@@ -192,6 +213,10 @@ export default {
 
           &:not(:first-child) {
             margin-left: rem(32px);
+          }
+
+          &--contact {
+            display: none;
           }
         }
 
