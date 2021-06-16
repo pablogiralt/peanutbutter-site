@@ -18,7 +18,7 @@ export default {
     link: [{
       rel: 'icon',
       type: 'image/x-icon',
-      href: '/favicon.ico'
+      href: '/favicon.png'
     }],
     script: [{
       "src": "https://cdn.polyfill.io/v2/polyfill.min.js?features=Element.prototype.classList"
@@ -27,9 +27,15 @@ export default {
     }]
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["vue-essential-slices/src/styles/styles.scss"],
+  css: [
+    //"vue-essential-slices/src/styles/styles.scss",
+    "@/assets/scss/main"
+  ],
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/vue-i18n.js'],
+  router: {
+    middleware: ['i18n']
+  },
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -44,11 +50,19 @@ export default {
         "path": "/:uid"
       }]
     }
-  }], ["nuxt-sm"]],
+  }], ["nuxt-sm"], '@nuxtjs/style-resources',],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ["vue-slicezone", "nuxt-sm"]
   },
+
+  styleResources: {
+    scss: [
+      "@/assets/scss/common/_variables.scss",
+      "@/assets/scss/common/_mixins.scss"
+    ],
+  },
+
   router: {
     extendRoutes(routes, resolve) {
       routes.unshift({

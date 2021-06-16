@@ -4,11 +4,26 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.0] - 2021-03-15
+## [0.2.0] - 2021-06-16
+
 ### Added
 
-- Contect cards component [#9](https://github.com/pablogiralt/peanutbutter-site/issues/9)
-- Contect cards component [#7](https://github.com/pablogiralt/peanutbutter-site/issues/7)
+- Install serverless forms solution [#11](https://github.com/pablogiralt/peanutbutter-site/issues/11) by @jkorea
+- Client Logos component [#17](https://github.com/pablogiralt/peanutbutter-site/issues/17) by @pablogiralt & @jkorea
+- Fetch Social Media links from Prismic [#19](https://github.com/pablogiralt/peanutbutter-site/issues/19) by @pablogiralt & @jkorea
+- Fetch Social Media links from Prismic [#20](https://github.com/pablogiralt/peanutbutter-site/issues/20) by @pablogiralt
+- Move ContactForm component out of slices [#16](https://github.com/pablogiralt/peanutbutter-site/issues/15) by @pablogiralt
+- Text block Slice [#15](https://github.com/pablogiralt/peanutbutter-site/issues/15) by @pablogiralt
+- Fetch Footer menu from prismic [#13](https://github.com/pablogiralt/peanutbutter-site/issues/13) by @pablogiralt
+- vue-i18n for string translations [#14](https://github.com/pablogiralt/peanutbutter-site/issues/14) by @pablogiralt
+- Create .nvmrc file with project's node version [#8](https://github.com/pablogiralt/peanutbutter-site/issues/8) by @pablogiralt
+- Styling of all site by @jkorea
+
+## [0.1.0] - 2021-03-15
+
+### Added
+- Content cards component [#9](https://github.com/pablogiralt/peanutbutter-site/issues/9)
+- Content cards component [#7](https://github.com/pablogiralt/peanutbutter-site/issues/7)
 - Desktop Navigation Component [#6](https://github.com/pablogiralt/peanutbutter-site/issues/6)
 - Testimonials Component [#5](https://github.com/pablogiralt/peanutbutter-site/issues/5)
 - Vue Slick Carousel [#4](https://github.com/pablogiralt/peanutbutter-site/issues/4)

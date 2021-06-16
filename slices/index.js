@@ -1,3 +1,6 @@
 export { default as MainBanner } from './MainBanner'
 export { default as TestimonialCarousel } from './TestimonialCarousel'
 export { default as ContentCards } from './ContentCards'
+export { default as TextBlock } from './TextBlock'
+export { default as ClientLogos } from './ClientLogos'
+export { default as ContactForm } from './ContactForm'

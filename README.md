@@ -38,3 +38,6 @@ https://www.slicemachine.dev/documentation/create-your-own-slices-components
 ### After creating your first Slice, create your storybook
 https://www.slicemachine.dev/documentation/adding-a-storybook
 `prismic sm --add-storybook`
+
+### Run the slice builder
+`prismic sm --develop`

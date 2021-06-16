@@ -8,31 +8,33 @@
     "primary": {
       "title": [
         {
-          "type": "heading1",
-          "text": "Embrace visionary convergence",
+          "type": "paragraph",
+          "text": "Mollit enim elit ipsum cupidatat. Elit amet consectetur fugiat ex.",
           "spans": []
         }
       ],
       "subtitle": [
         {
           "type": "heading1",
-          "text": "Transform sticky action-items",
+          "text": "Incubate B2C e-tailers",
           "spans": []
         }
       ],
       "description": [
         {
           "type": "heading1",
-          "text": "Engage distributed synergies",
+          "text": "Morph viral relationships",
           "spans": []
         }
       ],
-      "buttonText": "streamline dynamic paradigms",
+      "buttonText": "incentivize magnetic experiences",
       "link": {
         "link_type": "Web",
         "url": "http://google.com"
       },
-      "imageSide": "left"
+      "imageSide": "left",
+      "imageSize": "default",
+      "backgroundColor": "white"
     },
     "items": [
       {
@@ -43,8 +45,15 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=900&h=500&fit=crop"
-        }
+          "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f?w=900&h=500&fit=crop"
+        },
+        "caption": [
+          {
+            "type": "paragraph",
+            "text": "Adipisicing fugiat nisi dolore laborum pariatur cupidatat adipisicing pariatur voluptate qui mollit. Nulla nostrud voluptate incididunt. Irure esse duis consectetur tempor mollit aliquip proident excepteur.",
+            "spans": []
+          }
+        ]
       },
       {
         "image": {
@@ -54,8 +63,15 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=900&h=500&fit=crop"
-        }
+          "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"
+        },
+        "caption": [
+          {
+            "type": "paragraph",
+            "text": "Fugiat adipisicing commodo fugiat magna commodo eu in ea duis ullamco velit nisi nostrud et sint. Ullamco consequat eiusmod ut magna in proident ad sit reprehenderit.",
+            "spans": []
+          }
+        ]
       },
       {
         "image": {
@@ -65,30 +81,15 @@
           },
           "alt": "Placeholder image",
           "copyright": null,
-          "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=900&h=500&fit=crop"
-        }
-      },
-      {
-        "image": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a?w=900&h=500&fit=crop"
-        }
-      },
-      {
-        "image": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118?w=900&h=500&fit=crop"
-        }
+          "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68?w=900&h=500&fit=crop"
+        },
+        "caption": [
+          {
+            "type": "paragraph",
+            "text": "Excepteur pariatur adipisicing enim labore elit fugiat sunt quis adipisicing mollit non.",
+            "spans": []
+          }
+        ]
       }
     ],
     "slice_type": "main_banner"

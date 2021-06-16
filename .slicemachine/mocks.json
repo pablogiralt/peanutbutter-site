@@ -10,6 +10,14 @@
       "buttonText": {
         "content": null
       }
+    },
+    "items": {
+      "caption": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
     }
   },
   "TestimonialCarousel": {
@@ -45,6 +53,36 @@
       "description": {
         "config": {
           "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
+  },
+  "TextBlock": {
+    "primary": {
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    }
+  },
+  "ClientLogos": {
+    "primary": {
+      "title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
+    }
+  },
+  "ContactForm": {
+    "primary": {
+      "title": {
+        "config": {
+          "patternType": "HEADING",
           "blocks": 1
         }
       }

@@ -1,0 +1,30 @@
+/** Colors */
+$primary: #ffaa00;
+$primary-10: #fff7e6;
+$primary-60: #ffcc66;
+$black: #000000;
+$white: #ffffff;
+$grey-60: #666666;
+$very-light-grey: #f2f2f2;
+$error: #e02020;
+
+/** Box Model  */
+$gap: 8px;
+$spacer: $gap * 2;
+$container-px: 1280px;
+$container-medium: 1066px;
+$container-small: 936px;
+
+/** Grid settings */
+$full: 1920px;
+$xlg: 1400px;
+$lg: 1200px;
+$md: 1024px;
+$sm: 768px;
+$xs: 450px;
+
+/** Fonts */
+$font-primary: "Bariol", sans-serif;
+
+/** Misc */
+$transition-standard: all 0.3s ease-in-out;

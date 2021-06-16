@@ -1,0 +1,27 @@
+[
+  {
+    "id": "default-slice",
+    "name": "Default slice",
+    "docURL": "...",
+    "version": "sktwi1xtmkfgx8626",
+    "description": "TextBlock",
+    "primary": {
+      "title": [
+        {
+          "type": "paragraph",
+          "text": "Est cupidatat do excepteur est eiusmod aliquip ea qui deserunt. Incididunt ad exercitation enim proident sit sint excepteur.",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Et nisi velit magna laborum in dolore culpa dolor dolor. Cupidatat amet nulla elit ex excepteur amet nostrud cillum laboris labore nostrud est ea.",
+          "spans": []
+        }
+      ]
+    },
+    "items": [],
+    "slice_type": "text_block"
+  }
+]

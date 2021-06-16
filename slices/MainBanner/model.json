@@ -62,17 +62,49 @@
             "default_value": "left"
           },
           "type": "Select"
+        },
+        "imageSize": {
+          "config": {
+            "label": "Image Size",
+            "placeholder": "",
+            "options": [
+              "default",
+              "large"
+            ],
+            "default_value": "default"
+          },
+          "type": "Select"
+        },
+        "backgroundColor": {
+          "config": {
+            "label": "Background Color",
+            "placeholder": "",
+            "default_value": "white",
+            "options": [
+              "white",
+              "grey"
+            ]
+          },
+          "type": "Select"
         }
       },
       "items": {
         "image": {
-          "type": "Image",
           "config": {
-            "id": "image",
-            "label": "",
+            "label": "Image",
             "constraint": {},
             "thumbnails": []
-          }
+          },
+          "type": "Image"
+        },
+        "caption": {
+          "config": {
+            "label": "Caption",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          },
+          "type": "StructuredText"
         }
       }
     }
