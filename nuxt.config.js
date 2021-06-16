@@ -30,7 +30,8 @@ export default {
       {
         "defer": true,
         "data-domain": "new.peanutbutter.es",
-        "src": "https://plausible.io/js/plausible.js"
+        "data-api": "/lucas/api/event",
+        "src": "/lucas/js/script.js"
       }
     ]
   },
