@@ -9,6 +9,10 @@
     }
   ],
   "redirects": [
+    { "source": "/about", "destination": "/" },
+    { "source": "/about/", "destination": "/" },
+    { "source": "/contact", "destination": "/" },
+    { "source": "/contact/", "destination": "/" },
     { "source": "/work", "destination": "/trabajos" },
     { "source": "/work/", "destination": "/trabajos" },
     { "source": "/work/jimmy-lion", "destination": "/trabajos" },
