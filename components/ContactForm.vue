@@ -69,6 +69,10 @@
       </form>
 
       <div v-if="status === 'success'">
+        <div class="contact__success__image">
+          <img src="peanut-success.jpg" alt="">
+        </div>
+
         <div class="contact__title">
           {{ $t('contact.success_title') }}
         </div>
@@ -317,6 +321,10 @@ export default {
     text-transform: uppercase;
     font-weight: 700;
     color: $white;
+
+    &__image {
+      margin-bottom: rem(24px);
+    }
 
     &__icon {
       padding-left: rem(8px);
