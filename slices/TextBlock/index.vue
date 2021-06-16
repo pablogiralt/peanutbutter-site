@@ -19,17 +19,23 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .section {
-  position: relative;
-  background: #f7f7f7;
-  color: #111;
-  padding: 4em;
-  text-align: center;
+  @include container($container-small);
+  padding-top: rem(40px);
+  padding-bottom: rem(40px);
+  min-height: 75vh;
+
+  @media (min-width: $md) {
+    padding-top: rem(56px);
+    padding-bottom: rem(56px);
+  }
 }
+
 a {
-  color: #111;
+  color: $primary;
 }
+
 .title {
   margin-bottom: 2em;
 }
