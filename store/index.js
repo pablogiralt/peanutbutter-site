@@ -7,7 +7,8 @@ export const state = () => ({
   },
   settings: {},
   contactOpen: false,
-  menuOpen: false
+  menuOpen: false,
+  bodyClasses: []
 })
 
 export const mutations = {
@@ -29,5 +30,17 @@ export const mutations = {
 
   SET_MENU_OPEN (state, menuOpen) {
     state.menuOpen = menuOpen
+  },
+
+  BODY_CLASS_ADD (state, bodyClass) {
+    if (!state.bodyClasses.includes(bodyClass)) {
+      state.bodyClasses.push(bodyClass)
+    }
+  },
+
+  BODY_CLASS_REMOVE (state, bodyClass) {
+    if (state.bodyClasses.includes(bodyClass)) {
+      state.bodyClasses = state.bodyClasses.filter(item => item !== bodyClass)
+    }
   }
 }

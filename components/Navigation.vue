@@ -64,8 +64,6 @@ export default {
     toggleMenu () {
       // this.isMenuActive = !this.isMenuActive
       this.$store.commit('SET_MENU_OPEN', !this.isMenuActive)
-      // todo - añadir esto al body con Vue
-      document.body.style.overflow = this.isMenuActive ? 'hidden' : ''
     },
 
     openContact () {
