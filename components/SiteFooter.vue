@@ -7,20 +7,22 @@
         </a>
 
         <div class="footer__social">
-          <a href="https://www.instagram.com/peanutbuttercollective/" class="footer__social__link">
-            <img src="icons/instagram.svg" alt="">
-          </a>
-
-          <a href="https://www.linkedin.com/company/peanut-butter-collective" class="footer__social__link">
-            <img src="icons/linkedin.svg" alt="">
+          <a
+            v-for="(item, index) in socialMedia"
+            :key="index"
+            :href="item.link.url"
+            class="footer__social__link"
+            :target="item.link.target && item.link.target=='_blank' ? '_blank' : '_self'"
+          >
+            <img :src="item.icon.url" :alt="item.icon.alt || item.name || ''">
           </a>
         </div>
       </div>
 
       <div class="footer__col footer__col--logo">
-        <a href="#" class="footer__logo-link">
-          <img class="logo" src="logo-peanut-butter-collective.svg">
-        </a>
+        <nuxt-link :to="logoLink" class="footer__logo-link">
+          <img class="logo" src="~/static/logo-peanut-butter-collective.svg">
+        </nuxt-link>
       </div>
 
       <div class="footer__col footer__col--nav">
@@ -68,7 +70,15 @@ export default {
     }
   },
 
-  mounted () {}
+  computed: {
+    socialMedia () {
+      return this.$store.state.settings.social_media
+    },
+
+    logoLink () {
+      return this.$store.state.locale !== 'es' ? `/${this.$store.state.locale}` : '/'
+    }
+  }
 }
 </script>
 

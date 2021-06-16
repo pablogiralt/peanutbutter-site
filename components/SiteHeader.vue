@@ -4,7 +4,7 @@
       <navigation :main-menu="mainMenu" :alt-langs="altLangs" />
 
       <nuxt-link :to="logoLink" class="header__logo">
-        <img class="logo" src="logo-peanut-butter.svg">
+        <img class="logo" src="~/static/logo-peanut-butter.svg">
       </nuxt-link>
 
       <div class="header__contact">
@@ -24,7 +24,7 @@
           <ContactForm />
         </div>
 
-        <lang-switcher :alt-langs="altLangs" class="header__contact__lang"/>
+        <lang-switcher :alt-langs="altLangs" class="header__contact__lang" />
       </div>
     </div>
   </header>

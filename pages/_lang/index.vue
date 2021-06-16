@@ -32,6 +32,10 @@ export default {
       // Query to get main nav
       const footerMenu = await $prismic.api.getByUID('navigation', 'footer-nav', lang)
 
+      // Query to get settings
+      const settings = await $prismic.api.getSingle('settings', lang)
+      store.commit('SET_SETTINGS', settings)
+
       return {
         // Document content
         // slices: result.data.body,

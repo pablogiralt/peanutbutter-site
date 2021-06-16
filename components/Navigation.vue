@@ -20,7 +20,7 @@
         </li>
 
         <li class="main-nav__list__item--lang">
-          <lang-switcher :alt-langs="altLangs" :current-lang="currentLang" />
+          <lang-switcher :alt-langs="altLangs" />
         </li>
       </ul>
     </nav>

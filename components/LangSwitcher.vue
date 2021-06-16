@@ -2,8 +2,8 @@
   <ul class="lang-switcher">
     <li v-for="(lang, langCode) in langs" :key="lang.shortCode" class="lang-switcher__item">
       <nuxt-link
-        class="lang-switcher__item__link"
         v-if="lang.shortCode !== currentLang"
+        class="lang-switcher__item__link"
         :to="$prismic.linkResolver(altLang(langCode))"
       >
         <span>
@@ -19,11 +19,6 @@
 export default {
   name: 'LangSwitcher',
   props: {
-    // currentLang: {
-    //   type: String,
-    //   required: true,
-    //   default: ''
-    // },
     altLangs: {
       type: Array,
       required: true,
@@ -44,14 +39,16 @@ export default {
       }
     }
   },
-  methods: {
-    altLang (langCode) {
-      return this.altLangs.filter(lang => lang.lang === langCode)[0] || {}
-    }
-  },
+
   computed: {
     currentLang () {
       return this.$store.state.locale
+    }
+  },
+
+  methods: {
+    altLang (langCode) {
+      return this.altLangs.filter(lang => lang.lang === langCode)[0] || {}
     }
   }
 }
