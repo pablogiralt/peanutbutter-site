@@ -18,7 +18,7 @@ export default {
   components: {
     SliceZone
   },
-  async asyncData ({ $prismic, params, store, error, route }) {
+  async asyncData ({ $prismic, params, store, error, route, req }) {
     try {
       const lang = { lang: store.state.prismicLocales[store.state.locale] }
       const uid = route.params.uid || 'homepage'
@@ -36,10 +36,10 @@ export default {
       const settings = await $prismic.api.getSingle('settings', lang)
       store.commit('SET_SETTINGS', settings)
 
-      return {
-        // Document content
-        // slices: result.data.body,
+      // Get host from request when SSR and from window when page loaded client-side
+      const host = req ? req.headers.host.split(':')[0] : window.location.host.split(':')[0]
 
+      return {
         // Lang switcher
         altLangs: pageContent.alternate_languages,
 
@@ -49,16 +49,19 @@ export default {
         // Footer Menu
         footerMenu: footerMenu && footerMenu.data && footerMenu.data.menu ? footerMenu.data.menu : [],
 
-        page: pageContent
+        page: pageContent,
+
+        localhost: host === 'localhost'
       }
     } catch (e) {
+      console.error(e)
       // Returns error page
       error({ statusCode: 404, message: 'Page not found' })
     }
   },
 
   head () {
-    return {
+    const head = {
       title: this.page.data.meta_title,
       meta: [
         {
@@ -77,8 +80,20 @@ export default {
       },
       htmlAttrs: {
         lang: this.$store.state.locale
-      }
+      },
+      script: []
     }
+
+    if (this.$store.state.settings.plausible_domain && !this.localhost) {
+      head.scripts.push({
+        defer: true,
+        'data-domain': this.$store.state.settings.plausible_domain,
+        'data-api': '/lucas/api/event',
+        src: '/lucas/js/script.js'
+      })
+    }
+
+    return head
   },
 
   computed: {

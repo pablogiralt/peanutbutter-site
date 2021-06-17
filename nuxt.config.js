@@ -26,12 +26,6 @@ export default {
       }, 
       {
         "src": "https://cdn.jsdelivr.net/npm/focus-visible@5.0.2/dist/focus-visible.min.js"
-      },
-      {
-        "defer": true,
-        "data-domain": "new.peanutbutter.es",
-        "data-api": "/lucas/api/event",
-        "src": "/lucas/js/script.js"
       }
     ]
   },
