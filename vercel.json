@@ -46,9 +46,7 @@
     { "source": "/work/la-madrilena-de-surf", "destination": "/trabajos" },
     { "source": "/work/la-madrilena-de-surf/", "destination": "/trabajos" },
     { "source": "/work/gafa-vintage", "destination": "/trabajos" },
-    { "source": "/work/gafa-vintage/", "destination": "/trabajos" },
-    { "source": "/peanut/*", "destination": "/" },
-    { "source": "/skills/*", "destination": "/servicios" }
+    { "source": "/work/gafa-vintage/", "destination": "/trabajos" }
   ],
   "rewrites": [
     { "source": "/lucas/js/script.js", "destination": "https://plausible.io/js/plausible.js" },
