@@ -143,7 +143,7 @@ export default {
         }
 
         @media (min-width: $md) {
-          max-height: 70vh;
+          max-height: unset;
           margin: 0;
           width: 100%;
         }
