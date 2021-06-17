@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## unreleased
 
+### Added
+- SEO - add field to set meta robots to noindex [#33](https://github.com/pablogiralt/peanutbutter-site/issues/33) by @pablogiralt
+
 ## [0.5.0] - 2021-06-16
 
 ### Fixed
