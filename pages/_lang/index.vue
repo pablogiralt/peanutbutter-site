@@ -65,6 +65,11 @@ export default {
           hid: 'description',
           name: 'description',
           content: this.page.data.meta_description
+        },
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: this.page.data.noindex ? 'noindex' : 'index'
         }
       ],
       bodyAttrs: {
