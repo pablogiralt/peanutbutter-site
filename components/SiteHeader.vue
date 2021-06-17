@@ -126,6 +126,18 @@ export default {
       top: -56px;
     }
 
+    &.menu--active {
+      transform-style: preserve-3d;
+      transform-origin: center right;
+      transition: transform 1s;
+      bottom: 0;
+    }
+
+    &.contact--active {
+      bottom: 0;
+      transform: translateX(-100%) rotateY(-180deg);
+    }
+
     @media (min-width: $md) {
       &__nav-wrapper,
       &__logo,
@@ -255,6 +267,16 @@ export default {
 
         &.is-active {
           transform: translateY(0);
+        }
+
+        .menu--active & {
+          opacity: 0;
+          transform: rotateY(180deg);
+          backface-visibility: hidden;
+
+          &.is-active {
+            opacity: 1;
+          }
         }
       }
 

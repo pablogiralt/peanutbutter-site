@@ -224,6 +224,7 @@ export default {
           @include navItem;
           padding: rem(24px);
           display: block;
+          cursor: pointer;
 
           @media (min-width: $md) {
             padding: 0;
