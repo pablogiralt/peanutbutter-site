@@ -128,14 +128,13 @@ export default {
 
     &.menu--active {
       transform-style: preserve-3d;
-      transform-origin: center right;
-      transition: transform 1s;
+      transition: transform 0.6s ease;
       bottom: 0;
     }
 
     &.contact--active {
       bottom: 0;
-      transform: translateX(-100%) rotateY(-180deg);
+      transform: translateX(0) rotateY(-180deg);
     }
 
     @media (min-width: $md) {
@@ -168,6 +167,10 @@ export default {
         display: inline-block;
         vertical-align: middle;
         transition: 0.2s ease all;
+
+        .contact--active & {
+          transform: rotateY(-180deg);
+        }
 
         &.is-active {
           z-index: 101;
@@ -257,8 +260,9 @@ export default {
         right: 0;
         top: 0;
         bottom: 0;
+        opacity: 0;
         background-color: $primary-60;
-        transition: $transition-drawer;
+        transition: $transition-drawer, opacity 0.3s ease;
         transform: translateX(200%);
         display: flex;
         justify-content: center;
@@ -267,12 +271,14 @@ export default {
 
         &.is-active {
           transform: translateY(0);
+          opacity: 1;
         }
 
         .menu--active & {
           opacity: 0;
           transform: rotateY(180deg);
           backface-visibility: hidden;
+          transition: none;
 
           &.is-active {
             opacity: 1;
