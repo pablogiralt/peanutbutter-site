@@ -85,7 +85,7 @@ export default {
     }
 
     if (this.$store.state.settings.plausible_domain && !this.localhost) {
-      head.scripts.push({
+      head.script.push({
         defer: true,
         'data-domain': this.$store.state.settings.plausible_domain,
         'data-api': '/lucas/api/event',
