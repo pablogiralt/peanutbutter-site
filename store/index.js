@@ -8,7 +8,8 @@ export const state = () => ({
   settings: {},
   contactOpen: false,
   menuOpen: false,
-  bodyClasses: []
+  bodyClasses: [],
+  desktopBreakpoint: 1024
 })
 
 export const mutations = {

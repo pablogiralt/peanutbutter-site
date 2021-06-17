@@ -1,5 +1,5 @@
 <template>
-  <header class="header" :class="{ 'header--hidden': !showHeader, 'menu--active': menuOpen, 'contact--active': contactOpen }">
+  <header class="header" :class="{ 'header--hidden': !showHeader, 'menu--active': menuOpen, 'contact--active': contactOpenFromMenu }">
     <div class="header__container">
       <navigation :main-menu="mainMenu" :alt-langs="altLangs" />
 
@@ -51,10 +51,12 @@ export default {
       }
     }
   },
+
   data () {
     return {
       showHeader: true,
-      lastScrollPosition: 0
+      lastScrollPosition: 0,
+      windowWidth: typeof window !== 'undefined' ? window.innerWidth : false
     }
   },
 
@@ -64,11 +66,20 @@ export default {
     },
 
     menuOpen () {
-      return this.$store.state.menuOpen
+      return this.$store.state.menuOpen && this.windowWidth && this.windowWidth < this.$store.state.desktopBreakpoint
     },
 
     contactOpen () {
       return this.$store.state.contactOpen
+    },
+
+    contactOpenFromMenu () {
+      if (typeof window === 'undefined') {
+        return false
+      }
+      // todo - create getDevice method in Vuex
+      return this.$store.state.menuOpen && this.$store.state.contactOpen &&
+             this.windowWidth && this.windowWidth < this.$store.state.desktopBreakpoint
     },
 
     drawersVisible () {
@@ -84,11 +95,18 @@ export default {
   },
 
   mounted () {
+    this.windowWidth = typeof window !== 'undefined' ? window.innerWidth : false
+    window.addEventListener('resize', () => {
+      this.windowWidth = typeof window !== 'undefined' ? window.innerWidth : false
+    })
+
     window.addEventListener('scroll', this.onScroll)
   },
+
   beforeDestroy () {
     window.removeEventListener('scroll', this.onScroll)
   },
+
   methods: {
     onScroll () {
       const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
