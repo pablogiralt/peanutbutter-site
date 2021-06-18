@@ -1,5 +1,5 @@
 <template>
-  <header class="header" :class="{ 'header--hidden': !showHeader, 'menu--active': menuOpen, 'contact-from-menu': contactOpenFromMenu }">
+  <header class="header" :class="headerClasses">
     <div class="header__container">
       <navigation :main-menu="mainMenu" :alt-langs="altLangs" />
 
@@ -55,11 +55,21 @@ export default {
   data () {
     return {
       showHeader: true,
-      lastScrollPosition: 0
+      lastScrollPosition: 0,
+      menuClosing: false
     }
   },
 
   computed: {
+
+    headerClasses () {
+      return {
+        'header--hidden': !this.showHeader,
+        'menu--active': this.menuOpen,
+        'menu--closing': this.menuClosing,
+        'contact-from-menu': this.contactOpenFromMenu
+      }
+    },
 
     getDevice () {
       return this.$store.state.device
@@ -90,6 +100,15 @@ export default {
     drawersVisible (visible) {
       const mutation = visible ? 'BODY_CLASS_ADD' : 'BODY_CLASS_REMOVE'
       this.$store.commit(mutation, 'hidden')
+    },
+
+    menuOpen (open) {
+      if (!open) {
+        this.menuClosing = true
+        setTimeout(() => {
+          this.menuClosing = false
+        }, 1000)
+      }
     }
   },
 
