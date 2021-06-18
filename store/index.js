@@ -9,6 +9,7 @@ export const state = () => ({
   contactOpen: false,
   menuOpen: false,
   bodyClasses: [],
+  device: '',
   desktopBreakpoint: 1024
 })
 
@@ -43,5 +44,9 @@ export const mutations = {
     if (state.bodyClasses.includes(bodyClass)) {
       state.bodyClasses = state.bodyClasses.filter(item => item !== bodyClass)
     }
+  },
+
+  SET_DEVICE (state, device) {
+    state.device = device
   }
 }

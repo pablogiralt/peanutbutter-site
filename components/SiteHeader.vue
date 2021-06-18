@@ -1,5 +1,5 @@
 <template>
-  <header class="header" :class="{ 'header--hidden': !showHeader, 'menu--active': menuOpen, 'contact--active': contactOpenFromMenu }">
+  <header class="header" :class="{ 'header--hidden': !showHeader, 'menu--active': menuOpen, 'contact-from-menu': contactOpenFromMenu }">
     <div class="header__container">
       <navigation :main-menu="mainMenu" :alt-langs="altLangs" />
 
@@ -55,18 +55,22 @@ export default {
   data () {
     return {
       showHeader: true,
-      lastScrollPosition: 0,
-      windowWidth: typeof window !== 'undefined' ? window.innerWidth : false
+      lastScrollPosition: 0
     }
   },
 
   computed: {
+
+    getDevice () {
+      return this.$store.state.device
+    },
+
     logoLink () {
       return this.$store.state.locale !== 'es' ? `/${this.$store.state.locale}` : '/'
     },
 
     menuOpen () {
-      return this.$store.state.menuOpen && this.windowWidth && this.windowWidth < this.$store.state.desktopBreakpoint
+      return this.$store.state.menuOpen && !this.contactOpen && this.getDevice === 'mobile'
     },
 
     contactOpen () {
@@ -74,12 +78,7 @@ export default {
     },
 
     contactOpenFromMenu () {
-      if (typeof window === 'undefined') {
-        return false
-      }
-      // todo - create getDevice method in Vuex
-      return this.$store.state.menuOpen && this.$store.state.contactOpen &&
-             this.windowWidth && this.windowWidth < this.$store.state.desktopBreakpoint
+      return this.$store.state.menuOpen && this.$store.state.contactOpen && this.getDevice === 'mobile'
     },
 
     drawersVisible () {
@@ -95,11 +94,10 @@ export default {
   },
 
   mounted () {
-    this.windowWidth = typeof window !== 'undefined' ? window.innerWidth : false
+    this.setDevice()
     window.addEventListener('resize', () => {
-      this.windowWidth = typeof window !== 'undefined' ? window.innerWidth : false
+      this.setDevice()
     })
-
     window.addEventListener('scroll', this.onScroll)
   },
 
@@ -108,6 +106,12 @@ export default {
   },
 
   methods: {
+
+    setDevice () {
+      const device = window.innerWidth < this.$store.state.desktopBreakpoint ? 'mobile' : 'desktop'
+      this.$store.commit('SET_DEVICE', device)
+    },
+
     onScroll () {
       const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
       if (currentScrollPosition < 0) {
@@ -121,8 +125,12 @@ export default {
       this.showHeader = currentScrollPosition < this.lastScrollPosition
       this.lastScrollPosition = currentScrollPosition
     },
+
     toggleContactForm () {
       this.$store.commit('SET_CONTACT_OPEN', !this.contactOpen)
+      if (!this.$store.state.contactOpen) {
+        this.$store.commit('SET_MENU_OPEN', false)
+      }
     }
   }
 }
@@ -150,7 +158,7 @@ export default {
       bottom: 0;
     }
 
-    &.contact--active {
+    &.contact-from-menu {
       bottom: 0;
       transform: translateX(0) rotateY(-180deg);
     }
@@ -186,7 +194,7 @@ export default {
         vertical-align: middle;
         transition: 0.2s ease all;
 
-        .contact--active & {
+        .contact-from-menu & {
           transform: rotateY(-180deg);
         }
 

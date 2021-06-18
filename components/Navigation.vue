@@ -60,8 +60,17 @@ export default {
   data: () => ({}),
 
   computed: {
+
+    getDevice () {
+      return this.$store.state.device
+    },
+
     menuOpen () {
-      return this.$store.state.menuOpen
+      return this.$store.state.menuOpen && !this.contactOpen && this.getDevice === 'mobile'
+    },
+
+    contactOpen () {
+      return this.$store.state.contactOpen
     }
   },
 
