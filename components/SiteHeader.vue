@@ -177,6 +177,11 @@ export default {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @media (min-width: $md) and (max-width: $lg) {
+        padding-left: rem(48px);
+        padding-right: rem(48px);
+      }
     }
 
     &__contact {
