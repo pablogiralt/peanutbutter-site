@@ -310,7 +310,6 @@ export default {
         right: 0;
         top: 0;
         bottom: 0;
-        opacity: 0;
         background-color: $primary-60;
         transition: $transition-drawer;
         transform: translateX(200%);
@@ -323,6 +322,10 @@ export default {
           transform: translateY(0);
           opacity: 1;
           transition: $transition-standard;
+        }
+
+        .menu--closing & {
+          opacity: 0;
         }
 
         .menu--active & {
