@@ -160,7 +160,7 @@ export default {
 
     &.contact-from-menu {
       bottom: 0;
-      transform: translateX(0) rotateY(-180deg);
+      transform: translateX(0) rotateY(0);
     }
 
     @media (min-width: $md) {
@@ -288,7 +288,7 @@ export default {
         bottom: 0;
         opacity: 0;
         background-color: $primary-60;
-        transition: $transition-drawer, opacity 0.3s ease;
+        transition: $transition-drawer;
         transform: translateX(200%);
         display: flex;
         justify-content: center;
@@ -298,13 +298,14 @@ export default {
         &.is-active {
           transform: translateY(0);
           opacity: 1;
+          transition: $transition-standard;
         }
 
         .menu--active & {
           opacity: 0;
           transform: rotateY(180deg);
           backface-visibility: hidden;
-          transition: none;
+          transition: opacity 2s all;
 
           &.is-active {
             opacity: 1;
