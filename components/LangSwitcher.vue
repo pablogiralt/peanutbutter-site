@@ -95,13 +95,14 @@ export default {
         display: block;
         text-transform: uppercase;
         padding: rem(24px) 0;
+        color: $grey-60;
 
         @media (min-width: $md) {
           padding: 0;
         }
 
         &.disable {
-          color: $grey-60;
+          color: $white;
           font-weight: 400;
         }
       }

@@ -123,6 +123,13 @@ export default {
 
       #{$mainBanner}--img-large & {
         margin: 0;
+        height: 100%;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
       }
 
       @media (min-width: $md) {
@@ -173,7 +180,7 @@ export default {
     }
 
     &__text {
-      max-width: rem(266px);
+      max-width: 70%;
       margin: 0 auto;
 
       #{$mainBanner}--img-large & {
@@ -200,6 +207,22 @@ export default {
         @media (min-width: $xs) {
           max-width: rem(360px);
           align-self: center;
+
+          #{$mainBanner}--only-text & {
+            max-width: 90%
+          }
+        }
+
+        @media (min-width: $sm) {
+          max-width: unset;
+
+          #{$mainBanner}--only-text & {
+            max-width: 90%
+          }
+        }
+
+        @media (min-width: $md) {
+          max-width: rem(360px);
 
           #{$mainBanner}--only-text & {
             max-width: 90%

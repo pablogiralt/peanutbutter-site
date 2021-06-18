@@ -179,7 +179,7 @@ export default {
     margin: 0 auto;
     padding-top: rem(56px);
     padding-bottom: rem(56px);
-    height: 100%;
+    height: auto;
     overflow-y: auto;
 
     -webkit-overflow-scrolling: touch;

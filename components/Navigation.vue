@@ -60,8 +60,17 @@ export default {
   data: () => ({}),
 
   computed: {
+
+    getDevice () {
+      return this.$store.state.device
+    },
+
     menuOpen () {
-      return this.$store.state.menuOpen
+      return this.$store.state.menuOpen && !this.contactOpen && this.getDevice === 'mobile'
+    },
+
+    contactOpen () {
+      return this.$store.state.contactOpen
     }
   },
 
@@ -174,7 +183,7 @@ export default {
 
               @for $i from 1 to 6 {
                 &:nth-child(#{$i}) {
-                  transition: opacity 1s  $i * 0.25s, transform 1s cubic-bezier(0.16, 1.08, 0.38, 0.98) $i * 0.25s;
+                  transition: opacity 1s  $i * 0.3s, transform 1s cubic-bezier(0.16, 1.08, 0.38, 0.98) $i * 0.3s;
                 }
               }
             }

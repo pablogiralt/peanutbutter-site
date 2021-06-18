@@ -103,6 +103,11 @@ export default {
       text-align: inherit;
       justify-content: space-between;
     }
+
+    @media (min-width: $md) and (max-width: $lg) {
+      padding-left: rem(48px);
+      padding-right: rem(48px);
+    }
   }
 
   &__col {
@@ -157,6 +162,11 @@ export default {
     &__link {
       display: inline-block;
       padding: 0 rem(10px);
+      transition: $transition-standard;
+
+      &:hover {
+        opacity: 0.5;
+      }
 
       img {
         display: block;
@@ -201,6 +211,11 @@ export default {
         &__link {
           color: $grey-60;
           text-decoration: none;
+          transition: $transition-standard;
+
+          &:hover {
+            color: $primary;
+          }
         }
       }
     }

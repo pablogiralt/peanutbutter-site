@@ -1,5 +1,5 @@
 <template>
-  <header class="header" :class="{ 'header--hidden': !showHeader, 'menu--active': menuOpen, 'contact--active': contactOpen }">
+  <header class="header" :class="headerClasses">
     <div class="header__container">
       <navigation :main-menu="mainMenu" :alt-langs="altLangs" />
 
@@ -51,24 +51,44 @@ export default {
       }
     }
   },
+
   data () {
     return {
       showHeader: true,
-      lastScrollPosition: 0
+      lastScrollPosition: 0,
+      menuClosing: false
     }
   },
 
   computed: {
+
+    headerClasses () {
+      return {
+        'header--hidden': !this.showHeader,
+        'menu--active': this.menuOpen,
+        'menu--closing': this.menuClosing,
+        'contact-from-menu': this.contactOpenFromMenu
+      }
+    },
+
+    getDevice () {
+      return this.$store.state.device
+    },
+
     logoLink () {
       return this.$store.state.locale !== 'es' ? `/${this.$store.state.locale}` : '/'
     },
 
     menuOpen () {
-      return this.$store.state.menuOpen
+      return this.$store.state.menuOpen && !this.contactOpen && this.getDevice === 'mobile'
     },
 
     contactOpen () {
       return this.$store.state.contactOpen
+    },
+
+    contactOpenFromMenu () {
+      return this.$store.state.menuOpen && this.$store.state.contactOpen && this.getDevice === 'mobile'
     },
 
     drawersVisible () {
@@ -80,16 +100,37 @@ export default {
     drawersVisible (visible) {
       const mutation = visible ? 'BODY_CLASS_ADD' : 'BODY_CLASS_REMOVE'
       this.$store.commit(mutation, 'hidden')
+    },
+
+    menuOpen (open) {
+      if (!open) {
+        this.menuClosing = true
+        setTimeout(() => {
+          this.menuClosing = false
+        }, 1000)
+      }
     }
   },
 
   mounted () {
+    this.setDevice()
+    window.addEventListener('resize', () => {
+      this.setDevice()
+    })
     window.addEventListener('scroll', this.onScroll)
   },
+
   beforeDestroy () {
     window.removeEventListener('scroll', this.onScroll)
   },
+
   methods: {
+
+    setDevice () {
+      const device = window.innerWidth < this.$store.state.desktopBreakpoint ? 'mobile' : 'desktop'
+      this.$store.commit('SET_DEVICE', device)
+    },
+
     onScroll () {
       const currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
       if (currentScrollPosition < 0) {
@@ -103,8 +144,12 @@ export default {
       this.showHeader = currentScrollPosition < this.lastScrollPosition
       this.lastScrollPosition = currentScrollPosition
     },
+
     toggleContactForm () {
       this.$store.commit('SET_CONTACT_OPEN', !this.contactOpen)
+      if (!this.$store.state.contactOpen) {
+        this.$store.commit('SET_MENU_OPEN', false)
+      }
     }
   }
 }
@@ -128,14 +173,13 @@ export default {
 
     &.menu--active {
       transform-style: preserve-3d;
-      transform-origin: center right;
-      transition: transform 1s;
+      transition: transform 0.6s ease;
       bottom: 0;
     }
 
-    &.contact--active {
+    &.contact-from-menu {
       bottom: 0;
-      transform: translateX(-100%) rotateY(-180deg);
+      transform: translateX(0) rotateY(0);
     }
 
     @media (min-width: $md) {
@@ -152,6 +196,11 @@ export default {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @media (min-width: $md) and (max-width: $lg) {
+        padding-left: rem(48px);
+        padding-right: rem(48px);
+      }
     }
 
     &__contact {
@@ -168,6 +217,10 @@ export default {
         display: inline-block;
         vertical-align: middle;
         transition: 0.2s ease all;
+
+        .contact-from-menu & {
+          transform: rotateY(-180deg);
+        }
 
         &.is-active {
           z-index: 101;
@@ -267,12 +320,23 @@ export default {
 
         &.is-active {
           transform: translateY(0);
+          opacity: 1;
+          transition: $transition-standard;
+        }
+
+        .menu--closing & {
+          opacity: 0;
+        }
+
+        .menu--closing.contact-from-menu & {
+          opacity: 1;
         }
 
         .menu--active & {
           opacity: 0;
           transform: rotateY(180deg);
           backface-visibility: hidden;
+          transition: opacity 2s all;
 
           &.is-active {
             opacity: 1;

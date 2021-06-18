@@ -49,7 +49,7 @@ export default {
   .content-cards {
     background-color: $primary-10;
 
-    padding: rem(24px) rem(52px) rem(80px);
+    padding: rem(24px) 0 rem(80px);
 
     @media (min-width: $md) {
 
@@ -68,7 +68,7 @@ export default {
 
     &__item {
       margin: 0 auto rem(48px);
-      max-width: rem(266px);
+      max-width: 70%;
 
       &:last-child {
         margin-bottom: 0;
