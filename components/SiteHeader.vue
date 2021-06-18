@@ -328,6 +328,10 @@ export default {
           opacity: 0;
         }
 
+        .menu--closing.contact-from-menu & {
+          opacity: 1;
+        }
+
         .menu--active & {
           opacity: 0;
           transform: rotateY(180deg);
