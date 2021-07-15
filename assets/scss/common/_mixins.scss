@@ -5,6 +5,7 @@
 }
 
 @mixin container($width: $container-px, $gap: $gap * 2) {
+  position: relative;
   width: 100%;
   max-width: $width;
   margin-left: auto;
