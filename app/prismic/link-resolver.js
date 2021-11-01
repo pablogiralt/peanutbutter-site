@@ -1,5 +1,5 @@
 export default function (doc) {
-
+  
   const langPaths = {
     'en-us': 'en',
     'es-es': ''
@@ -8,6 +8,10 @@ export default function (doc) {
 
   if (doc.uid === 'homepage') {
     return `/${shortCode}`
+  }
+
+  if (doc.uid === 'blog') {
+    return `/${shortCode}/blog`   
   }
 
   if (doc.type === 'page') {

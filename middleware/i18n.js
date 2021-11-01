@@ -8,7 +8,7 @@ export default function ({ isHMR, app, store, route, params, error, redirect }) 
   if (route.params.lang) {
     locale = route.params.lang
   } else {
-    locale = route.name === 'index' || route.name === 'uid' ? defaultLocale : route.name
+    locale = route.name === 'index' || route.name === 'blog' || route.name === 'uid' ? defaultLocale : route.name
   }
 
   // if (store.state.locales.includes(locale)) {
