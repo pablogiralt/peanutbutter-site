@@ -48,10 +48,16 @@ export default {
   modules: [["@nuxtjs/prismic", {
     "endpoint": "https://peanutbutter.cdn.prismic.io/api/v2",
     "apiOptions": {
-      "routes": [{
-        "type": "page",
-        "path": "/:uid"
-      }]
+      "routes": [
+        {
+          "type": "page",
+          "path": "/:uid"
+        },
+        {
+          "type": "post",
+          "path": "/resources/:uid"
+        }
+      ]
     }
   }], ["nuxt-sm"], '@nuxtjs/style-resources',],
   // Build Configuration: https://go.nuxtjs.dev/config-build
