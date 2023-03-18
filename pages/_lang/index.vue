@@ -3,7 +3,7 @@
     <site-header :alt-langs="altLangs" :main-menu="mainMenu" />
     <slice-zone
       class="main"
-      type="page"
+      :type="customType"
       :uid="uid"
       :lang="lang"
     />
@@ -20,11 +20,13 @@ export default {
   },
   async asyncData ({ $prismic, params, store, error, route, req }) {
     try {
+      console.log(store.state.locale)
       const lang = { lang: store.state.prismicLocales[store.state.locale] }
       const uid = route.params.uid || 'homepage'
+      const customType = route.name === 'resources-uid' ? 'post' : 'page'
 
       // Query to get document content
-      const pageContent = await $prismic.api.getByUID('page', uid, lang)
+      const pageContent = await $prismic.api.getByUID(customType, uid, lang)
 
       // Query to get main nav
       const mainMenu = await $prismic.api.getByUID('navigation', 'main-nav', lang)
@@ -102,6 +104,9 @@ export default {
     },
     lang () {
       return this.$store.state.prismicLocales[this.$store.state.locale]
+    },
+    customType () {
+      return this.$root?._route?.name === 'resources-uid' ? 'post' : 'page'
     }
   }
 }
