@@ -62,7 +62,10 @@ export default {
   }], ["nuxt-sm"], '@nuxtjs/style-resources',],
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile: ["vue-slicezone", "nuxt-sm"]
+    transpile: ["vue-slicezone", "nuxt-sm"],
+    extend(config) {
+      config.resolve.alias['node-fetch-native'] = require.resolve('node-fetch')
+    }
   },
 
   styleResources: {
