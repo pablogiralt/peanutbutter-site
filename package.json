@@ -17,7 +17,7 @@
     "@nuxtjs/prismic": "^1.2.4",
     "@prismicio/vue": "^2.0.7",
     "core-js": "^3.8.3",
-    "nuxt": "^2.14.12",
+    "nuxt": "^2.15.8",
     "nuxt-sm": "^0.0.6",
     "prismic-javascript": "^3.0.2",
     "vue-essential-slices": "^0.2.0",
@@ -37,6 +37,7 @@
     "eslint-plugin-vue": "^7.5.0",
     "node-sass": "^6.0.0",
     "sass-loader": "^10.2.1",
-    "slice-machine-ui": "^0.0.44"
+    "slice-machine-ui": "^0.0.44",
+    "webpack": "^4.46.0"
   }
 }
