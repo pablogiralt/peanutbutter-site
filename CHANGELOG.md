@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Transition effect between menu and contact in mobile version [#26](https://github.com/pablogiralt/peanutbutter-site/issues/33)  by @pablogiralt & @jkorea
 
 ## [0.7.0] - Unreleased
-- Make project work with node 16 so it can be deployed to Vercel [#37](https://github.com/pablogiralt/peanutbutter-site/issues/37) by @pablogiralt
+- Make project work with node 18 so it can be deployed to Vercel [#37](https://github.com/pablogiralt/peanutbutter-site/issues/37) by @pablogiralt
 
 ## [0.6.0] - 2021-06-17
 ### Added
