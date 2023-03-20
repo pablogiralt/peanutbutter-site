@@ -89,7 +89,7 @@ export default {
     }
 
     &__title {
-      /deep/ p {
+      ::v-deep p {
         @include bannerTitle2;
         color: $primary;
         margin: 0 0 rem(8px);
@@ -97,7 +97,7 @@ export default {
     }
 
     &__subtitle {
-      /deep/ p {
+      ::v-deep p {
         @include bannerSubtitle2;
         color: $black;
         margin: 0 0 rem(24px);

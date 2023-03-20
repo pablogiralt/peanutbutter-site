@@ -55,7 +55,7 @@ export default {
       padding: 0 rem(16px);
       width: 100%;
 
-      /deep/ p {
+      ::v-deep p {
         margin: 0;
       }
     }

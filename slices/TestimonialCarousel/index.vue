@@ -60,7 +60,7 @@ export default {
       padding: rem(56px) 0 rem(24px);
     }
 
-    /deep/ .slick-dots {
+    ::v-deep .slick-dots {
       margin: 0;
     }
 
@@ -96,7 +96,7 @@ export default {
       text-align: center;
       margin-bottom: rem(24px);
 
-      /deep/ p {
+      ::v-deep p {
         margin: 0;
       }
 
