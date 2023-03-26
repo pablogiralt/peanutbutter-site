@@ -55,14 +55,14 @@ export default {
     }
 
     &__title {
-      /deep/ h2 {
+      ::v-deep h2 {
         @include bannerTitle;
         margin: 0 0 rem(24px);
       }
     }
 
     &__subtitle {
-      /deep/ p {
+      ::v-deep p {
         @include bannerSubtitle;
         color: $primary;
         margin: 0 0 rem(24px);

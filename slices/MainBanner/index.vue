@@ -167,7 +167,7 @@ export default {
       width: 100%;
       left: 76px;
 
-      /deep/ p {
+      ::v-deep p {
         margin: 0;
       }
     }
@@ -232,14 +232,14 @@ export default {
     }
 
     &__title {
-      /deep/ h1 {
+      ::v-deep h1 {
         @include bannerTitle;
         margin: 0 0 rem(8px);
       }
     }
 
     &__subtitle {
-      /deep/ p {
+      ::v-deep p {
         @include bannerSubtitle;
         color: $primary;
         margin: 0 0 rem(24px);
