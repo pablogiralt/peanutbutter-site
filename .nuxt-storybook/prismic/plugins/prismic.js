@@ -16,7 +16,6 @@ export default async (context, inject) => {
 
   let api = {}
   try {
-    console.log(1111);
     api = await Prismic.api('https://peanutbutter.cdn.prismic.io/api/v2', Object.assign({}, options,  {"routes":[{"type":"page","path":"/:uid"}]}))
   } catch (error) {
     console.error(error)

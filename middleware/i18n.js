@@ -14,7 +14,6 @@ export default function ({ isHMR, app, store, route, params, error, redirect }) 
     } else {
       locale = route.name
     }
-    console.log('locale', locale)
   }
 
   // if (store.state.locales.includes(locale)) {
