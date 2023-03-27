@@ -1,0 +1,45 @@
+{
+  "id": "blog_posts_list",
+  "type": "SharedSlice",
+  "name": "BlogPostsList",
+  "description": "Blog Posts List",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default Slice",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Blog Posts List",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading1",
+            "label": "Title",
+            "placeholder": "This is where it all begins..."
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "single": "paragraph",
+            "label": "Description",
+            "placeholder": "A nice description of your product"
+          }
+        },
+        "sort": {
+          "config": {
+            "label": "Sort",
+            "placeholder": "",
+            "options": [
+              "Latest first",
+              "Manual order"
+            ]
+          },
+          "type": "Select"
+        }
+      },
+      "items": {}
+    }
+  ]
+}

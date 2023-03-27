@@ -1,0 +1,28 @@
+[
+  {
+    "id": "default",
+    "name": "Default Slice",
+    "docURL": "...",
+    "version": "sktwi1xtmkfgx8626",
+    "description": "Blog Posts List",
+    "primary": {
+      "title": [
+        {
+          "type": "paragraph",
+          "text": "Est aliquip laborum nisi cupidatat laboris sit non qui non voluptate qui. Enim ut occaecat incididunt consequat tempor ut sunt ullamco dolor deserunt id occaecat. Non et id adipisicing laborum nulla sint adipisicing excepteur ipsum tempor sint.",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Enim labore nostrud excepteur proident voluptate anim sint aute cupidatat sint minim qui. Eiusmod aute aute adipisicing quis.",
+          "spans": []
+        }
+      ],
+      "sort": "Manual order"
+    },
+    "items": [],
+    "slice_type": "blog_posts_list"
+  }
+]
