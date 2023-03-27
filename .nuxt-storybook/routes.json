@@ -2,55 +2,62 @@
   {
     "name": "prismic-preview",
     "path": "/preview",
-    "component": "/Users/pablo/jamstack/peanutbutter-site/.nuxt-storybook/prismic/pages/preview.vue",
-    "_name": "_1f6ce156"
+    "component": "/Users/pablo/shopify/peanutbutter-site/.nuxt-storybook/prismic/pages/preview.vue",
+    "_name": "_42f78854"
   },
   {
     "name": "en",
     "path": "/en",
-    "component": "/Users/pablo/jamstack/peanutbutter-site/pages/en.vue",
+    "component": "/Users/pablo/shopify/peanutbutter-site/pages/en.vue",
     "chunkName": "pages/en",
-    "_name": "_8d09152c"
+    "_name": "_9747e4a8"
   },
   {
     "name": "uid",
     "path": "/:uid",
-    "component": "/Users/pablo/jamstack/peanutbutter-site/pages/_uid.vue",
+    "component": "/Users/pablo/shopify/peanutbutter-site/pages/_uid.vue",
     "chunkName": "pages/_uid",
-    "_name": "_a1eebbdc"
+    "_name": "_742431d4"
   },
   {
     "name": "custom",
     "path": "*",
-    "component": "/Users/pablo/jamstack/peanutbutter-site/pages/404.vue",
-    "_name": "_276d7b72"
+    "component": "/Users/pablo/shopify/peanutbutter-site/pages/404.vue",
+    "_name": "_4d7bb245"
   },
   {
     "name": "404",
     "path": "/404",
-    "component": "/Users/pablo/jamstack/peanutbutter-site/pages/404.vue",
+    "component": "/Users/pablo/shopify/peanutbutter-site/pages/404.vue",
     "chunkName": "pages/404",
-    "_name": "_276d7b72"
+    "_name": "_4d7bb245"
+  },
+  {
+    "name": "resources-uid",
+    "path": "/resources/:uid?",
+    "component": "/Users/pablo/shopify/peanutbutter-site/pages/resources/_uid.vue",
+    "chunkName": "pages/resources/_uid",
+    "_name": "_a9ac1684"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/pablo/jamstack/peanutbutter-site/pages/index.vue",
+    "component": "/Users/pablo/shopify/peanutbutter-site/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_22b78321"
+    "_name": "_010deb9f"
   },
   {
     "name": "lang",
     "path": "/:lang",
-    "component": "/Users/pablo/jamstack/peanutbutter-site/pages/_lang/index.vue",
+    "component": "/Users/pablo/shopify/peanutbutter-site/pages/_lang/index.vue",
     "chunkName": "pages/_lang/index",
-    "_name": "_037b911f"
+    "_name": "_4a95b9c6"
   },
   {
     "name": "lang-uid",
     "path": "/:lang/:uid",
-    "component": "/Users/pablo/jamstack/peanutbutter-site/pages/_lang/_uid.vue",
+    "component": "/Users/pablo/shopify/peanutbutter-site/pages/_lang/_uid.vue",
     "chunkName": "pages/_lang/_uid",
-    "_name": "_42abdc54"
+    "_name": "_39191296"
   }
 ]
