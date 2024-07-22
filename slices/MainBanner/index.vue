@@ -255,6 +255,10 @@ export default {
       ::v-deep ul {
         padding-left: rem(18px);
       }
+
+      ::v-deep a {
+       color: $black;
+      }
     }
 
     &__link {
