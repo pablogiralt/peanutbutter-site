@@ -5,10 +5,15 @@ export default function ({ isHMR, app, store, route, params, error, redirect }) 
     return
   }
   let locale
+
   if (route.params.lang) {
     locale = route.params.lang
   } else {
-    locale = route.name === 'index' || route.name === 'uid' ? defaultLocale : route.name
+    if (route.name === 'index' || route.name === 'uid' || route.name === 'resources-uid') {
+      locale = defaultLocale
+    } else {
+      locale = route.name
+    }
   }
 
   // if (store.state.locales.includes(locale)) {

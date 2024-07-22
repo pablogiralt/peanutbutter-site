@@ -6,10 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.7.0] - 2021-06-18
 
+## [0.8.0] - 2024-07-22
+### Fixed
+- Fix links in buttons of mainBanner not working when banner has more than one image
+
+### Changed
+- Make project work with node 18 so it can be deployed to Vercel [#37](https://github.com/pablogiralt/peanutbutter-site/issues/37) by @pablogiralt
+
+### Added
 - Transition effect between menu and contact in mobile version [#26](https://github.com/pablogiralt/peanutbutter-site/issues/33)  by @pablogiralt & @jkorea
 
 ## [0.6.0] - 2021-06-17
-
 ### Added
 - SEO - add field to set meta robots to noindex [#33](https://github.com/pablogiralt/peanutbutter-site/issues/33) by @pablogiralt
 

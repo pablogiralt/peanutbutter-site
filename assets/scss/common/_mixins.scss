@@ -1,10 +1,11 @@
 @function rem($size) {
-  $remSize: $size / 16px;
+  $remSize: calc($size / 16px);
 
   @return #{$remSize}rem;
 }
 
 @mixin container($width: $container-px, $gap: $gap * 2) {
+  position: relative;
   width: 100%;
   max-width: $width;
   margin-left: auto;
@@ -123,6 +124,8 @@
 
 @mixin linkItem($color) {
   position: relative;
+  text-decoration: none;
+  color: $black;
 
   &::after {
     content: "";

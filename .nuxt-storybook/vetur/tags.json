@@ -1,20 +1,23 @@
 {
-  "LangSwitcher": {
-    "description": "Auto imported from /components/LangSwitcher.vue"
+  "BlogPosts": {
+    "description": "Auto imported from components/BlogPosts.vue"
   },
-  "LazyLangSwitcher": {
-    "description": "Auto imported from /components/LangSwitcher.vue"
+  "ContactForm": {
+    "description": "Auto imported from components/ContactForm.vue"
+  },
+  "LangSwitcher": {
+    "description": "Auto imported from components/LangSwitcher.vue"
   },
   "Logo": {
-    "description": "Auto imported from /components/Logo.vue"
-  },
-  "LazyLogo": {
-    "description": "Auto imported from /components/Logo.vue"
+    "description": "Auto imported from components/Logo.vue"
   },
   "Navigation": {
-    "description": "Auto imported from /components/Navigation.vue"
+    "description": "Auto imported from components/Navigation.vue"
   },
-  "LazyNavigation": {
-    "description": "Auto imported from /components/Navigation.vue"
+  "SiteFooter": {
+    "description": "Auto imported from components/SiteFooter.vue"
+  },
+  "SiteHeader": {
+    "description": "Auto imported from components/SiteHeader.vue"
   }
 }

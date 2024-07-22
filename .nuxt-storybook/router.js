@@ -1,23 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import { normalizeURL, decode } from '@nuxt/ufo'
+import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _1f6ce156 = () => interopDefault(import('./prismic/pages/preview.vue' /* webpackChunkName: "" */))
-const _8d09152c = () => interopDefault(import('../pages/en.vue' /* webpackChunkName: "pages/en" */))
-const _a1eebbdc = () => interopDefault(import('../pages/_uid.vue' /* webpackChunkName: "pages/_uid" */))
-const _276d7b72 = () => interopDefault(import('../pages/404.vue' /* webpackChunkName: "" */))
-const _22b78321 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
-const _037b911f = () => interopDefault(import('../pages/_lang/index.vue' /* webpackChunkName: "pages/_lang/index" */))
-const _42abdc54 = () => interopDefault(import('../pages/_lang/_uid.vue' /* webpackChunkName: "pages/_lang/_uid" */))
+const _42f78854 = () => interopDefault(import('./prismic/pages/preview.vue' /* webpackChunkName: "" */))
+const _9747e4a8 = () => interopDefault(import('../pages/en.vue' /* webpackChunkName: "pages/en" */))
+const _742431d4 = () => interopDefault(import('../pages/_uid.vue' /* webpackChunkName: "pages/_uid" */))
+const _4d7bb245 = () => interopDefault(import('../pages/404.vue' /* webpackChunkName: "" */))
+const _a9ac1684 = () => interopDefault(import('../pages/resources/_uid.vue' /* webpackChunkName: "pages/resources/_uid" */))
+const _010deb9f = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _4a95b9c6 = () => interopDefault(import('../pages/_lang/index.vue' /* webpackChunkName: "pages/_lang/index" */))
+const _39191296 = () => interopDefault(import('../pages/_lang/_uid.vue' /* webpackChunkName: "pages/_lang/_uid" */))
 
-// TODO: remove in Nuxt 3
 const emptyFn = () => {}
-const originalPush = Router.prototype.push
-Router.prototype.push = function push (location, onComplete = emptyFn, onAbort) {
-  return originalPush.call(this, location, onComplete, onAbort)
-}
 
 Vue.use(Router)
 
@@ -30,62 +26,61 @@ export const routerOptions = {
 
   routes: [{
     path: "/preview",
-    component: _1f6ce156,
+    component: _42f78854,
     name: "prismic-preview"
   }, {
     path: "/en",
-    component: _8d09152c,
+    component: _9747e4a8,
     name: "en"
   }, {
     path: "/:uid",
-    component: _a1eebbdc,
+    component: _742431d4,
     name: "uid"
   }, {
     path: "*",
-    component: _276d7b72,
+    component: _4d7bb245,
     name: "custom"
   }, {
     path: "/404",
-    component: _276d7b72,
+    component: _4d7bb245,
     name: "404"
   }, {
+    path: "/resources/:uid?",
+    component: _a9ac1684,
+    name: "resources-uid"
+  }, {
     path: "/",
-    component: _22b78321,
+    component: _010deb9f,
     name: "index"
   }, {
     path: "/:lang",
-    component: _037b911f,
+    component: _4a95b9c6,
     name: "lang"
   }, {
     path: "/:lang/:uid",
-    component: _42abdc54,
+    component: _39191296,
     name: "lang-uid"
   }],
 
   fallback: false
 }
 
-function decodeObj(obj) {
-  for (const key in obj) {
-    if (typeof obj[key] === 'string') {
-      obj[key] = decode(obj[key])
-    }
-  }
-}
+export function createRouter (ssrContext, config) {
+  const base = (config._app && config._app.basePath) || routerOptions.base
+  const router = new Router({ ...routerOptions, base  })
 
-export function createRouter () {
-  const router = new Router(routerOptions)
+  // TODO: remove in Nuxt 3
+  const originalPush = router.push
+  router.push = function push (location, onComplete = emptyFn, onAbort) {
+    return originalPush.call(this, location, onComplete, onAbort)
+  }
 
   const resolve = router.resolve.bind(router)
   router.resolve = (to, current, append) => {
     if (typeof to === 'string') {
       to = normalizeURL(to)
     }
-    const r = resolve(to, current, append)
-    if (r && r.resolved && r.resolved.query) {
-      decodeObj(r.resolved.query)
-    }
-    return r
+    return resolve(to, current, append)
   }
 
   return router

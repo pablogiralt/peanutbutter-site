@@ -33,12 +33,15 @@
             :field="slice.primary.description"
             class="main-banner__description"
           />
-          <span
+
+          <component
+            :is="slice.primary.link && slice.items && slice.items.length > 1 ? 'prismic-link' : 'span'"
             v-if="slice.primary.buttonText"
+            :field="slice.primary.link"
             class="main-banner__link"
           >
             {{ slice.primary.buttonText }}
-          </span>
+          </component>
         </div>
       </div>
     </component>
@@ -167,7 +170,7 @@ export default {
       width: 100%;
       left: 76px;
 
-      /deep/ p {
+      ::v-deep p {
         margin: 0;
       }
     }
@@ -180,7 +183,7 @@ export default {
     }
 
     &__text {
-      max-width: 70%;
+      max-width: 85%;
       margin: 0 auto;
 
       #{$mainBanner}--img-large & {
@@ -232,14 +235,14 @@ export default {
     }
 
     &__title {
-      /deep/ h1 {
+      ::v-deep h1 {
         @include bannerTitle;
         margin: 0 0 rem(8px);
       }
     }
 
     &__subtitle {
-      /deep/ p {
+      ::v-deep p {
         @include bannerSubtitle;
         color: $primary;
         margin: 0 0 rem(24px);
@@ -248,6 +251,14 @@ export default {
 
     &__description {
       margin: 0 0 rem(24px);
+
+      ::v-deep ul {
+        padding-left: rem(18px);
+      }
+
+      ::v-deep a {
+       color: $black;
+      }
     }
 
     &__link {

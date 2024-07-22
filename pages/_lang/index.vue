@@ -1,9 +1,10 @@
 <template>
   <div>
     <site-header :alt-langs="altLangs" :main-menu="mainMenu" />
+    <blog-posts v-if="posts?.length" :posts="posts" />
     <slice-zone
       class="main"
-      type="page"
+      :type="customType"
       :uid="uid"
       :lang="lang"
     />
@@ -20,17 +21,32 @@ export default {
   },
   async asyncData ({ $prismic, params, store, error, route, req }) {
     try {
+      // console.log(store.state.locale)
       const lang = { lang: store.state.prismicLocales[store.state.locale] }
       const uid = route.params.uid || 'homepage'
+      const customType = route.name === 'resources-uid' ? 'post' : 'page'
 
       // Query to get document content
-      const pageContent = await $prismic.api.getByUID('page', uid, lang)
+      const pageContent = await $prismic.api.getByUID(customType, uid, lang)
 
       // Query to get main nav
       const mainMenu = await $prismic.api.getByUID('navigation', 'main-nav', lang)
 
       // Query to get main nav
       const footerMenu = await $prismic.api.getByUID('navigation', 'footer-nav', lang)
+
+      let blogPosts = []
+      // IF "Fetch posts" field is checked in prismic for this page, fetch blog posts
+      if (pageContent.data?.fetch_posts) {
+        // Query for blog posts
+        const blogPostsResponse = await $prismic.api.query(
+          $prismic.predicates.at('document.type', 'post')
+        )
+
+        if (blogPostsResponse?.results?.length) {
+          blogPosts = blogPostsResponse.results
+        }
+      }
 
       // Query to get settings
       const settings = await $prismic.api.getSingle('settings', lang)
@@ -50,6 +66,8 @@ export default {
         footerMenu: footerMenu && footerMenu.data && footerMenu.data.menu ? footerMenu.data.menu : [],
 
         page: pageContent,
+
+        posts: blogPosts,
 
         localhost: host === 'localhost'
       }
@@ -102,6 +120,9 @@ export default {
     },
     lang () {
       return this.$store.state.prismicLocales[this.$store.state.locale]
+    },
+    customType () {
+      return this.$root?._route?.name === 'resources-uid' ? 'post' : 'page'
     }
   }
 }

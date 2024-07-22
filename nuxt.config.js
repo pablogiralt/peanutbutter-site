@@ -48,10 +48,16 @@ export default {
   modules: [["@nuxtjs/prismic", {
     "endpoint": "https://peanutbutter.cdn.prismic.io/api/v2",
     "apiOptions": {
-      "routes": [{
-        "type": "page",
-        "path": "/:uid"
-      }]
+      "routes": [
+        {
+          "type": "page",
+          "path": "/:uid"
+        },
+        {
+          "type": "post",
+          "path": "/resources/:uid"
+        }
+      ]
     }
   }], ["nuxt-sm"], '@nuxtjs/style-resources',],
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -72,19 +78,30 @@ export default {
         name: 'custom',
         path: '*',
         component: resolve(__dirname, 'pages/404.vue')
-      }); // Move uid so it has higuer priority than lang
+      }); 
+      
+      // Move "uid" so it has higuer priority than lang
 
       let fromIndex = routes.map(route => route.name).indexOf('uid');
       let toIndex = 0;
-      var uidRoute = routes[fromIndex];
+      let uidRoute = routes[fromIndex];
+      
       routes.splice(fromIndex, 1);
-      routes.splice(toIndex, 0, uidRoute); // Move en so it has higuer than uid
-
+      routes.splice(toIndex, 0, uidRoute); 
+      
+      // Move "en" so it has higuer priority than uid
       fromIndex = routes.map(route => route.name).indexOf('en');
       toIndex = 0;
-      var uidRoute = routes[fromIndex];
+      uidRoute = routes[fromIndex];
       routes.splice(fromIndex, 1);
       routes.splice(toIndex, 0, uidRoute);
+
+      // Move "blog" so it has higuer priority than uid
+      // fromIndex = routes.map(route => route.name).indexOf('blog');
+      // toIndex = 0;
+      // uidRoute = routes[fromIndex];
+      // routes.splice(fromIndex, 1);
+      // routes.splice(toIndex, 0, uidRoute);
     }
 
   },

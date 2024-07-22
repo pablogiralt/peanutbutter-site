@@ -10,6 +10,10 @@ export default function (doc) {
     return `/${shortCode}`
   }
 
+  if (doc.uid === 'blog') {
+    return `/${shortCode}/blog`   
+  }
+
   if (doc.type === 'page') {
     return shortCode ? `/${shortCode}/${doc.uid}` : `/${doc.uid}`
   }

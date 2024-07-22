@@ -12,7 +12,7 @@ import { createApp } from '../'
  * @nuxtjs/storybook
  * execute plugin scripts
  */
-window.__NUXT__ = { config: {} };
+window.__NUXT__ = { config: {"_app":{"basePath":"/","assetsPath":"/_nuxt/","cdnURL":null}} };
 ;
 
 // Fetch mixin
