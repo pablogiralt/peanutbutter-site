@@ -34,7 +34,7 @@ export default {
     background: $primary-10;
 
     &__container {
-      @include container($container-medium);
+      // @include container($container-medium);
       padding-top: rem(40px);
       padding-bottom: rem(40px);
 
@@ -83,15 +83,20 @@ export default {
       align-content: center;
 
       &__item {
-        flex: 1 1 50%;
-        max-width: 50%;
+        // flex: 1 1 50%;
+        // max-width: 50%;
+        flex: 0 0 150px;
+        max-width: 150px;
+        padding: 1rem;
         display: flex;
+        flex-grow: 0;
         justify-content: center;
         align-items: center;
-
+        // width: 150px;
+        // height: 150px;
         @media (min-width: $md) {
-          flex: 1 1 33.333%;
-          max-width: 33.333%;
+          // flex: 1 1 33.333%;
+          // max-width: 33.333%;
         }
       }
     }
