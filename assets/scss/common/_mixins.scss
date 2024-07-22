@@ -124,6 +124,8 @@
 
 @mixin linkItem($color) {
   position: relative;
+  text-decoration: none;
+  color: $black;
 
   &::after {
     content: "";

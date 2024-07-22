@@ -2,7 +2,6 @@
   <div class="footer-wrapper">
     <footer class="footer">
       <div class="footer__container">
-
         <div class="footer__col footer__col--info">
           <a href="#" rel="noopener noreferrer" class="footer__mail-link">
             hello [at] peanutbutter.es
