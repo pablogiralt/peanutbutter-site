@@ -98,6 +98,10 @@
 export default {
   name: 'Form',
 
+  middleware ({ $gtm }) {
+    $gtm.push({ varName: 'text value' })
+  },
+
   props: {
     title: {
       type: Array,
@@ -146,13 +150,33 @@ export default {
         .then((response) => {
           if (response.code === 200) {
             this.status = 'success'
+            this.$gtm.push({
+              event: 'Lead',
+              data: {
+                email: this.email
+              }
+            })
           } else {
             // Formcarry error
             this.status = 'error'
+            this.$gtm.push({
+              event: 'LeadError',
+              data: {
+                errorType: 'Formcarry error'
+              }
+            })
           }
         })
         // network error
-        .catch(() => (this.status = 'error'))
+        .catch(() => {
+          this.$gtm.push({
+            event: 'LeadError',
+            data: {
+              errorType: 'Network error'
+            }
+          })
+          this.status = 'error'
+        })
     }
   }
 }

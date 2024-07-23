@@ -20,13 +20,12 @@ export default {
     SliceZone
   },
 
-  middleware ({ $gtm }) {
-    $gtm.push({ varName: 'text value' })
-  },
+  // middleware ({ $gtm }) {
+  //   $gtm.push({ varName: 'text value' })
+  // },
 
   async asyncData ({ $prismic, params, store, error, route, req }) {
     try {
-      // console.log(store.state.locale)
       const lang = { lang: store.state.prismicLocales[store.state.locale] }
       const uid = route.params.uid || 'homepage'
       const customType = route.name === 'resources-uid' ? 'post' : 'page'
