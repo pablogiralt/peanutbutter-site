@@ -80,8 +80,8 @@ export default {
       enabled: true,
       // enabled: process.env.NODE_ENV === 'production' ? true : false,
       debug: true,
-      pageTracking: true,
-      pageViewEventName: 'pageView',
+      // pageTracking: true,
+      // pageViewEventName: 'pageView',
     }
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build

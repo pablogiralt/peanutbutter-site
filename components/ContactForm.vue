@@ -151,7 +151,7 @@ export default {
           if (response.code === 200) {
             this.status = 'success'
             this.$gtm.push({
-              event: 'Lead',
+              event: 'lead',
               data: {
                 email: this.email
               }
@@ -160,7 +160,7 @@ export default {
             // Formcarry error
             this.status = 'error'
             this.$gtm.push({
-              event: 'LeadError',
+              event: 'lead_error',
               data: {
                 errorType: 'Formcarry error'
               }
@@ -170,7 +170,7 @@ export default {
         // network error
         .catch(() => {
           this.$gtm.push({
-            event: 'LeadError',
+            event: 'lead_error',
             data: {
               errorType: 'Network error'
             }
