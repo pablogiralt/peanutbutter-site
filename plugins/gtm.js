@@ -1,6 +1,5 @@
-export default function ({
-  $gtm,
-  route
-}) {
-  $gtm.init(process.env.gtmId) // pass gtm id as a varibale form different env
+export default function ({ $gtm, route }) {
+  console.log('route', route)
+  $gtm.init('GTM-MCHQK28P')
+  $gtm.push({ varName: 'value' })
 }

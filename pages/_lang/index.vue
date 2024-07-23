@@ -19,6 +19,11 @@ export default {
   components: {
     SliceZone
   },
+
+  middleware ({ $gtm }) {
+    $gtm.push({ varName: 'text value' })
+  },
+
   async asyncData ({ $prismic, params, store, error, route, req }) {
     try {
       // console.log(store.state.locale)

@@ -70,7 +70,20 @@ export default {
     ["nuxt-sm"], 
     '@nuxtjs/style-resources',
     '@nuxtjs/gtm',
-    ],
+  ],
+  gtm: {
+    id: 'GTM-MCHQK28P'
+  },
+  publicRuntimeConfig: {
+    gtm: {
+      id: process.env.GOOGLE_TAG_MANAGER_ID,
+      enabled: true,
+      // enabled: process.env.NODE_ENV === 'production' ? true : false,
+      debug: true,
+      pageTracking: true,
+      pageViewEventName: 'pageView',
+    }
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ["vue-slicezone", "nuxt-sm"]
