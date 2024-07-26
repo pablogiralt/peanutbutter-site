@@ -35,7 +35,13 @@ export default {
     "@/assets/scss/main"
   ],
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/vue-i18n.js'],
+  plugins: [
+    '~/plugins/vue-i18n.js',
+    {
+      src: '~/plugins/gtm.js',
+      mode: 'client'
+    }
+  ],
   router: {
     middleware: ['i18n']
   },
@@ -45,21 +51,39 @@ export default {
   buildModules: [// https://go.nuxtjs.dev/eslint
   '@nuxtjs/eslint-module'],
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [["@nuxtjs/prismic", {
-    "endpoint": "https://peanutbutter.cdn.prismic.io/api/v2",
-    "apiOptions": {
-      "routes": [
-        {
-          "type": "page",
-          "path": "/:uid"
-        },
-        {
-          "type": "post",
-          "path": "/resources/:uid"
-        }
-      ]
+  modules: [
+    ["@nuxtjs/prismic", {
+      "endpoint": "https://peanutbutter.cdn.prismic.io/api/v2",
+      "apiOptions": {
+        "routes": [
+          {
+            "type": "page",
+            "path": "/:uid"
+          },
+          {
+            "type": "post",
+            "path": "/resources/:uid"
+          }
+        ]
+      }
+    }], 
+    ["nuxt-sm"], 
+    '@nuxtjs/style-resources',
+    '@nuxtjs/gtm',
+  ],
+  gtm: {
+    id: 'GTM-MCHQK28P'
+  },
+  publicRuntimeConfig: {
+    gtm: {
+      id: process.env.GOOGLE_TAG_MANAGER_ID,
+      enabled: true,
+      // enabled: process.env.NODE_ENV === 'production' ? true : false,
+      debug: true,
+      // pageTracking: true,
+      // pageViewEventName: 'pageView',
     }
-  }], ["nuxt-sm"], '@nuxtjs/style-resources',],
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ["vue-slicezone", "nuxt-sm"]
@@ -108,5 +132,8 @@ export default {
   storybook: {
     stories: ["~/slices/**/*.stories.js"]
   },
-  ignore: ["**/*.stories.js"]
+  ignore: ["**/*.stories.js"],
+  env: {
+    gtmId: process.env.GTM_ID
+  } 
 };

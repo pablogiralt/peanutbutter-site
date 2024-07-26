@@ -19,9 +19,9 @@ export default {
   components: {
     SliceZone
   },
-  async asyncData ({ $prismic, params, store, error, route, req }) {
+
+  async asyncData ({ $prismic, params, store, error, route, req, $gtm }) {
     try {
-      // console.log(store.state.locale)
       const lang = { lang: store.state.prismicLocales[store.state.locale] }
       const uid = route.params.uid || 'homepage'
       const customType = route.name === 'resources-uid' ? 'post' : 'page'
@@ -54,6 +54,15 @@ export default {
 
       // Get host from request when SSR and from window when page loaded client-side
       const host = req ? req.headers.host.split(':')[0] : window.location.host.split(':')[0]
+
+      $gtm.push({
+        event: 'page_view',
+        data: {
+          page_title: pageContent?.data?.meta_title || '',
+          page_location: `https://${host}${route.path}`,
+          page_path: route.path
+        }
+      })
 
       return {
         // Lang switcher
