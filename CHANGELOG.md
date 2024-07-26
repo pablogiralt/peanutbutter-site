@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [0.9.0] - 2024-07-26
+### Added
+- GTM container + send page_view & lead events
+
 ## [0.8.0] - 2024-07-22
 ### Fixed
 - Fix links in buttons of mainBanner not working when banner has more than one image
